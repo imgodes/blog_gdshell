@@ -84,7 +84,7 @@ const config = {
             items: [
               {
                 label: 'Android Security',
-                to: '/docs/cybersecurity/androidsecurity',
+                to: '/docs/cybersecurity/androidsec',
               },
             ],
           },
