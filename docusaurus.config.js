@@ -70,24 +70,24 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Ciência da Computação',
-                to: '/docs/fundamentos/computerscience',
-              },
-            ],
-          },
-          {
-            title: 'Cybersecurity',
-            items: [
-              {
-                label: 'Android Security',
-                to: '/docs/cybersecurity/androidsec',
-              },
-            ],
-          },
+          // {
+          //   title: 'Docs',
+          //   items: [
+          //     {
+          //       label: 'Ciência da Computação',
+          //       to: '/docs/fundamentos/computerscience',
+          //     },
+          //   ],
+          // },
+          // {
+          //   title: 'Cybersecurity',
+          //   items: [
+          //     {
+          //       label: 'Android Security',
+          //       to: '/docs/cybersecurity/androidsec',
+          //     },
+          //   ],
+          // },
           {
             title: 'More',
             items: [
