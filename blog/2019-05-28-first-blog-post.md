@@ -2,7 +2,7 @@
 slug: markdown
 title: Features Markdown
 authors: [slorber]
-tags: [markdown, docusaurus, reference]
+tags: []
 ---
 
 Este post serve como **referência visual e funcional** de todas as features de Markdown/MDX usadas no blog.
