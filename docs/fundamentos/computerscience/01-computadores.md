@@ -50,8 +50,4 @@ Um sistema digital de representação de dados pode ser a solução para esse ti
 
 Pense em um interruptor de luz. Ele só tem duas posições possíveis: ligado ou desligado. Não existe “mais ou menos ligado”. Sempre que você olha para o interruptor, ele está claramente em um desses dois estados. Isso pode confuso agora, afinal, como que ligado e desligado pode vir a se tornar uma medida precisa, porém, ao longo do livro vamos destrinchar melhor isso.
 
-### Introdução ao binário
-Sistemas digitais usam dois símbolos para representar dados, 0 e 1. Esse é o **sistema binário**!
-Mas existem muitas coisas que podem ser representadas em computadores, o alfabeto por exemplo tem 26 letras, como poderia apenas 0 e 1 representar todas 26 letras? E aqui começa a ficar interessante, pois os dados são representados por uma sequência de binários, onde, cada sequência significa uma letra.
-
-Ainda confuso? Vamos ao próximo tópico então! 
+Para isso dar certo um sistema de numeração é utilizado, no caso, o sistema binário. Mas antes de nos aprofundarmos nisso temos que entender o que é um número e um sistema de numeração.
