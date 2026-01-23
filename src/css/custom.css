@@ -1,64 +1,57 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Literata:wght@400;500;600&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Literata:wght@400;500;600&display=swap");
+/* =====================
+   INFIMA BASE
+===================== */
 
-
-/* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 100%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
   --font-ui: "Orbitron", system-ui, sans-serif;
   --font-heading: "JetBrains Mono", monospace;
+  --font-body: "Literata", serif;
+
   --ifm-font-family-base: var(--font-body);
   --ifm-font-family-monospace: "JetBrains Mono", monospace;
 }
 
-/* LIGHT MODE — estilo Kindle */
-html[data-theme='light'],
-html[data-theme='light'] body {
-  background-color: #F4F1EC;
-  color: #2B2B2B;
+/* =====================
+   BODY / MARKDOWN
+===================== */
+
+html,
+body {
+  font-family: var(--font-body);
+  font-weight: 500;
+  line-height: 1.75;
 }
 
+/* Markdown readability */
 .markdown {
   max-width: 72ch;
   font-size: 1.05rem;
-  line-height: 1.75;
 }
 
 .markdown p {
   margin-bottom: 1.3em;
 }
 
-html[data-theme='light'] h1,
-html[data-theme='light'] h2,
-html[data-theme='light'] h3 {
-  color: #1F1F1F;
+.markdown strong {
+  font-weight: 600;
+  color: #6ac4b5;
 }
 
-html[data-theme='dark'] h1,
-html[data-theme='dark'] h2,
-html[data-theme='dark'] h3 {
-  color: #FFFFFF;
-}
 
-/* DARK MODE — estilo Kindle dark */
-html[data-theme='dark'],
-html[data-theme='dark'] body {
-  background-color: #14110F;
-  color: #E8E6E3;
+/* =====================
+   LIGHT MODE (Kindle)
+===================== */
+
+html[data-theme='light'],
+html[data-theme='light'] body {
+  background-color: #F4F1EC;
+  color: #2B2B2B;
 }
 
 html[data-theme='light'] a {
@@ -69,35 +62,8 @@ html[data-theme='light'] a:hover {
   color: #004C3F;
 }
 
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: #2a3b25;
-}
-html[data-theme='light'] {
-  --ifm-color-content: #2B2B2B;
-  --ifm-color-content-secondary: #555555;
-}
-
-html[data-theme='dark'] {
-  --ifm-color-content: #E8E6E3;
-  --ifm-color-content-secondary: #B8B6B3;
-}
-
-
-html[data-theme='dark'],
-html[data-theme='dark'] body {
-  background: linear-gradient(
-    to bottom,
-    #14110F 0%,
-    #121212 100%
-  );
-  color: #E8E6E3;
+html[data-theme='light'] .navbar {
+  background-color: #F4F1EC;
 }
 
 html[data-theme='light'] .footer {
@@ -106,8 +72,22 @@ html[data-theme='light'] .footer {
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-html[data-theme='light'] .footer__title {
-  color: #2B2B2B;
+html[data-theme='light'] .theme-doc-sidebar-container {
+  background-color: #EFEAE3;
+}
+
+/* =====================
+   DARK MODE (Kindle dark)
+===================== */
+
+html[data-theme='dark'],
+html[data-theme='dark'] body {
+  background: linear-gradient(to bottom, #14110F 0%, #121212 100%);
+  color: #E8E6E3;
+}
+
+html[data-theme='dark'] .navbar {
+  background-color: #181818;
 }
 
 html[data-theme='dark'] .footer {
@@ -116,25 +96,13 @@ html[data-theme='dark'] .footer {
   border-top: 1px solid rgba(232, 230, 227, 0.08);
 }
 
-html[data-theme='light'] .theme-doc-sidebar-container {
-  background-color: #EFEAE3;
-}
-
 html[data-theme='dark'] .theme-doc-sidebar-container {
   background-color: #181818;
 }
 
-html[data-theme='dark'] .navbar {
-  background-color:#181818
-}
-html[data-theme='light'] .navbar {
-  background-color:#181818
-}
-html,
-body {
-  font-family: "Literata", serif;
-  font-weight: 600;
-}
+/* =====================
+   HEADINGS & UI
+===================== */
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
