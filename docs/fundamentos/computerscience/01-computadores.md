@@ -1,4 +1,4 @@
-# Computadores
+##  Computadores
 
 Muitas pessoas limitam o conceito de “computador” àquela caixa que fica embaixo da mesa, ligada a um monitor. Essa imagem não está errada, mas é incompleta. Um computador vai muito além disso.
 
@@ -8,10 +8,10 @@ De forma simples, **um computador é qualquer dispositivo eletrônico que pode s
 
 Por enquanto, basta guardar essa definição. Com o tempo, ela vai fazer cada vez mais sentido.
 
-# Analógico vs Digital
+##  Analógico vs Digital
 É muito comum as pessoas associarem computadores a dispositivos digitais, em contraste com objetos como relógios de pulso clássicos, que costumam ser chamados de analógicos. Mas o que isso realmente significa? O que diferencia algo analógico de algo digital?
 
-## Abordagem analógica
+## ##  Abordagem analógica
 Olhe ao seu redor e escolha qualquer objeto. Agora tente descrever características como tamanho e peso. Fazer isso com precisão não é simples sem ferramentas como uma régua ou uma balança.
 Na ausência dessas ferramentas, normalmente usamos comparações:
 - “Essa boneca tem mais ou menos um palmo de altura”
@@ -41,13 +41,21 @@ Perceba que em ambos os exemplos, tanto a mola, quanto o mercúrio, não medem n
 
 Porém aqui vai um problema, esses números não são precisos, se a agulha da balança para entre 59Kg e 60Kg, ou se o mercúrio parar entre 29°C e 30°C. Até poderíamos chutar que é 59,5Kg no caso da balança, mas não teria como ter certeza absoluta, apenas seria uma aproximação. Então como ser mais preciso que o analógico?
 
-## Abordagem digital
+## ##  Abordagem digital
 Mas o que isso tem a ver com computadores? Bem, acontece que essas representações analógicas são um problema para os computadores. Pois os tipos de sistemas analógicos usados são tão diferentes que criar um único computador que seja capaz de entender todos eles é quase impossível. Por exemplo, criar uma máquina me possa medir o volume de mercúrio (como o termômetro) é completamente diferente de criar uma máquina que consiga medir o peso de alguém.
 
 Outro ponto é que computadores dependem de representações extremamente confiáveis e precisas. As representações analógicas dificilmente são representadas com precisão, além de ter a tendência a se deteriorar com o tempo e perder a fidelidade quando copiadas. Computadores precisam de uma maneira de presentar todos os tipos de dados em um formato que possa ser processado, armazenado e copiado de forma precisa.
 
 Um sistema digital de representação de dados pode ser a solução para esse tipo de problema. Em vez de representar informações como variações contínuas, um sistema digital utiliza uma sequência de símbolos bem definidos. Cada símbolo só pode assumir um valor dentro de um conjunto limitado e previamente conhecido, como por exemplo ligado ou desligado, verdadeiro ou falso, 0 ou 1. Isso significa que, diferente de um sistema analógico, não existem valores intermediários: cada informação precisa ser representada escolhendo um dos valores possíveis desse conjunto.
 
-Pense em um interruptor de luz. Ele só tem duas posições possíveis: ligado ou desligado. Não existe “mais ou menos ligado”. Sempre que você olha para o interruptor, ele está claramente em um desses dois estados. Isso pode confuso agora, afinal, como que ligado e desligado pode vir a se tornar uma medida precisa, porém, ao longo do livro vamos destrinchar melhor isso.
+Pense em um interruptor de luz. Ele só tem duas posições possíveis: ligado ou desligado. Não existe “mais ou menos ligado”. Sempre que você olha para o interruptor, ele está claramente em um desses dois estados.
 
-Para isso dar certo um sistema de numeração é utilizado, no caso, o sistema binário. Mas antes de nos aprofundarmos nisso temos que entender o que é um número e um sistema de numeração.
+:::tip
+Para entender com profundidade, como esse "ligado e desligado" se torna uma informação dentro do computador, seria necessário aprender sobre eletricidade, física, química e etc. 
+
+Mas de maneira simples, os sinais elétricos chegam até o processador e são **interpretados** de modo que uma baixa tensão elétrica é interpretada como 0 e uma tensão mais alta, como 1. E por meio de um componente chamado transístor que armazena esse estado, se consegue representar 0 e 1 dentro do processador.
+
+Não é exagero nenhum dizer que TUDO em um computador são 0s e 1s. Nada mais. Este site, uma música, uma imagem, tudo é representado usando 0s e 1s.
+:::
+
+Para isso dar certo um sistema de numeração é utilizado, no caso, o sistema binário. Mas antes de nos aprofundarmos nisso temos que entender o que é um número antes.

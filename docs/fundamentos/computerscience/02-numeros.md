@@ -1,4 +1,4 @@
-# Números
+##  Números
 
 Como já visto, anteriormente, o computador pode ser visto como uma espécie de super calculadora. Claro que é muito simplista pensar assim, porém por baixo dos panos **tudo é número** (como diria Pitágoras). Tanto que não é difícil o ábaco ser mencionado na maioria dos livros de computação e em aulas de sistemas operacionais.
 
@@ -28,13 +28,13 @@ A maioria peguei do livro *O livro da Matemática*, da GloboLivros, ainda não l
 Outras eram anotações antigas mesmo.
 :::
 
-# Uma definição
+##  Uma definição
 Buscando uma definição que se encaixe no nosso contexto, pode-se dizer que:
 > *O número é um objeto abstrato usado para representar ideias de contar, ordem, medir ou descrever uma quantidade.*
 
 Claro que na prática, números são usado também para identificação, como documentos, números de celular, etc.
 
-# Mas e os computadores? O que isso tem a ver?
+##  Mas e os computadores? O que isso tem a ver?
 Até aqui falamos sobre o que é um número enquanto ideia. Vimos que números são abstrações, construções da mente humana usadas para representar quantidade, ordem e medida. Mas existe uma pergunta que ainda não foi respondida:
 
 > Como um número passa a existir de forma concreta para ser usado?
@@ -43,7 +43,7 @@ Um número, por si só, não ocupa espaço, não tem peso e não pode ser tocado
 
 Quando escrevemos o número 5, por exemplo, o que realmente existe no papel ou na tela não é o número em si, mas um **símbolo** que concordamos em associar a essa ideia. O símbolo poderia ser outro, desde que todos concordassem com o significado. O número continua o mesmo, mesmo que sua representação mude.
 
-# Representar números é um acordo
+##  Representar números é um acordo
 Ao longo da história, diferentes civilizações representaram números de maneiras distintas. Algumas usavam riscos, outras letras, outras símbolos próprios. O número não mudava, o que mudava era a forma de escrevê-lo e interpretá-lo. E desde que as demais pessoas concordem com essa representação, está tudo certo.
 
 :::tip[Conclusão]
