@@ -98,7 +98,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} GDSH, Inc. Built with pain.`,
+        copyright: `Copyright © ${new Date().getFullYear()} GDSH, Inc. Built with pain and caffeine.`,
       },
       prism: {
         theme: prismThemes.github,

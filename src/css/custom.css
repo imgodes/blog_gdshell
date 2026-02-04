@@ -5,7 +5,7 @@
 ===================== */
 
 :root {
-  --ifm-color-primary: #2e8555;
+  --ifm-color-primary: ## 2e8555;
   --ifm-code-font-size: 100%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
@@ -40,7 +40,7 @@ body {
 
 .markdown strong {
   font-weight: 600;
-  color: #6ac4b5;
+  color: ## 6ac4b5;
 }
 
 
@@ -50,30 +50,30 @@ body {
 
 html[data-theme='light'],
 html[data-theme='light'] body {
-  background-color: #F4F1EC;
-  color: #2B2B2B;
+  background-color: ## F4F1EC;
+  color: ## 2B2B2B;
 }
 
 html[data-theme='light'] a {
-  color: #006D5B;
+  color: ## 006D5B;
 }
 
 html[data-theme='light'] a:hover {
-  color: #004C3F;
+  color: ## 004C3F;
 }
 
 html[data-theme='light'] .navbar {
-  background-color: #F4F1EC;
+  background-color: ## F4F1EC;
 }
 
 html[data-theme='light'] .footer {
-  background-color: #ECE7DF;
-  color: #2B2B2B;
+  background-color: ## ECE7DF;
+  color: ## 2B2B2B;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 html[data-theme='light'] .theme-doc-sidebar-container {
-  background-color: #EFEAE3;
+  background-color: ## EFEAE3;
 }
 
 /* =====================
@@ -82,22 +82,22 @@ html[data-theme='light'] .theme-doc-sidebar-container {
 
 html[data-theme='dark'],
 html[data-theme='dark'] body {
-  background: linear-gradient(to bottom, #14110F 0%, #121212 100%);
-  color: #E8E6E3;
+  background: linear-gradient(to bottom, ## 14110F 0%, ## 121212 100%);
+  color: ## E8E6E3;
 }
 
 html[data-theme='dark'] .navbar {
-  background-color: #181818;
+  background-color: ## 181818;
 }
 
 html[data-theme='dark'] .footer {
-  background-color: #1E1E1E;
-  color: #E8E6E3;
+  background-color: ## 1E1E1E;
+  color: ## E8E6E3;
   border-top: 1px solid rgba(232, 230, 227, 0.08);
 }
 
 html[data-theme='dark'] .theme-doc-sidebar-container {
-  background-color: #181818;
+  background-color: ## 181818;
 }
 
 /* =====================

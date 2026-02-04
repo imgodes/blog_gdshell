@@ -13,16 +13,16 @@ Use como guia para escrita e validação de renderização.
 
 ---
 
-## Headings
+## ##  Headings
 
-# Heading 1
-## Heading 2
-### Heading 3
-#### Heading 4
+##  Heading 1
+## ##  Heading 2
+## ## ##  Heading 3
+## ## ## ##  Heading 4
 
 ---
 
-## Parágrafos
+## ##  Parágrafos
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.  
 Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -31,7 +31,7 @@ Novo parágrafo após linha em branco.
 
 ---
 
-## Ênfase
+## ##  Ênfase
 
 Texto em *itálico*  
 Texto em **negrito**  
@@ -40,7 +40,7 @@ Texto em ~~tachado~~
 
 ---
 
-## Citações (Blockquote)
+## ##  Citações (Blockquote)
 
 > Isto é uma citação.
 >
@@ -50,9 +50,9 @@ Texto em ~~tachado~~
 
 ---
 
-## Listas
+## ##  Listas
 
-### Lista não ordenada
+## ## ##  Lista não ordenada
 
 - Item A
 - Item B
@@ -60,7 +60,7 @@ Texto em ~~tachado~~
   - Subitem B.2
 - Item C
 
-### Lista ordenada
+## ## ##  Lista ordenada
 
 1. Primeiro
 2. Segundo
@@ -68,7 +68,7 @@ Texto em ~~tachado~~
 
 ---
 
-## Lista de tarefas
+## ##  Lista de tarefas
 
 - [x] Markdown básico
 - [x] Código
@@ -77,7 +77,7 @@ Texto em ~~tachado~~
 
 ---
 
-## Links
+## ##  Links
 
 Link interno:
 [Blog](/blog)
@@ -87,19 +87,19 @@ Link externo:
 
 ---
 
-## Imagens
+## ##  Imagens
 
 ![Imagem de exemplo](/img/mask.png)
 
 ---
 
-## Código inline
+## ##  Código inline
 
 Use o comando `apktool d app.apk` para descompilar o APK.
 
 ---
 
-## Bloco de código
+## ##  Bloco de código
 
 ```bash
 apktool d app.apk
@@ -114,7 +114,7 @@ public class MainActivity {
 }
 ```
 
-### Bloco de código com título
+## ## ##  Bloco de código com título
 
 ```jsx title="/src/components/HelloCodeTitle.js"
 function HelloCodeTitle(props) {
@@ -122,7 +122,7 @@ function HelloCodeTitle(props) {
 }
 ```
 
-### Bloco de código com highlight  
+## ## ##  Bloco de código com highlight  
 ```js
 function HighlightSomeText(highlight) {
   if (highlight) {
@@ -144,7 +144,7 @@ function HighlightMoreText(highlight) {
 }
 ```
 
-### Bloco de codigo com highlight via metadata
+## ## ##  Bloco de codigo com highlight via metadata
 
 ```jsx {1,4-6,11}
 import React from 'react';
@@ -160,7 +160,7 @@ function MyComponent(props) {
 export default MyComponent;
 ```
 
-### Com numero de linha
+## ## ##  Com numero de linha
 ```jsx showLineNumbers
 import React from 'react';
 
@@ -175,46 +175,46 @@ export default function MyComponent(props) {
 }
 ```
 
-# Separador horizontal
+##  Separador horizontal
 
 --- 
 
-# HTML Embutido
-<div style={{ padding: "1rem", border: "1px solid #888" }}> <strong>HTML direto no MDX</strong> <p>Útil para casos pontuais.</p> </div>
+##  HTML Embutido
+<div style={{ padding: "1rem", border: "1px solid ## 888" }}> <strong>HTML direto no MDX</strong> <p>Útil para casos pontuais.</p> </div>
 
-# Admonitions
+##  Admonitions
 
 :::note
 
-Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+Some **content** with _Markdown_ `syntax`. Check [this `api`](## ).
 
 :::
 
 :::tip
 
-Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+Some **content** with _Markdown_ `syntax`. Check [this `api`](## ).
 
 :::
 
 :::info
 
-Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+Some **content** with _Markdown_ `syntax`. Check [this `api`](## ).
 
 :::
 
 :::warning
 
-Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+Some **content** with _Markdown_ `syntax`. Check [this `api`](## ).
 
 :::
 
 :::danger
 
-Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+Some **content** with _Markdown_ `syntax`. Check [this `api`](## ).
 
 :::
 
-# Admonitions com título
+##  Admonitions com título
 
 :::note[Your Title **with** some _Markdown_ `syntax`!]
 
@@ -222,7 +222,7 @@ Some **content** with some _Markdown_ `syntax`.
 
 :::
 
-# Nested admonitions
+##  Nested admonitions
 :::::info[Parent]
 
 Parent content
@@ -241,7 +241,7 @@ Deep child content
 
 :::::
 
-# Tabs
+##  Tabs
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -257,7 +257,7 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-## Tabs - Valor padrão
+## ##  Tabs - Valor padrão
 Com valor padrão:
 
 <Tabs
@@ -272,7 +272,7 @@ Com valor padrão:
   <TabItem value="banana">This is a banana 🍌</TabItem>
 </Tabs>
 
-## Tabs - sincronizadas
+## ##  Tabs - sincronizadas
 
 <Tabs groupId="operating-systems">
   <TabItem value="win" label="Windows">Use Ctrl + C to copy.</TabItem>
@@ -284,14 +284,14 @@ Com valor padrão:
   <TabItem value="mac" label="macOS">Use Command + V to paste.</TabItem>
 </Tabs>
 
-## Tabs - customizando
+## ##  Tabs - customizando
 <Tabs className="unique-tabs">
   <TabItem value="Apple">This is an apple 🍎</TabItem>
   <TabItem value="Orange">This is an orange 🍊</TabItem>
   <TabItem value="Banana">This is a banana 🍌</TabItem>
 </Tabs>
 
-# Stepper
+##  Stepper
 
 <Stepper
   steps={[

@@ -28,7 +28,7 @@
 }
 
 .crtBg {
-  background: linear-gradient(to right, #1e1e1e 0%, #2d3436 100%);
+  background: linear-gradient(to right, ## 1e1e1e 0%, ## 2d3436 100%);
 }
 
 /* Hero / Layout Base */
@@ -389,12 +389,12 @@
 }
 
 .glitchText::before {
-  color: #00ffff;
+  color: ## 00ffff;
   z-index: -1;
 }
 
 .glitchText::after {
-  color: #ff00ff;
+  color: ## ff00ff;
   z-index: -2;
 }
 
