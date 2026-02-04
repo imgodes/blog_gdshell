@@ -17,3 +17,8 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+
+literatura:
+  label: Literatura
+  permalink: /literatura
+  description: Opiniões e ideias duvidosas
