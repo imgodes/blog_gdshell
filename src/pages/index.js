@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import styles from './home.module.css';
+import AboutPopover from '@site/src/components/AboutPopover';
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -52,6 +53,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            <AboutPopover />
 
             <div className={styles.navButtons}>
               <Link
