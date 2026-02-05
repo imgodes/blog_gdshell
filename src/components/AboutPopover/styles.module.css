@@ -1,0 +1,62 @@
+.button {
+  font-family: var(--font-ui);
+  background: transparent;
+  border: 1px solid var(--ifm-color-primary);
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  color: var(--ifm-color-primary);
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* MODAL */
+.modal {
+  background: var(--ifm-background-color);
+  color: var(--ifm-color-content);
+  width: min(90vw, 520px);
+  border-radius: 8px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+/* FECHAR */
+.close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* CONTEÚDO */
+.content {
+  padding: 1rem;
+}
+
+.content p {
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
