@@ -1,24 +1,19 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
-
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
-
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
-
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
-
 literatura:
   label: Literatura
   permalink: /literatura
   description: Opiniões e ideias duvidosas
+
+android:
+  label: Android
+  permalink: /android
+  description: Algumas coisas sobre android e cybersecurity
+
+tech:
+  label: Técnicos
+  permalink: /tech
+  description: Conteúdos técnicos.
+
+non-tech:
+  label: Geral
+  permalink: /non-tech
+  description: Conteúdos não técnicos.
