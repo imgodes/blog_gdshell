@@ -1,0 +1,296 @@
+---
+slug: cvss4
+title: Introdução ao CVSS 4.0
+tags: [redteam, tech]
+toc_min_heading_level: 1
+toc_max_heading_level: 2
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Intrudução ao CVSS
+
+O Common Vulnerability Scoring System (CVSS) é um padrão aberto mantido pelo FIRST [^1] (Forum of Incident Response and Security Teams) para avaliar a severidade de vulnerabilidades.
+
+Ele tenta responder a pergunta:
+
+> "O quão grave é essa vulnerabilidade, de forma padronizada?"
+
+O resultado final é um score numérico de 0 a 10, acompanhado de uma classificação qualitativa (Low, Medium, High, Critical).
+
+A versão mais recente é o CVSS v4.0, publicada em 2023.
+
+# Qual a importância dele?
+
+O CVSS é amplamente utilizado por:
+- National Vulnerability Database (NVD)
+- fabricantes de software
+- times de segurança
+- programas de bug bounty
+- auditorias e compliance
+
+Ele impacta diretamente:
+- Priorização de correções
+- SLAs de patching
+- Decisão de risco
+- Governança de segurança
+- Métricas executivas
+
+Sem um padrão como o CVSS, cada fornecedor classificaria severidade de forma subjetiva. O CVSS trouxe um modelo matemático consistente para comparação entre vulnerabilidades.
+
+Mas até a versão 3.1, o modelo tinha limitações importantes.
+
+# CVSS 3.1 → CVSS 4.0: O que mudou?
+
+## 1. Separação clara entre severidade técnica e risco ao ambiente
+
+No CVSS 3.1, muitas vezes o score era usado como "risco real", mesmo ele representando apenas a severidade técnica.
+
+No CVSS 4.0 houve uma melhoria significativa na modelagem dos grupos de métricas:
+- Base Metrics
+- Threat Metrics (novo grupo mais claro)
+- Environmental Metrics
+- Supplemental Metrics (novo grupo)
+
+Isso ajuda a separar melhor:
+
+- Severidade técnica intrínseca
+- Exploitabilidade real
+- Impacto no contexto da organização
+
+Isso reduz o uso incorreto do score Base como se fosse risco absoluto.
+
+## 2. Reformulação das métricas de impacto
+
+No CVSS 3.x tínhamos:
+- Confidentiality (C)
+- Integrity (I)
+- Availability (A)
+
+No CVSS 4.0, o modelo foi expandido para separar impacto em:
+- Impacto no sistema vulnerável
+- Impacto em sistemas subsequentes
+- Isso resolve um problema clássico:
+
+:::tip
+Uma vulnerabilidade pode ter impacto limitado no sistema vulnerável, mas permitir pivoting e impacto muito maior em sistemas conectados.
+:::
+
+O CVSS 4.0 passa a modelar isso de forma mais explícita.
+## 3. Mudanças na modelagem de exploitabilidade
+Algumas métricas foram refinadas:
+
+- Attack Complexity foi redefinida
+- Attack Requirements foi introduzida
+- Privileges Required foi ajustada
+- User Interaction foi detalhada
+
+Isso torna o cálculo mais preciso e menos ambíguo.
+
+## 4. Novas métricas suplementares
+O CVSS 4.0 adicionou métricas que não entram diretamente no cálculo do score base, mas ajudam na comunicação, como:
+- Safety impact
+- Automatable
+- Recovery effort
+
+Essas métricas são extremamente relevantes em ambientes industriais e OT.
+
+# Como utilizar
+
+## Resumo - TL;TR (Too Lazy To Read)
+  
+Se estiver com pressa, de uma olhada nessa tabela:
+
+| Grupo de Métricas | O que representa | O que mede na prática | Impacta o score final? |
+|-------------------|------------------|------------------------|-------------------------|
+| **Base** | Severidade técnica intrínseca da vulnerabilidade | Facilidade de exploração + impacto direto no sistema vulnerável e em sistemas subsequentes | Sim |
+| **Threat** | Situação atual da ameaça | Existência de exploit público, exploração ativa, maturidade do exploit | Sim |
+| **Environmental** | Contexto específico da organização | Importância do ativo, controles compensatórios, requisitos de CID [^2] | Sim |
+| **Supplemental** | Contexto adicional para análise de risco | Automação, esforço de resposta, impacto em segurança física, urgência do fornecedor, etc. | Não (não altera o cálculo oficial) |
+
+
+## Grupos de Métricas do CVSS
+O CVSS é organizado em quatro grupos principais de métricas, cada um com um propósito específico na avaliação de uma vulnerabilidade.
+![metricas](https://www.first.org/cvss/v4.0/media/699c7730c6e9a411584a129153e334f4.png)
+
+
+### Base Metric Group
+O grupo Base representa as características intrínsecas da vulnerabilidade — ou seja, aquilo que não muda com o tempo nem depende do ambiente onde ela está instalada.
+
+Ele é dividido em dois conjuntos, Exploitability e Impact. Clique nas abas abaixo para ver a descrição de cada uma:
+
+<Tabs>
+  <TabItem value="Exploitability" label="Exploitability" default>
+    Reflete o quão fácil é explorar a vulnerabilidade e quais são os requisitos técnicos para isso.
+    
+    Essas métricas descrevem as características do que está vulnerável, chamado formalmente de sistema vulnerável.
+  </TabItem>
+  <TabItem value="Impact" label="Impact">
+    Reflete as consequências diretas de uma exploração bem-sucedida. O impacto pode ser, no próprio sistema vulnerável, ou em sistemas subsequentes.
+    
+    O sistema vulnerável normalmente é um software, sistema operacional, módulo, driver ou até um dispositivo de hardware.
+    
+    Já o sistema subsequente pode ser qualquer outro sistema afetado indiretamente, inclusive impacto em segurança humana.
+  </TabItem>
+</Tabs>
+
+A separação entre impacto no sistema vulnerável e impacto em sistemas subsequentes foi introduzida no CVSS v3.0 (antes representada pelo conceito de “Scope”).
+
+### Threat Metric Group
+O grupo Threat representa fatores relacionados à ameaça que podem mudar ao longo do tempo, mas não necessariamente variam entre ambientes.
+
+Por exemplo, se existe exploit publicado, o score tende a ser maior do que uma vulnerabilidade cuja o exploit é desconhecido.
+
+Essas métricas são dinâmicas e podem evoluir conforme o cenário de ameaças muda.
+
+### Environmental Metric Group
+O grupo Environmental representa fatores específicos do ambiente da organização que está avaliando a vulnerabilidade.
+
+Inclui:
+- Controles de segurança que podem mitigar o impacto
+- Importância daquele sistema dentro da infraestrutura
+- Relevância operacional
+
+Uma mesma vulnerabilidade pode ter impacto diferente dependendo do contexto organizacional.
+
+### Supplemental Metric Group
+O grupo Supplemental fornece contexto adicional sobre a vulnerabilidade.
+- Não impactam diretamente o score final do CVSS
+- São definidas pelo consumidor (organização que está avaliando)
+
+A organização pode decidir o peso que dará a essas informações em seu próprio processo de análise de risco. Essas métricas servem para comunicar características adicionais, mas não alteram o cálculo matemático padrão.
+
+## E agora, o que realmente importa: Impacto
+
+Entendido como o CVSS organiza suas métricas, o próximo passo é aprofundar naquilo que normalmente mais chama atenção em um relatório: o impacto.
+
+Quando vemos algo como:
+- Confidentiality: High  
+- Integrity: Low  
+- Availability: None  
+
+O que isso realmente quer dizer?
+
+Essas classificações não são subjetivas. Elas seguem critérios técnicos bem definidos dentro do grupo **Base**, especificamente nas métricas de impacto.
+
+No CVSS 4.0, o modelo foi refinado para separar o impacto no sistema vulnerável e em sistemas subsequentes. Isso significa que uma vulnerabilidade pode ter pouco impacto direto no componente afetado, mas permitir consequências muito mais graves em outros sistemas conectados.
+
+Na próxima seção, vamos dissecar exatamente o que significa Confidentiality ser **None, Low ou High**, e como essa escolha altera drasticamente o score final.
+
+## Impacto no CVSS 4.0: Confidentiality, Integrity e Availability
+
+:::danger
+Eu traduzi e resumi de acordo com a minha interpretação do que é importante, caso queira consulte o site oficial [aqui](https://www.first.org/cvss/v4.0/specification-document).
+:::
+
+No CVSS 4.0, as métricas de impacto são divididas entre **Sistema Vulnerável** (VC, VI, VA) e **Sistema Subsequente** (SC, SI, SA).
+
+Isso permite modelar tanto o impacto direto quanto o impacto em cadeia após a exploração. O score é maior quanto maior for a consequência técnica da exploração bem-sucedida.
+
+## Resumo - TL;TR (Too Lazy To Read)
+Se ainda estiver com pressa:
+
+| Métrica | O que mede | High significa | Low significa |
+|----------|------------|---------------|---------------|
+| Confidentiality | Vazamento de informação | Exposição total ou crítica | Vazamento limitado |
+| Integrity | Modificação indevida de dados | Controle total ou alteração crítica | Alteração limitada |
+| Availability | Interrupção de serviço | Negação total ou crítica | Degradação parcial |
+
+
+## Confidentiality (VC / SC)
+
+Mede o impacto na **confidencialidade das informações** gerenciadas pelo sistema afetado.
+
+Confidencialidade significa restringir acesso e divulgação de informações apenas a usuários autorizados, impedindo acesso ou exposição à não autorizados.
+
+### High (H)
+- Perda total de confidencialidade.
+- Todas as informações do sistema são expostas ao atacante (ou informações que estão expostas possibilitam acesso às demais informações que deveriam ser restritas).
+- Ou acesso a informações restritas cujo vazamento cause impacto direto e grave.
+
+Exemplos:
+- Roubo de senha de administrador.
+- Exfiltração de chaves privadas de um servidor web.
+
+### Low (L)
+- Existe vazamento parcial de informações.
+- O atacante obtém dados restritos, mas:
+  - não controla exatamente o que será exposto, ou
+  - o volume/tipo de dados é limitado.
+- O impacto não é diretamente grave para o sistema.
+
+### None (N)
+- Nenhuma perda de confidencialidade.
+
+### Diferença entre VC e SC
+
+- **VC (Vulnerable Confidentiality)** → impacto no próprio sistema vulnerável.
+- **SC (Subsequent Confidentiality)** → impacto em sistemas subsequentes afetados após a exploração.
+
+## Integrity (VI / SI)
+
+Mede o impacto na **integridade das informações**.
+
+Integridade está relacionada à confiabilidade e veracidade dos dados.  
+É afetada quando ocorre modificação não autorizada de dados ou quando ações críticas podem ser repudiadas (ex.: logging insuficiente).
+
+### High (H)
+- Perda total de integridade.
+- O atacante pode modificar qualquer ou todos os arquivos protegidos.
+- Ou modificar alguns arquivos cuja alteração cause consequência direta e grave.
+
+### Low (L)
+- Modificação de dados é possível.
+- O atacante não controla totalmente as consequências.
+- A alteração não gera impacto direto e grave.
+
+### None (N)
+- Nenhuma perda de integridade.
+
+### Diferença entre VI e SI
+
+- **VI (Vulnerable Integrity)** → impacto no sistema vulnerável.
+- **SI (Subsequent Integrity)** → impacto em sistemas subsequentes.
+
+## Availability (VA / SA)
+
+Mede o impacto na **disponibilidade do sistema afetado**.
+
+Diferente de C e I, que tratam de dados, essa métrica avalia a disponibilidade do sistema em si (serviços web, banco de dados, e-mail, etc.).
+
+Ataques que consomem, largura de banda, CPU, memória, espaço em disco, impactam disponibilidade.
+
+### High (H)
+- Perda total de disponibilidade.
+- O atacante consegue negar completamente o acesso aos recursos.
+- Pode ser:
+  - Sustentado (enquanto o ataque ocorre)
+  - Persistente (permanece após o fim do ataque)
+- Ou perda parcial que gere consequência direta e grave.
+
+Exemplo:
+- Exploração repetida que causa vazamento gradual de memória até derrubar o serviço.
+
+### Low (L)
+- Redução de desempenho ou interrupções.
+- Não há negação total de serviço.
+- O impacto não é diretamente grave.
+
+### None (N)
+- Nenhum impacto na disponibilidade.
+
+### Diferença entre VA e SA
+
+- **VA (Vulnerable Availability)** → impacto no sistema vulnerável.
+- **SA (Subsequent Availability)** → impacto em sistemas subsequentes.
+
+# Conclusão
+No CVSS 4.0, a grande evolução está na separação explícita entre:
+
+- Impacto direto no sistema vulnerável
+- Impacto indireto em sistemas subsequentes
+
+Essa distinção é essencial para modelar corretamente cenários modernos como pivoting, lateral movement e impactos em cadeia.
+
+[^1]: The Forum of Incident Response and Security Teams (FIRST) is a global nonprofit organization that brings together computer security and incident response teams from government, private industry, academia, and other sectors. It plays a leading role in coordinating cybersecurity cooperation and establishing best practices worldwide.
+[^2]: Confidencialidade, Integridade e Disponibilidade.

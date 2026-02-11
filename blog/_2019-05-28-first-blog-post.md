@@ -12,6 +12,7 @@ Use como guia para escrita e validação de renderização.
 
 <!-- truncate -->
 
+
 ---
 
 ## Headings
