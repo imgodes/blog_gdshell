@@ -44,6 +44,7 @@ body {
 }
 
 
+
 /* =====================
    LIGHT MODE (Kindle)
 ===================== */
@@ -113,4 +114,17 @@ h1, h2, h3, h4, h5, h6 {
 .button,
 .theme-doc-sidebar-container {
   font-family: var(--font-ui);
+}
+
+.tabs {
+  gap: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.tabs__item {
+  border: 1px solid var(--ifm-color-primary);
+
 }

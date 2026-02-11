@@ -1,4 +1,9 @@
-##  Números
+---
+title: Números
+sidebar_position:  4
+---
+
+#  Números
 
 Como já visto, anteriormente, o computador pode ser visto como uma espécie de super calculadora. Claro que é muito simplista pensar assim, porém por baixo dos panos **tudo é número** (como diria Pitágoras). Tanto que não é difícil o ábaco ser mencionado na maioria dos livros de computação e em aulas de sistemas operacionais.
 

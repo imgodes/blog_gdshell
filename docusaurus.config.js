@@ -8,7 +8,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'GDSH',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Personal website',
   favicon: 'img/mask.png',
 
   future: {
@@ -64,7 +64,8 @@ const config = {
           src: 'img/mask.png',
         },
         items: [
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/', label: 'home', position: 'left'},
+          {to: '/blog', label: 'blog', position: 'left'},
         ],
       },
       footer: {

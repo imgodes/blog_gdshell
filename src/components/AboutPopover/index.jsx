@@ -42,8 +42,7 @@ export default function AboutPopover() {
             <p>
             Espero que goste! Estou sempre tentando melhorar minha didática e escrita,
             mas graças às aulas em que dormi no ensino médio, certamente haverá deslizes, portanto,
-            sinta-se livre para me avisar. Também evito ao máximo usar IA nos meus textos na esperança
-            de conseguir melhorar.
+            sinta-se livre para me avisar.
             </p>
             <p>
             Ademais, estou tentando escrever um livro sobre fundamentos em computação, 
