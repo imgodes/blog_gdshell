@@ -1,0 +1,66 @@
+---
+slug: offensivezerotrust
+title: Usando ZeroTrust para criar uma infraestrutura de OAST/C2
+tags: [offensive, tech]
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Durante minha jornada no Blue Team, "ZeroTrust", e como vários gestores e palestrantes gostavam de chamar, "A Morte da VPN", eram temas centrais no cotidiano do *chão da fábrica*, em vários momentos, era necessário pensar qual feature, dentre as várias que ferramentas como Cloudflare e ZScaler oferecem, podem servir para solucionar meus problemas e desafios?
+
+<!-- truncate -->
+
+# Minha experiência com arquiteturas Zero Trust
+
+Pode-se dizer que eu tive o privilégio de pegar a crista da onda dessa época, naquele momento, todos ainda estavam aprendendo como o modelo Zero Trust que estava vindo para revolucionar a arquitetura tradicional, porém ultrapassada, de "castle and moat" (VPN). Repensar a forma que nossos usuários acessam as coisas durante seu dia a dia de trabalho, era uma atividade intelectualmente complicada. Foi necessário que eu buscasse a teoria fundamental por trás da necessidade dessas tecnologias e depois me preocupasse com a parte prática da coisa.
+
+Os projetos que participei desse ponto em diante foram fáceis do ponto de vista técnico pois eu possuía uma base sólida, e isso me deu bagagem para olhar para diferentes cenários e conseguir aplicar os mesmos princípios mesmo sem ninguém citar nada sobre esse tipo de arquitetura explicitamente.
+
+# Infraestrutura de Red Team e o Zero Trust
+
+Apesar do tema ser mais comumente associado a profissionais de defesa, os mesmos conceitos podem ser aplicados ao se pensar em infraestrutura de Red Team.
+
+Quando pensamos em operações ofensivas, especialmente em cenários mais realistas, alguns requisitos começam a surgir:
+- Reduzir ao máximo a superfície de exposição;
+- Evitar identificação trivial da infraestrutura;
+- Controlar rigorosamente quem pode acessar componentes críticos;
+- Simular comportamentos modernos de aplicações e ambientes corporativos;
+- **Simular comportamentos de atacantes sofisticados**;
+
+:::warning[Sobre a infraestrutura de atacantes sofisticados]
+
+Acredito que seja de conhecimento comum que o cenário clássico, onde o domínio controlado pelo atacante é algo como an00n.h4ck3r.xyz, sem TLS, com certificado inválido, gerando alertas em antivírus e aparecendo imediatamente como IoC **já está completamente defasado**.
+
+Infraestruturas modernas de ataque evoluíram junto com os mecanismos de defesa. Isso muda completamente o jogo: a detecção passa a depender muito mais de comportamento do que de indicadores estáticos.
+
+:::
+
+Portanto, ter uma infraestrutura robusta não só deixa o time mais seguro, como também torna o teste significativamente mais realista.
+
+Curiosamente, esses objetivos se alinham quase perfeitamente com os princípios de Zero Trust. Ao invés de confiar na rede, no IP de origem ou no fato de um serviço estar “dentro” da infraestrutura, o modelo Zero Trust parte do princípio de que:
+- Nada é confiável por padrão;
+- Todo acesso deve ser autenticado e autorizado;
+- A exposição deve ser mínima e controlada;
+- Maioria dos serviços (principalmente cloud) já nascem expostos;
+
+Quando aplicamos isso ao contexto de Red Team, a mudança de mentalidade é imediata. Serviços que tradicionalmente ficariam expostos, como painéis administrativos, SSH ou interfaces de gerenciamento, passam a ser protegidos por camadas de autenticação forte. Ao mesmo tempo, apenas os componentes que realmente precisam ser acessíveis externamente (como endpoints de callback para SSRF ou OAST) permanecem visíveis.
+
+Essa separação cria uma arquitetura mais limpa pois teremos a **superfície pública controlada** onde será exposto apenas o necessário para interação com o alvo do teste, e também a **superfície privada protegida**, onde o acesso será restrito, autenticado e auditável.
+
+Então para concluir aqui, como ficaria do ponto de vista técnico:
+- Temos um asset (pode ser um EC2, VPS, tanto faz) que temos a necessidade de expor para nossos testes OAST;
+- Essa exposição será controlada para que seja o mais segura possível à nível de rede (não estou falando de hardening de SO);
+- Esse mesmo asset precisa ser administrado, porém diferente do objetivo anterior, não existe a necessidade de que ele esteja exposto no mesmo nível.
+
+Foi exatamente com esse objetivo que montei o ambiente descrito neste post. A ideia não era apenas “fazer funcionar”, mas sim construir algo que:
+- fosse seguro o suficiente para não virar alvo trivial na internet;
+- fosse realista o suficiente para simular infraestrutura moderna de atacante;
+- e simples o suficiente para ser reproduzido sem grande complexidade operacional;
+
+Para isso, utilizei o Cloudflare como peça central da arquitetura, explorando três componentes principais:
+- DNS (gestão de domínio e resolução);
+- Proxy/WAF (controle de exposição);
+- Zero Trust (autenticação e controle de acesso);
+
+No próximo passo, vou mostrar como essa arquitetura foi construída na prática, desde a configuração dos domínios até a integração com o servidor OAST.
