@@ -18,7 +18,7 @@ non-tech:
   permalink: /non-tech
   description: Conteúdos não técnicos.
 
-redteam:
-  label: RedTeam
-  permalink: /redteam
-  description: Conteúdo sobre Red Team e pentest.
+offensive:
+  label: Offensive
+  permalink: /offensive
+  description: Conteúdo sobre segurança ofensiva em geral.
