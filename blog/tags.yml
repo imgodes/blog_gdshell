@@ -14,7 +14,7 @@ tech:
   description: Conteúdos técnicos.
 
 non-tech:
-  label: Geral
+  label: Não técnico
   permalink: /non-tech
   description: Conteúdos não técnicos.
 
