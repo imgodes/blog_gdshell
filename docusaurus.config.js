@@ -10,7 +10,9 @@ const config = {
   title: 'GDSH',
   tagline: 'Personal website',
   favicon: 'img/mask.png',
-
+  plugins: [
+    require.resolve('docusaurus-plugin-image-zoom'),
+  ],
   future: {
     v4: true,
   },
@@ -52,7 +54,16 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-  
+      zoom: {
+        selector: '.markdown :not(em) > img',
+        background: {
+          light: 'rgb(255, 255, 255)',
+          dark: 'rgb(50, 50, 50)'
+        },
+        config: {
+          // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+        }
+      },
       image: 'img/socialcard.png',
       colorMode: {
         respectPrefersColorScheme: true,
