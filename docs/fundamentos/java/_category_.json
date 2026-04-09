@@ -1,0 +1,8 @@
+{
+  "label": "Java",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "A seção de Java tem como objetivo construir uma compreensão sólida sobre como programas são escritos, organizados e executados nessa linguagem. Mais do que aprender sintaxe, o foco está em entender o funcionamento interno. Essa base é essencial não apenas para desenvolvimento, mas também para análise de código, engenharia reversa, pentest mobile e escrever extensões para o Burp."
+  }
+}
