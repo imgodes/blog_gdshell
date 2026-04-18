@@ -8,8 +8,10 @@ export function Stepper({ steps }) {
         <li key={index} className={styles.step}>
           <div className={styles.index}>{index + 1}</div>
           <div className={styles.content}>
-            <strong>{step.title}</strong>
-            {step.description && <p>{step.description}</p>}
+            <strong className={styles.title}>{step.title}</strong>
+            {step.children && (
+              <div className={styles.body}>{step.children}</div>
+            )}
           </div>
         </li>
       ))}

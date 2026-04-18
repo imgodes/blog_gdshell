@@ -243,6 +243,17 @@ Deep child content
 
 :::::
 
+Keywords: 
+'info',
+'success',
+'danger',
+'note',
+'tip',
+'warning',
+'important',
+'caution',
+'security'
+
 ##  Tabs
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -295,19 +306,136 @@ Com valor padrão:
 
 ##  Stepper
 
+import { Stepper } from '@site/src/components/Stepper';
+
 <Stepper
   steps={[
     {
       title: "Preparar o ambiente",
-      description: "Instale Java, Android SDK e configure o PATH"
+      children: (
+        <p>Instale <strong>Java 11+</strong>, <em>Android SDK</em> e configure o <code>PATH</code></p>
+      )
     },
     {
       title: "Descompilar o APK",
-      description: "Use apktool para extrair os recursos"
+      children: (
+        <>
+          <p>Use o <code>apktool</code> para extrair os recursos:</p>
+          <pre><code>apktool d app.apk -o output/</code></pre>
+        </>
+      )
     },
     {
       title: "Analisar o Manifest",
-      description: "Verifique permissões e componentes exportados"
+      children: (
+        <>
+          <p>Verifique <strong>permissões</strong> e componentes exportados no arquivo:</p>
+          <pre><code>output/AndroidManifest.xml</code></pre>
+        </>
+      )
     }
   ]}
 />
+
+## Column
+
+<Columns> 
+  <Column className='text--left'>
+    #### My First Column
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam maecenas sed enim ut. Sit amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar. Sit amet porttitor eget dolor morbi. Varius vel pharetra vel turpis nunc.
+  </Column>
+  <Column className='text--center'>
+    #### My Second Column
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam maecenas sed enim ut. Sit amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar. Sit amet porttitor eget dolor morbi. Varius vel pharetra vel turpis nunc.
+  </Column>
+  <Column className='text--justify'>
+    #### My Third Column
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam maecenas sed enim ut. Sit amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar. Sit amet porttitor eget dolor morbi. Varius vel pharetra vel turpis nunc.
+  </Column>
+</Columns>
+
+### Example With Image - Source
+<Columns> 
+  <Column className='text--center'>
+    ![](/img/mask.png)
+  </Column>
+  <Column className='text--justify'> 
+    #### My text column
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam maecenas sed enim ut. Sit amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar. Sit amet porttitor eget dolor morbi. Varius vel pharetra vel turpis nuncSit amet porttitor eget dolor morbi. Varius vel pharetra vel turpis nunc.
+  </Column>
+</Columns>
+
+###
+Example With Code Block - Source
+<Columns> 
+  <Column className='col--8'> 
+    ```bash
+    cat /etc/hosts
+    ```
+    </Column>
+    <Column>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A diam maecenas sed enim ut. Sit amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar. Sit amet porttitor eget dolor morbi. Varius vel pharetra vel turpis nuncSit amet porttitor eget dolor morbi. Varius vel pharetra vel turpis nunc. 
+    </Column>
+</Columns>
+
+# ImageOnClick
+## Basic
+<ImageOnClick imageUrl="/img/mask.png" altText="Dinosaur" buttonName="Click me" />
+
+## Emoji
+
+<ImageOnClick imageUrl="/img/mask.png" altText="Dinosaur" buttonName="🔎" />
+
+# TimeLine Component
+
+
+<Timeline variant="danger-darkest" horizontal>
+
+<TimelineItem  variant='white' align='right' color='danger'  style={{ borderColor: 'danger', borderWidth: '5px', borderStyle: 'solid' , borderRadius:'20px'}}>
+### 2024 
+Year of the Dragon : The Dragon symbolizes power, strength, and good fortune. People born under this sign are often seen as confident, ambitious, and charismatic.
+</TimelineItem>
+<TimelineItem   variant='black' align='left' color='info' style={{ borderColor: 'info', borderWidth: '5px', borderStyle: 'solid' , borderRadius:'0'}} >
+### 2023 
+Year of the Rabbit : The Rabbit is associated with luck, peace, and gentleness. People born under this sign are often considered kind, compassionate, and artistic.
+</TimelineItem>
+
+<TimelineItem  variant='warning' align='right'>
+### 2022
+Year of the Tiger : The Tiger symbolizes bravery, courage, and determination. People born under this sign are known for their self-confidence and ability to overcome obstacles
+</TimelineItem>
+<TimelineItem  variant='info' align='left' >
+### 2021
+Year of the Ox : The Ox represents hard work, stability, and perseverance. People born under this sign are known for their reliability and dedication
+</TimelineItem>
+
+<TimelineItem variant='primary' align='right'>
+### 2020
+Year of the Rat : The Rat is associated with intelligence, prosperity, and resourcefulness. People born under this sign are often viewed as clever and opportunistic.
+</TimelineItem>
+<TimelineItem align='left'  variant='danger'>
+### 2019
+Year of the Pig : The Pig symbolizes abundance, generosity, and kindness. People born under this sign are renowned for their warm nature and good sense of humor.
+</TimelineItem>
+
+<TimelineItem  variant='success' align='right' >
+### 2018
+Year of the Dog : The Dog represents loyalty, faithfulness, and protection. People born under this sign are often perceived as honest, devoted, and loyal to their family and friends.
+</TimelineItem>
+<TimelineItem   variant='info' align='left' color='danger' >
+### 2017
+ Year of the Rooster : The Rooster is associated with bravery, self-confidence, and determination. People born under this sign are often considered dynamic and full of energy
+</TimelineItem>
+
+<TimelineItem  variant='white' align='right' color='info'>
+### 2016
+Year of the Monkey : The Monkey symbolizes intelligence, cleverness, and curiosity. People born under this sign are renowned for their sharp minds and ability to find creative solutions to problems
+</TimelineItem>
+<TimelineItem  variant='primary-darkest' align='left' color='primary-lightest'>
+### 2015
+Year of the Goat/Sheep : The Goat (or Sheep) represents gentleness, harmony, and creativity. People born under this sign are often seen as loving and artistic.
+</TimelineItem>
+
+
+
+</Timeline>
