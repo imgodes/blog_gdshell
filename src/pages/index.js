@@ -4,6 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import styles from './home.module.css';
 import AboutPopover from '@site/src/components/AboutPopover';
+import GlitchTerminal from '@site/src/components/GlitchTerminal';
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -74,6 +75,8 @@ export default function Home() {
                 <span className={styles.uiButtonGlitch}>Cybersecurity</span>
               </Link>
             </div>
+
+            <GlitchTerminal />
           </div>
 
           {/* Coluna direita vazia */}
