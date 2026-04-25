@@ -3,7 +3,7 @@ tittle: Hexadecimal
 ---
 #  Hexadecimal
 
-Vimos que computadores representam tudo usando sequências de 0s e 1s. Na teoria, isso é elegante. Na prática, ler e escrever longas cadeias binárias é extremamente tedioso e sujeito a erros humanos. Imagine ter que inspecionar o valor `0b10110011110100011010000111001101` em um depurador. Longo, cansativo e fácil de errar.
+Vimos que computadores representam tudo usando sequências de 0s e 1s. Na teoria, isso é elegante. Na prática, ler e escrever longas cadeias binárias é extremamente tedioso e sujeito a erros humanos. Imagine ter que inspecionar o valor `0b10110011110100011010000111001101` em um depurador. Parece terrível, não é?
 
 É para resolver esse problema que o sistema hexadecimal existe.
 
@@ -11,7 +11,10 @@ Vimos que computadores representam tudo usando sequências de 0s e 1s. Na teoria
 
 O sistema hexadecimal, ou simplesmente *hex*, é um sistema de numeração de base 16. Assim como o decimal usa potências de 10 e o binário usa potências de 2, o hexadecimal usa potências de 16 para determinar o valor de cada posição.
 
-A questão imediata é: temos apenas 10 algarismos (de 0 a 9), mas um sistema de base 16 precisa de 16 símbolos distintos. Para completar os 6 símbolos restantes, usamos as primeiras letras do alfabeto: A, B, C, D, E e F. Poderiam ser outros símbolos quaisquer; letras foram escolhidas por convenção.
+A primeira coisa que pensei quando estava aprendendo foi a seguinte.
+> se temos apenas 10 algarismos (de 0 a 9), mas um sistema de base 16 precisa de 16 símbolos distintos, como vou representar valores depois do 9?
+
+Bom, para completar os 6 símbolos restantes, usamos as primeiras letras do alfabeto: A, B, C, D, E e F. Poderiam ser outros símbolos quaisquer; letras foram escolhidas por convenção.
 
 A correspondência é simples:
 
@@ -38,7 +41,7 @@ O prefixo convencional para indicar que um número está em hexadecimal é `0x`.
 
 ##  A relação com o binário
 
-A razão pela qual o hexadecimal é tão útil na computação é direta: 16 é uma potência de 2, especificamente $2^4 = 16$. Isso significa que exatamente 4 bits correspondem a exatamente 1 dígito hexadecimal.
+A razão pela qual o hexadecimal é tão útil na computação é a **simplicidade na presentação e compatibilidade com binários**. 16 é uma potência de 2, especificamente $2^4 = 16$. Isso significa que exatamente 4 bits correspondem a exatamente 1 dígito hexadecimal.
 
 Isso torna a conversão entre os dois sistemas extremamente simples. Para converter um número binário para hexadecimal, basta separá-lo em grupos de 4 bits da direita para a esquerda e substituir cada grupo pelo dígito hexadecimal correspondente.
 
@@ -49,9 +52,12 @@ Tomando `0b10110011` como exemplo:
   B    3
 ```
 
-Logo, `0b10110011 = 0xB3`. Para conferir: $11 \cdot 16^1 + 3 \cdot 16^0 = 176 + 3 = 179$.
+Logo, `0b10110011 = 0xB3`. Para conferir matematicamente: 
+$$
+11 \cdot 16^1 + 3 \cdot 16^0 = 176 + 3 = 179
+$$
 
-O caminho inverso é igualmente direto: cada dígito hexadecimal é expandido para 4 bits.
+O caminho inverso é igualmente possível, onde cada dígito hexadecimal é expandido para 4 bits.
 
 :::tip[Exercite]
 Tente converter esses números antes de ver a resposta:
@@ -81,20 +87,14 @@ Binário:     0b11111111
 Hexadecimal: 0xFF
 ```
 
-O hexadecimal equilibra compacidade e proximidade com o binário. Ao contrário do decimal, a conversão para binário é imediata e não exige cálculos.
+O hexadecimal equilibra compacidade e proximidade com o binário, nem tão longo e difícil ler ou decorar quanto o binário, e nem tão distante quanto seria o decimal. Ao contrário do decimal, a conversão para binário não exige cálculos complicados.
 
 ##  Onde o hexadecimal aparece
 
-Conforme você avança no estudo de computação, o hexadecimal aparece em praticamente todo lugar: endereços de memória (`0x7ffee3b5c0a0`), cores em CSS (`#FF5733`), valores em arquivos de configuração, hashes criptográficos e muito mais.
+Conforme você avança no estudo de computação, o hexadecimal aparece em praticamente todo lugar como endereços de memória (`0x7ffee3b5c0a0`), cores em CSS (`#FF5733`), valores em arquivos de configuração, hashes criptográficos e muito mais.
 
 Quando um depurador mostra que uma variável está no endereço `0x00007fff5fbff8b0`, ele está usando hexadecimal porque o valor binário equivalente teria 48 dígitos. A leitura seria praticamente impossível.
 
 :::info
 O sistema octal (base 8) também aparece ocasionalmente, especialmente em permissões de arquivos no Unix e Linux. Por exemplo, a permissão `chmod 755` usa octal. Cada dígito octal corresponde a 3 bits, o que faz sentido porque as permissões de leitura, escrita e execução são representadas por 3 bits por usuário. O raciocínio é o mesmo do hexadecimal: agrupar bits em unidades convenientes para leitura humana.
 :::
-
-#  Referências
-
-- Justice, Matthew. *How Computers Really Work*. No Starch Press, 2020. Capítulo 1: Computing Concepts.
-- Petzold, Charles. *Code: The Hidden Language of Computer Hardware and Software*. Microsoft Press, 2000.
-- MDN Web Docs. *CSS color values*. Disponível em: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value. Acesso em: 2026.

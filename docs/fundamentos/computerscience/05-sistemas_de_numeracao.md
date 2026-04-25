@@ -13,7 +13,9 @@ A grande maioria de nós conhece bem os símbolos 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 q
 
 Normalmente, escrevemos números usando algo chamado notação posicional. Isso significa que ao escrever um número cada posição representa uma ordem de grandeza diferente. No sistema decimal, ou de base 10, as ordens de grandeza são fatores de 10, e cada lugar pode ter um de dez símbolos diferentes (de 0 a 9).
 
+<center>
 ![sistema_decimal](./img/sistemadecimal01.svg)
+</center>
 
 Por hora vamos chamar esse lugar de casa, pois é bem comum chamarem assim no Brasil durante o ensino.
 Quando dizemos que cada “casa” representa uma ordem de grandeza, o que estamos realmente dizendo é que cada posição está associada a uma potência de 10. Isso significa que, no sistema decimal, cada casa vale 10 elevado a algum número.
@@ -25,7 +27,9 @@ Começando da direita para a esquerda:
 
 E assim por diante, agora que nos aprofundamos vamos mudar um pouco a imagem:
 
+<center>
 ![sistema_decimal](./img/sistemadecimal02.svg)
+</center>
 
 Agora que já separamos o número em "casas", podemos finalmente chegar ao número original novamente, para isso basta multiplicar o número presenta na casa pelo valor que ela possui. Se número estiver na casa #0 será multiplicado por $10^0$.
 
@@ -52,7 +56,7 @@ Isso remove qualquer achismo de que um número é apenas uma sequência de símb
 É exatamente esse princípio que fundamenta o sistema que os computadores usam: o binário.
 
 ##  Sistema binário
-O sistema binário tem esse nome pois é constituído de apenas dois símbolos 0 e 1 (e assim como o decimal é chamado de base 10, o binário também pode ser chamado de base 2). Contar em binário segue a mesma ideia do sistema decimal, primeiro vem o 0 (que representa nenhuma quantidade), depois o 1 que representa uma unidade, se quisermos representar duas quantidades devemos colocar o 1 a esquerda e depois a unidade de valor nulo 0 a direita, formando 10 (le-se um, zero, e não dez), que representaria duas quantidades.
+O sistema binário tem esse nome pois é constituído de apenas dois símbolos 0 e 1 e assim como o decimal é chamado de base 10, o binário também pode ser chamado de base 2. Contar em binário segue a mesma ideia do sistema decimal, primeiro vem o 0 (que representa nenhuma quantidade), depois o 1 que representa uma unidade, se quisermos representar duas quantidades devemos colocar o 1 a esquerda e depois a unidade de valor nulo 0 a direita, formando 10 (le-se um, zero, e não dez), que representaria duas quantidades.
 
 Observe a tabela abaixo que compara os dois sistemas:
 
@@ -76,9 +80,13 @@ Perceba o padrão de que toda vez que os símbolos disponíveis se esgotam, acre
 
 ##  Binário e potências de 2
 
-O mesmo raciocínio posicional que vimos no decimal se aplica aqui. A diferença é que a base agora é 2, então cada posição representa uma potência de 2: $2^0$, $2^1$, $2^2$, e assim por diante, sempre da direita para a esquerda.
+O mesmo raciocínio posicional que vimos no decimal se aplica aqui. A diferença é que a base agora é 2, então cada posição representa uma potência de 2:
 
-Tomando o binário $101$ como exemplo e decompondo da direita para a esquerda:
+<center>
+![sistema_binario01](./img/sistemabinario01.svg)
+</center>
+
+Tomando o binário $101$ como exemplo e decompondo com as mesmas regras do decimal, primeiro multiplicar o número presente na casa, pela sua respectiva potência de 2:
 
 $$
 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 4 + 0 + 1 = 5
