@@ -1,6 +1,5 @@
 ---
 sidebar_position: 1
-draft: true
 ---
 
 # Por que os fundamentos?
