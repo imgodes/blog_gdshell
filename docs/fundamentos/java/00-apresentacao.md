@@ -1,5 +1,6 @@
 ---
 title: Apresentação do conteúdo
+draft: true
 ---
 
 Após estabelecer os conceitos fundamentais de computação, avançamos para o estudo de Java como linguagem base para construção de software e entendimento prático de execução de programas.

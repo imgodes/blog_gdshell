@@ -93,6 +93,10 @@ Link externo:
 
 ![Imagem de exemplo](/img/mask.png)
 
+
+<Figure src="/img/mask.png" alt="Imagem de um transistor" caption="Imagem x"/>
+
+
 ---
 
 ## Código inline
