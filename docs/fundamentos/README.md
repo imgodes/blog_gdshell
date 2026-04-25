@@ -19,5 +19,4 @@ Eu tento escrever da forma mais simples possível. Sempre ouvi que explico bem a
 
 Se você encontrar erros de escrita, concordância ou qualquer outro deslize pelo caminho, sinta-se à vontade para avisar. A ideia aqui é aprender, melhorar e deixar o conteúdo cada vez mais claro, não fingir que está tudo perfeito.
 
-## Overview
 
