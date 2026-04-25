@@ -18,34 +18,18 @@ Este post não é um tutorial de Python é apenas uma alternativa para aprender 
   <summary>Instruções básicas de como usar o Python</summary>
 
   Já me contradizendo aqui vai um tutorial:
-  <Stepper
-  steps={[
-    {
-      title: "Baixe e instale o Python",
-      children: (
-        <p>Baixe o Python em https://www.python.org/downloads/ e faça </p>
-      )
-    },
-    {
-      title: "Descompilar o APK",
-      children: (
-        <>
-          <p>Use o <code>apktool</code> para extrair os recursos:</p>
-          <pre><code>apktool d app.apk -o output/</code></pre>
-        </>
-      )
-    },
-    {
-      title: "Analisar o Manifest",
-      children: (
-        <>
-          <p>Verifique <strong>permissões</strong> e componentes exportados no arquivo:</p>
-          <pre><code>output/AndroidManifest.xml</code></pre>
-        </>
-      )
-    }
-  ]}
-/>
+  <Stepper>
+  <Step title="Baixe e instale o Python">
+    Baixe o Python em https://www.python.org/downloads/ e faça a instalação.
+  </Step>
+  <Step title="Console do Python">
+    Execute o seguinte comando no seu terminal:
+```bash
+python
+```
+    Você deve conseguir ver uma console cuja a linha se inicia com ">>>". E é ai que você vai digitar seus comandos.
+  </Step>
+</Stepper>
 
 </details>
 
