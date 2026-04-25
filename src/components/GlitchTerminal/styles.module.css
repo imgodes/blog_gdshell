@@ -1,0 +1,162 @@
+.terminal {
+  position: relative;
+  font-family: 'Courier New', 'Lucida Console', monospace;
+  font-size: 0.9rem;
+  padding: 1.1rem 1.4rem 1.2rem;
+  background: rgba(0, 0, 0, 0.82);
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  border-radius: 3px;
+  min-width: 380px;
+  min-height: 7rem;
+  box-shadow:
+    0 0 18px rgba(0, 255, 255, 0.12),
+    inset 0 0 12px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+/* Scanline sutil */
+.scanline {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Linhas */
+.line {
+  display: block;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  position: relative;
+}
+
+.normal {
+  color: #88cc88;
+}
+
+.error {
+  color: #ff4444;
+  text-shadow: 0 0 6px rgba(255, 50, 50, 0.7);
+}
+
+.warning {
+  color: #ffcc44;
+  text-shadow: 0 0 4px rgba(255, 200, 50, 0.5);
+}
+
+.main {
+  color: #00ffff;
+  font-family: 'Orbitron', monospace;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 8px #00ffff,
+    0 0 18px rgba(0, 255, 255, 0.5);
+  margin-top: 0.45rem;
+}
+
+/* Cursor piscando */
+.cursor {
+  display: inline-block;
+  color: #00ffff;
+  animation: blink 0.75s step-end infinite;
+  text-shadow: 0 0 6px #00ffff;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Char corrompido no meio da digitação */
+.corruptChar {
+  color: #ff00ff;
+  text-shadow: 0 0 4px #ff00ff;
+  animation: flashCorrupt 0.08s steps(1) infinite;
+}
+
+@keyframes flashCorrupt {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Glitch na linha principal durante display */
+.glitching {
+  animation: glitchShift 0.12s infinite;
+}
+
+.glitching::before,
+.glitching::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.glitching::before {
+  color: #ff00ff;
+  text-shadow: 0 0 6px #ff00ff;
+  animation: glitchSliceA 0.12s infinite;
+  clip-path: polygon(0 15%, 100% 15%, 100% 35%, 0 35%);
+}
+
+.glitching::after {
+  color: #ff3300;
+  text-shadow: 0 0 6px #ff3300;
+  animation: glitchSliceB 0.12s infinite;
+  clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%);
+}
+
+@keyframes glitchShift {
+  0%, 100% { transform: translate(0, 0); }
+  15%       { transform: translate(-3px, 1px); }
+  30%       { transform: translate(3px, -1px); }
+  50%       { transform: translate(-2px, 0); }
+  70%       { transform: translate(2px, 1px); }
+  85%       { transform: translate(0, -1px); }
+}
+
+@keyframes glitchSliceA {
+  0%, 100% { transform: translate(0); }
+  20%       { transform: translate(5px, 0); }
+  40%       { transform: translate(-5px, 0); }
+  60%       { transform: translate(3px, 0); }
+  80%       { transform: translate(-2px, 0); }
+}
+
+@keyframes glitchSliceB {
+  0%, 100% { transform: translate(0); }
+  20%       { transform: translate(-6px, 0); }
+  40%       { transform: translate(6px, 0); }
+  60%       { transform: translate(-3px, 0); }
+  80%       { transform: translate(2px, 0); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .terminal {
+    min-width: 280px;
+    font-size: 0.8rem;
+  }
+
+  .main {
+    font-size: 1.05rem;
+    letter-spacing: 0.12em;
+  }
+}
