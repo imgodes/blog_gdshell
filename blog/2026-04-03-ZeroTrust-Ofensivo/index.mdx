@@ -133,26 +133,20 @@ Já com o Cloudflare Access, o serviço continua tecnicamente exposto na interne
 
 Na prática, o fluxo passa a ser:
 
-<Stepper
-  steps={[
-    {
-      title: "Acesso externo",
-      description: "O usuário acessa vps01.exemplo.com e é direcionado para rede anycast da Cloudflare"
-    },
-    {
-      title: "Rede Anycast e Proxy Reverso",
-      description: "A Cloudflare intercepta a requisição de verifica as regras implementadas"
-    },
-    {
-      title: "Zero Trust Access",
-      description: "A Cloudflare direciona o usuário para o processo de autenticação implementado (Google, GitHub, SSO, etc)"
-    },
-    {
-      title: "Acesso final",
-      description: "Apenas após a validação bem sucedida, o usuário é direcionado para a aplicação final"
-    }
-  ]}
-/>
+<Stepper>
+  <Step title="Acesso externo">
+    O usuário acessa vps01.exemplo.com e é direcionado para rede anycast da Cloudflare.
+  </Step>
+  <Step title="Rede Anycast e Proxy Reverso">
+    A Cloudflare intercepta a requisição de verifica as regras implementadas.
+  </Step>
+  <Step title="Zero Trust Access">
+    A Cloudflare direciona o usuário para o processo de autenticação implementado (Google, GitHub, SSO, etc)"
+  </Step>
+  <Step title="Acesso final">
+    Apenas após a validação bem sucedida, o usuário é direcionado para a aplicação final
+  </Step>
+</Stepper>
 
 Isso significa que o serviço deixa de ser publicamente acessível, mesmo estando “online”. Do ponto de vista da infraestrutura, isso elimina a necessidade de expor portas administrativas, confiar em IPs fixos e manter túneis VPN tradicionais.
 

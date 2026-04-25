@@ -310,36 +310,18 @@ Com valor padrão:
 
 ##  Stepper
 
-import { Stepper } from '@site/src/components/Stepper';
+<Stepper>
+  <Step title="Título do passo">
+    Texto com **negrito**, `código`, [links](url) e tudo mais que markdown suporta.
+  </Step>
+  <Step title="Outro passo">
+    Inclusive blocos de código:
 
-<Stepper
-  steps={[
-    {
-      title: "Preparar o ambiente",
-      children: (
-        <p>Instale <strong>Java 11+</strong>, <em>Android SDK</em> e configure o <code>PATH</code></p>
-      )
-    },
-    {
-      title: "Descompilar o APK",
-      children: (
-        <>
-          <p>Use o <code>apktool</code> para extrair os recursos:</p>
-          <pre><code>apktool d app.apk -o output/</code></pre>
-        </>
-      )
-    },
-    {
-      title: "Analisar o Manifest",
-      children: (
-        <>
-          <p>Verifique <strong>permissões</strong> e componentes exportados no arquivo:</p>
-          <pre><code>output/AndroidManifest.xml</code></pre>
-        </>
-      )
-    }
-  ]}
-/>
+```python
+    print("funciona")
+```
+  </Step>
+</Stepper>
 
 ## Column
 
