@@ -148,3 +148,7 @@ O processo termina quando o quociente chega a zero. A partir daí, basta ler os 
 A resposta mais direta é: porque dois é o mínimo necessário para representar qualquer informação de forma não ambígua. Um sistema com um único símbolo não permite distinção entre valores diferentes. Com dois símbolos, já é possível construir qualquer número, qualquer texto, qualquer imagem.
 
 O binário não é apenas uma escolha conveniente para a eletrônica. Ele é suficiente para representar tudo. A questão é que trabalhar diretamente com longas sequências de 0s e 1s pode ser bastante inconveniente para humanos. Por isso, outros sistemas continuam sendo úteis no dia a dia da computação, especialmente o hexadecimal, que representa dados binários de forma mais compacta e legível, como veremos no próximo capítulo.
+
+:::tip[Colocando em prática]
+Se você quiser ver essas conversões acontecendo de verdade, escrevi um post sobre como [brincar com binários no Python](/blog/binario-em-python). O Python entende binário e hexadecimal nativamente e é uma ótima ferramenta para confirmar os exercícios deste capítulo.
+:::
