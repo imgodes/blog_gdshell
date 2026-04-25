@@ -2,6 +2,7 @@
 title: Sistemas de numeração
 sidebar_position: 5
 ---
+
 import sistema_decimal01 from './img/sistemadecimal01.svg';
 
 #  Sistemas de numeração
@@ -14,8 +15,8 @@ Normalmente, escrevemos números usando algo chamado notação posicional. Isso 
 
 ![sistema_decimal](./img/sistemadecimal01.svg)
 
-Por hora vamos chamar esse lugar de *casa*, pois é bem comum chamarem assim no Brasil durante o ensino.
-Quando dizemos que cada *casa* representa uma ordem de grandeza, o que estamos realmente dizendo é que cada posição está associada a uma potência de 10. Isso significa que, no sistema decimal, cada casa vale 10 elevado a algum número.
+Por hora vamos chamar esse lugar de casa, pois é bem comum chamarem assim no Brasil durante o ensino.
+Quando dizemos que cada “casa” representa uma ordem de grandeza, o que estamos realmente dizendo é que cada posição está associada a uma potência de 10. Isso significa que, no sistema decimal, cada casa vale 10 elevado a algum número.
 
 Começando da direita para a esquerda:
 - A primeira casa é a casa #0, logo ela vale $10^0$
@@ -28,7 +29,7 @@ E assim por diante, agora que nos aprofundamos vamos mudar um pouco a imagem:
 
 Agora que já separamos o número em "casas", podemos finalmente chegar ao número original novamente, para isso basta multiplicar o número presenta na casa pelo valor que ela possui. Se número estiver na casa #0 será multiplicado por $10^0$.
 
-Qualquer número decimal pode ser decomposto como a soma de cada dígito multiplicado pela potência de 10 correspondente à sua posição:
+Agora vem o ponto chave, qualquer número decimal pode ser decomposto como a soma de cada dígito multiplicado pela potência de 10 correspondente à sua posição:
 - O número $5$ seria multiplicado por $10$ elevado ao número da posição de $5$ que neste caso é a posição zero. Isso é o mesmo que escrever: $5 \cdot 10^0 = 5$ 
 - O número $7$ seria multiplicado por $10$ elevado ao número da posição de $5$ que neste caso é a posição um. Isso é o mesmo que escrever: $7 \cdot 10^1 = 70$ 
 - O número $2$ seria multiplicado por $10$ elevado ao número da posição de $2$ que neste caso é a posição dois. isso é o mesmo que escrever: $2 \cdot 10^2 = 200$ 
@@ -148,3 +149,7 @@ O processo termina quando o quociente chega a zero. A partir daí, basta ler os 
 A resposta mais direta é: porque dois é o mínimo necessário para representar qualquer informação de forma não ambígua. Um sistema com um único símbolo não permite distinção entre valores diferentes. Com dois símbolos, já é possível construir qualquer número, qualquer texto, qualquer imagem.
 
 O binário não é apenas uma escolha conveniente para a eletrônica. Ele é suficiente para representar tudo. A questão é que trabalhar diretamente com longas sequências de 0s e 1s pode ser bastante inconveniente para humanos. Por isso, outros sistemas continuam sendo úteis no dia a dia da computação, especialmente o hexadecimal, que representa dados binários de forma mais compacta e legível, como veremos no próximo capítulo.
+
+:::tip[Colocando em prática]
+Se você quiser ver essas conversões acontecendo de verdade, escrevi um post sobre como [brincar com binários no Python](/blog/binario-em-python). O Python entende binário e hexadecimal nativamente e é uma ótima ferramenta para confirmar os exercícios deste capítulo.
+:::

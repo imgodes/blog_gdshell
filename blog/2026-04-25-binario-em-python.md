@@ -4,11 +4,50 @@ title: Brincando com binários no Python
 tags: [tech]
 ---
 
-Se você acabou de ler o capítulo sobre [sistemas de numeração](/docs/fundamentos/computerscience/sistemas_de_numeracao), provavelmente está com vontade de colocar a mão na massa. A boa notícia é que o Python é uma das melhores ferramentas para isso: ele entende binário e hexadecimal nativamente, e tem funções que tornam as conversões entre bases uma linha de código.
+:::important[Nota Importante]
+Esse post foi criado com o objetivo de servir como guia para deixar o [livro de fundamentos](/docs/fundamentos) um pouco mais prático. Eu roubei essa idéia do [Livro de Engenharia Reversa do Fernando Mercês](https://mentebinaria.gitbook.io/engenharia-reversa) um dos melhores livros que já li, e tive o prazer de te-lo em versão física e autografada, **recomendo que sinta inveja**.
+:::
+
+Se você acabou de ler o capítulo sobre [sistemas de numeração](/docs/fundamentos/computerscience/sistemas_de_numeracao), provavelmente está com vontade de colocar a mão na massa. A boa notícia é que o Python é uma das melhores ferramentas para isso. Ele é fácil, entende binário e hexadecimal nativamente, e tem funções que tornam as conversões entre bases uma linha de código.
 
 <!-- truncate -->
 
-Este post não é um tutorial de Python. É mais um convite para você abrir o terminal, digitar algumas coisas e ver com os próprios olhos o que foi explicado na teoria.
+Este post não é um tutorial de Python é apenas uma alternativa para aprender os fundamentos da computação de forma prática, entretando abaixo dou instuções **básicas** de como usar a ferramenta. É mais um convite para você abrir o terminal, digitar algumas coisas e ver com os próprios olhos o que foi explicado na teoria.
+
+<details>
+  <summary>Instruções básicas de como usar o Python</summary>
+
+  Já me contradizendo aqui vai um tutorial:
+  <Stepper
+  steps={[
+    {
+      title: "Baixe e instale o Python",
+      children: (
+        <p>Baixe o Python em https://www.python.org/downloads/ e faça </p>
+      )
+    },
+    {
+      title: "Descompilar o APK",
+      children: (
+        <>
+          <p>Use o <code>apktool</code> para extrair os recursos:</p>
+          <pre><code>apktool d app.apk -o output/</code></pre>
+        </>
+      )
+    },
+    {
+      title: "Analisar o Manifest",
+      children: (
+        <>
+          <p>Verifique <strong>permissões</strong> e componentes exportados no arquivo:</p>
+          <pre><code>output/AndroidManifest.xml</code></pre>
+        </>
+      )
+    }
+  ]}
+/>
+
+</details>
 
 ## Python já fala binário
 
