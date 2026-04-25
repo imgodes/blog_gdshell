@@ -48,7 +48,7 @@ O computador é uma máquina extremamente literal. Se duas cartas compartilharem
 
 ##  O que é um byte
 
-Para facilitar o trabalho com sequências de bits, computadores agrupam 8 bits em uma unidade chamada *byte*. Essa escolha não é arbitrária: 8 bits oferecem $2^8 = 256$ combinações, o que é suficiente para representar todos os caracteres do alfabeto latino, pontuações e símbolos de controle com uma margem confortável. Além disso, 8 é uma potência de 2, o que torna operações matemáticas muito mais eficientes para o hardware.
+Para facilitar o trabalho com sequências de bits, computadores agrupam 8 bits em uma unidade chamada *byte*. E isso não é atoa, 8 bits oferecem $2^8 = 256$ combinações, o que é suficiente para representar todos os caracteres do alfabeto latino, pontuações e símbolos de controle com uma margem confortável. Além disso, 8 é uma potência de 2, o que torna operações matemáticas muito mais eficientes para o hardware.
 
 Alguns exemplos de notação:
 
@@ -79,7 +79,7 @@ Com esses prefixos, ao invés de dizer "esse arquivo tem 3 bilhões de bytes", e
 
 ###  O problema dos prefixos binários
 
-Aqui aparece uma fonte histórica de confusão. Computadores operam em base 2, mas esses prefixos vêm do sistema decimal. Na prática, fabricantes de hardware e sistemas operacionais usaram durante muito tempo os mesmos prefixos com valores ligeiramente diferentes, baseados em potências de 2.
+Muita gente faz confusão nessa parte. Computadores operam em base 2, mas esses prefixos vêm do sistema decimal. Na prática, fabricantes de hardware e sistemas operacionais usaram durante muito tempo os mesmos prefixos com valores ligeiramente diferentes, baseados em potências de 2.
 
 Por exemplo, quando alguém diz que um arquivo tem 1 GB, pode querer dizer exatamente 1.000.000.000 bytes (definição decimal, usada por fabricantes de HD) ou 1.073.741.824 bytes (que é $2^{30}$, usada por sistemas operacionais). Para resolver essa ambiguidade, foi criado um conjunto de prefixos binários padronizados pela IEC em 1998:
 
