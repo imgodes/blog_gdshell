@@ -12,7 +12,7 @@ A mente humana funciona da mesma forma. Quando você investe tempo em compreende
 
 Vivemos em um tempo que valoriza respostas rápidas e soluções prontas. Por isso, ter o privilégio (cada vez mais raro) de dedicar tempo aos fundamentos é algo valioso. Escolher aprender como as coisas funcionam, em vez de apenas usá-las, é um ato consciente de profundidade em um mundo de superficialidade.
 
-Se você está aqui, disposto a investir esse tempo, agradeço por confiar esse processo a mim. Não prometo atalhos, mas prometo estrutura, e lhe garanto e dedicação nesses textos.
+Se você está aqui, disposto a investir esse tempo, agradeço por confiar esse processo a mim. Não prometo atalhos, mas prometo estrutura, e lhe garanto dedicação nesses textos.
 
 ## Como eu escrevo
 Eu tento escrever da forma mais simples possível. Sempre ouvi que explico bem as coisas, então resolvi usar isso aqui. Em compensação, é bem provável que eu e você soframos juntos as consequências de algumas aulas de Língua Portuguesa que eu dormi durante o Ensino Médio.
