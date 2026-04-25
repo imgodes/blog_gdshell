@@ -44,10 +44,11 @@ Observe que o valor mais a direita, é multiplicado por $10^0$, isso faz com que
 :::
 
 
-Como o maior número possível de se representar com três casas é 999, se quisermos representar que vai além disso precisariamos de uma quarta casa, a do milhar, ou $10^4$ e assim por diante.
-Isso tira um achismo de que o número é apenas um sequência de símbolos, na verdade, agora entendemos que ele vem de um sistema de somas de potências de 10.
-Bem este é o sistema decimal utilizado por humanos, agora, quando o assunto são computadores utiliza-se o sistema de numeração binário. Esse, apesar de ser o mais comum, não é o único sistema de numeração capaz de representar quantidades. 
-> Claude code: Essa transição para o sistema binario ficou ruim, arrume aqui.
+Como o maior número possível de se representar com três casas é 999, se quisermos representar o que vai além disso precisaríamos de uma quarta casa, a do milhar, ou $10^3$, e assim por diante.
+
+Isso remove qualquer achismo de que um número é apenas uma sequência de símbolos. Agora entendemos que ele vem de um sistema de somas de potências de 10, e que qualquer sistema posicional pode ser descrito da mesma forma, trocando apenas a base.
+
+É exatamente esse princípio que fundamenta o sistema que os computadores usam: o binário.
 
 ##  Sistema binário
 O sistema binário tem esse nome pois é constituído de apenas dois símbolos 0 e 1 (e assim como o decimal é chamado de base 10, o binário também pode ser chamado de base 2). Contar em binário segue a mesma ideia do sistema decimal, primeiro vem o 0 (que representa nenhuma quantidade), depois o 1 que representa uma unidade, se quisermos representar duas quantidades devemos colocar o 1 a esquerda e depois a unidade de valor nulo 0 a direita, formando 10 (le-se um, zero, e não dez), que representaria duas quantidades.
@@ -72,17 +73,9 @@ Observe a tabela abaixo que compara os dois sistemas:
 
 Perceba o padrão de que toda vez que os símbolos disponíveis se esgotam, acrescenta-se uma nova posição à esquerda e recomeça-se do zero. No decimal isso acontece ao passar do 9 para o 10. No binário, ao passar do 1 para o 10, do 11 para o 100, e assim por diante.
 
-##  Notação posicional
-> Claude code: Esse trecho talvez possa ser incorporado la no começo pois eu ja falei de sistema decimal de base 10.
-Para entender como as conversões entre sistemas funcionam, é preciso entender o conceito de notação posicional. Tanto no decimal quanto no binário, cada posição em um número representa uma potência de sua base.
+##  Binário e potências de 2
 
-No sistema decimal (base 10), as posições valem potências de 10. Começando da direita para a esquerda, a primeira posição vale $10^0 = 1$, a segunda $10^1 = 10$, a terceira $10^2 = 100$, e assim por diante. Qualquer número decimal pode ser decomposto como a soma de cada dígito multiplicado pela potência correspondente à sua posição. Por exemplo, o número 275 pode ser escrito como:
-
-$$
-275 = 2 \cdot 10^2 + 7 \cdot 10^1 + 5 \cdot 10^0
-$$
-
-O mesmo raciocínio se aplica ao binário, mas com potências de 2. Cada posição representa $2^n$, onde $n$ começa em 0 na posição mais à direita e cresce para a esquerda.
+O mesmo raciocínio posicional que vimos no decimal se aplica aqui. A diferença é que a base agora é 2, então cada posição representa uma potência de 2: $2^0$, $2^1$, $2^2$, e assim por diante, sempre da direita para a esquerda.
 
 Tomando o binário $101$ como exemplo e decompondo da direita para a esquerda:
 
@@ -90,7 +83,7 @@ $$
 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 4 + 0 + 1 = 5
 $$
 
-Logo, $101$ em binário representa o número cinco em decimal. Isso significa que a mesma sequência de símbolos pode representar valores completamente diferentes dependendo da base usada. Para evitar ambiguidade, usa-se uma convenção de notação.
+Logo, $101$ em binário representa o número cinco em decimal. A mesma sequência de símbolos representa valores completamente diferentes dependendo da base usada, por isso é importante sempre deixar claro em qual sistema um número está escrito.
 
 ##  Convenções de notação
 
