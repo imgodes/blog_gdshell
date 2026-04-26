@@ -1,0 +1,88 @@
+---
+title: Representado texto
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+#  Texto digital
+No contexto da computação, texto é uma **coleção de caracteres**. Uma sequência de caracteres dentro de um mesmo contexto costuma ser chamada de *string* (do inglês, fio ou corda).
+
+Para armazenar texto em binário, é preciso primeiro **definir um conjunto de caracteres e atribuir um código binário único para cada um deles**. Esse conjunto é chamado de tabela de caracteres, ou *charset*.
+
+Para definir quantos bits são necessários, precisamos estimar quantos caracteres queremos representar. Considerando apenas o alfabeto latino sem acentuação (26 letras minúsculas e 26 maiúsculas), os 10 algarismos e pontuações comuns, chegamos a algo em torno de 100 símbolos distintos. Usando a fórmula conhecida:
+
+$$
+2^7 = 128
+$$
+
+Sete bits já seriam suficientes. Como 7 bits é um número incomum (não é uma potência de 2 inteira nem um múltiplo conveniente de byte), faz mais sentido usar 8 bits, o que nos dá 256 combinações possíveis e ocupa exatamente 1 byte por caractere.
+
+Quanto as combinações de bits, não precisa se preocupar em criar uma, por sorte, já fizeram isso por nós. Não é necessário sequer decora-la, no momento entender seu funcionamento é mais que suficiente. Existem diversos padrões já estabelecidos, vamos explorar alguns.
+
+## ASCII - American Standard Code for Information Interchange
+
+O padrão mais antigo e ainda mais influente para representação de texto em computadores é o *American Standard Code for Information Interchange*, conhecido pela sigla ASCII. Criado em 1963, o ASCII define 128 caracteres usando 7 bits, mas armazenados em 1 byte com o bit mais significativo sempre valendo 0.
+
+---
+
+Clique nas abas abaixo para alternar a visualização:
+
+<Tabs>
+  <TabItem value="printable" label="Caracteres imprimíveis" default>
+    Os caracteres de 32 a 126 são os visíveis: letras maiúsculas e minúsculas, algarismos, pontuações e símbolos comuns. Por exemplo, a letra `A` é representada pelo valor decimal 65, que em binário é `0b01000001` e em hexadecimal é `0x41`. A letra `a` minúscula é o valor 97, ou `0x61`.
+
+    Existe uma relação elegante aqui: a diferença entre uma letra maiúscula e sua versão minúscula no ASCII é sempre 32, ou `0x20`. Isso facilita imensamente a implementação de funções que convertem entre maiúsculas e minúsculas.
+
+    | Decimal | Hexadecimal | Binário      | Símbolo | Descrição                  |
+    |--------:|:-----------:|:------------:|:-------:|:---------------------------|
+    | 32      | 0x20        | `0b00100000` | ` `     | Espaço                     |
+    | 33      | 0x21        | `0b00100001` | `!`     | Ponto de exclamação        |
+    | 65      | 0x41        | `0b01000001` | `A`     | Letra A maiúscula          |
+    | 66      | 0x42        | `0b01000010` | `B`     | Letra B maiúscula          |
+    | 90      | 0x5A        | `0b01011010` | `Z`     | Letra Z maiúscula          |
+    | 97      | 0x61        | `0b01100001` | `a`     | Letra a minúscula          |
+    | 98      | 0x62        | `0b01100010` | `b`     | Letra b minúscula          |
+    | 122     | 0x7A        | `0b01111010` | `z`     | Letra z minúscula          |
+   
+    :::tip Dica
+    Os dígitos de `0` a `9` vão de `0x30` a `0x39` — subtrair 0x30 de qualquer dígito ASCII dá diretamente seu valor numérico. O mesmo padrão vale para letras: `A–Z` ocupam `0x41` até `0x5A` e `a–z` ocupam `0x61` até `0x7A`, com diferença exata de `0x20` entre maiúsculas e minúsculas.
+
+    Ou seja, a letra `a` que ocupa a posição `0x61` menos `0x20` dá exatamente a posição que da sua versão maiúscula `A`. Para fins de didática é possível interpretar da seguinte forma usando uma formula[^1]:
+    $$
+    a_{16} - 20_{16} = A
+    $$ 
+    :::
+    
+  </TabItem>
+  <TabItem value="control" label="Caracteres de controle">
+    Os primeiros 32 caracteres do ASCII (valores de 0 a 31) não são visíveis. São os chamados caracteres de controle, herdados da era das máquinas de escrever e dos teletypes.
+
+    O *carriage return* (retorno do carrinho, valor 13) e o *line feed* (alimentação de linha, valor 10) indicam o fim de uma linha de texto. O *tab* (tabulação, valor 9) representa um avanço horizontal. O *null* (valor 0) marca o fim de uma string em muitas linguagens de programação.
+
+    :::info Fato histórico interessante
+    Esses nomes não são metáforas estranhas, em máquinas de escrever mecânicas, o "carrinho" era o mecanismo que deslizava horizontalmente sob o papel para imprimir as letras. O *carriage return* literalmente movia esse carrinho de volta ao início da linha, enquanto o *line feed* avançava o papel uma linha para cima. Confira você mesmo no vídeo abaixo:
+
+    ![](https://www.youtube.com/watch?v=8cxJm3jcESE)
+    
+    :::
+
+    | Decimal | Hexadecimal | Binário      | Símbolo | Nome             | Descrição                                              |
+    |--------:|:-----------:|:------------:|:-------:|:----------------:|:-------------------------------------------------------|
+    | 0       | 0x00        | `0b00000000` | `NUL`   | Null             | Marcador de fim de string em C e derivadas             |
+    | 8       | 0x08        | `0b00001000` | `BS`    | Backspace        | Recua o cursor um caractere (`\b` em C)                |
+    | 9       | 0x09        | `0b00001001` | `HT`    | Horizontal Tab   | Avanço horizontal até próxima tabulação (`\t`)         |
+    | 10      | 0x0A        | `0b00001010` | `LF`    | Line Feed        | Nova linha; padrão de fim de linha no Unix (`\n`)      |
+    | 13      | 0x0D        | `0b00001101` | `CR`    | Carriage Return  | Retorna ao início da linha; par com LF no Windows (`\r`) |
+    | 127     | 0x7F        | `0b01111111` | `DEL`   | Delete           | Apaga o caractere anterior; tecnicamente não é controle, mas também não é imprimível |
+
+    :::note O interessantíssimo CR+LF
+    O Windows usa a sequência `\r\n` (CR seguido de LF) para quebras de linha, herança direta dos teletypes onde os dois comandos eram necessários mecanicamente. Unix simplificou para apenas `\n`. Isso explica por que arquivos de texto trocados entre os sistemas às vezes apresentam caracteres `^M` estranhos.
+    :::
+
+  </TabItem>
+</Tabs>
+
+--- 
+
+[^1]: Eu tirei essa formula da minha cabeça perdão aos matemáticos de plantão.

@@ -1,5 +1,5 @@
 ---
-tittle: Bits
+title: Bits
 ---
 
 #  Bits e Bytes
@@ -17,7 +17,7 @@ Sozinho, um bit serve para representar apenas dois estados distintos. Isso é su
 Quando juntamos dois bits, passamos a ter quatro combinações possíveis: `00`, `01`, `10` e `11`. Com três bits, são oito combinações. A regra geral é simples:
 
 $$
-\text{número de combinações} = 2^n
+\text{numero de combinações} = 2^n
 $$
 
 onde $n$ é a quantidade de bits disponíveis.
