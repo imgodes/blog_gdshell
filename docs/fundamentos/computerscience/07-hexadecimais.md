@@ -1,5 +1,5 @@
 ---
-tittle: Hexadecimal
+title: Hexadecimal
 ---
 #  Hexadecimal
 
