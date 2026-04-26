@@ -116,15 +116,71 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-ui);
 }
 
-.tabs {
-  gap: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* =====================
+   TABS
+===================== */
+
+/* Wrapper geral — posiciona o painel logo abaixo das abas */
+.tabs-container {
+  margin-bottom: 1.5rem;
 }
 
+/* Lista de abas: alinhadas à esquerda, sem gap, grudadas na linha */
+.tabs {
+  display: flex;
+  gap: 0;
+  justify-content: flex-start;
+  align-items: flex-end;
+  border-bottom: 2px solid var(--ifm-color-primary);
+  margin-bottom: 0 !important;
+  padding: 0;
+  list-style: none;
+}
 
+/* Cada aba: ghost, canto superior arredondado, sem borda de baixo */
 .tabs__item {
-  border: 1px solid var(--ifm-color-primary);
+  border: 2px solid var(--ifm-color-primary);
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  padding: 0.45rem 1.1rem;
+  margin-right: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--ifm-color-primary);
+  background: transparent;
+  opacity: 0.55;
+  transition: opacity 0.15s ease, background 0.15s ease, color 0.15s ease;
+  position: relative;
+  bottom: -2px; /* sobe 2px para cobrir a borda inferior do .tabs */
+}
 
+.tabs__item:hover {
+  opacity: 0.85;
+}
+
+/* Aba ativa: preenchida, opacidade total, tampa a linha inferior */
+.tabs__item--active,
+.tabs__item[aria-selected="true"] {
+  background: var(--ifm-color-primary);
+  color: #fff;
+  opacity: 1;
+  font-weight: 600;
+}
+
+/* Painel de conteúdo: borda nas laterais e fundo para conectar visualmente à aba */
+.tabs-container > .margin-top--md {
+  margin-top: 0 !important;
+  border: 2px solid var(--ifm-color-primary);
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  padding: 1.25rem 1.5rem;
+}
+
+/* Ajuste dark mode: fundo levemente distinto no painel */
+html[data-theme='dark'] .tabs-container > .margin-top--md {
+  background-color: rgba(46, 133, 85, 0.06);
+}
+
+html[data-theme='light'] .tabs-container > .margin-top--md {
+  background-color: rgba(46, 133, 85, 0.04);
 }
