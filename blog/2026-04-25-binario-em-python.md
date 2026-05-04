@@ -2,6 +2,7 @@
 slug: binario-em-python
 title: Brincando com binários no Python
 tags: [tech]
+image: /img/pythoneatbits.png
 ---
 
 :::important[Nota Importante]

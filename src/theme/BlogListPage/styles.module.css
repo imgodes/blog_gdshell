@@ -1,0 +1,382 @@
+/* =====================
+   BLOG LIST - CYBERPUNK RETRO
+===================== */
+
+.wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+/* ---- HEADER ---- */
+
+.header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(0, 255, 180, 0.25);
+  padding-bottom: 1.25rem;
+}
+
+.headerPrompt {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.75rem;
+  color: #00ff99;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+  opacity: 0.7;
+}
+
+.headerTitle {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #00ffcc;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 8px rgba(0, 255, 200, 0.6),
+    0 0 20px rgba(0, 255, 200, 0.2);
+  margin: 0;
+}
+
+.headerCount {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: rgba(0, 255, 180, 0.5);
+  margin-top: 0.4rem;
+  letter-spacing: 0.08em;
+}
+
+/* ---- GRID ---- */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* ---- CARD ---- */
+
+.card {
+  position: relative;
+  background: rgba(0, 8, 12, 0.85);
+  border: 1px solid rgba(0, 255, 180, 0.2);
+  padding: 1.4rem 1.6rem;
+  text-decoration: none;
+  display: block;
+  overflow: hidden;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  cursor: pointer;
+}
+
+/* corner accent */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid #00ffcc;
+  border-left: 2px solid #00ffcc;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  border-bottom: 2px solid #00ffcc;
+  border-right: 2px solid #00ffcc;
+}
+
+.card:hover {
+  background: rgba(0, 255, 180, 0.04);
+  border-color: rgba(0, 255, 180, 0.5);
+  text-decoration: none;
+}
+
+/* ---- SCANLINE OVERLAY (visible on hover) ---- */
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.15) 3px,
+    rgba(0, 0, 0, 0.15) 4px
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  z-index: 5;
+}
+
+.card:hover .scanlines {
+  opacity: 1;
+  animation: scanlinePulse 0.08s steps(1) infinite;
+}
+
+@keyframes scanlinePulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+/* ---- CARD WITH IMAGE: side-by-side layout ---- */
+
+.cardWithImage {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0;
+  padding: 0;
+}
+
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(0, 255, 180, 0.15);
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(30%) brightness(0.85) saturate(1.2);
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover .cardImage {
+  filter: grayscale(0%) brightness(0.9) saturate(1.5) hue-rotate(10deg);
+  transform: scale(1.03);
+}
+
+/* scanline overlay on the image */
+.imageScanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.18) 3px,
+    rgba(0, 0, 0, 0.18) 4px
+  );
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+/* neon border flare on image side during hover */
+.card:hover .imageWrapper {
+  border-right-color: rgba(0, 255, 180, 0.4);
+  box-shadow: inset -4px 0 12px rgba(0, 255, 180, 0.08);
+}
+
+.cardBody {
+  padding: 1.4rem 1.6rem;
+}
+
+/* cards without image keep old padding via the card class */
+.card:not(.cardWithImage) .cardBody {
+  padding: 0;
+}
+
+@media (max-width: 640px) {
+  .cardWithImage {
+    grid-template-columns: 1fr;
+  }
+
+  .imageWrapper {
+    height: 140px;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 255, 180, 0.15);
+  }
+}
+
+/* ---- CARD META (date + reading time) ---- */
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: rgba(0, 255, 180, 0.5);
+  letter-spacing: 0.08em;
+}
+
+.metaSep {
+  opacity: 0.4;
+}
+
+/* ---- CARD TITLE ---- */
+
+.title {
+  position: relative;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e0fff8;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  margin: 0 0 0.75rem;
+  display: inline-block;
+  transition: color 0.1s ease;
+}
+
+.card:hover .title {
+  color: #00ffcc;
+  text-shadow: 0 0 6px rgba(0, 255, 200, 0.5);
+  animation: glitchTitle 0.25s steps(1) infinite;
+}
+
+/* pseudo-elements for glitch slices on the title */
+.title::before,
+.title::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  white-space: pre-wrap;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card:hover .title::before {
+  color: #ff00cc;
+  clip-path: polygon(0 20%, 100% 20%, 100% 42%, 0 42%);
+  opacity: 1;
+  animation: glitchSliceA 0.25s steps(1) infinite;
+}
+
+.card:hover .title::after {
+  color: #00ccff;
+  clip-path: polygon(0 58%, 100% 58%, 100% 76%, 0 76%);
+  opacity: 1;
+  animation: glitchSliceB 0.25s steps(1) infinite;
+}
+
+@keyframes glitchTitle {
+  0%, 100% { transform: translate(0, 0); }
+  20%       { transform: translate(-2px, 1px); }
+  40%       { transform: translate(2px, -1px); }
+  60%       { transform: translate(-1px, 0); }
+  80%       { transform: translate(1px, 1px); }
+}
+
+@keyframes glitchSliceA {
+  0%, 100% { transform: translate(0); opacity: 1; }
+  25%       { transform: translate(6px, 0); opacity: 0.9; }
+  50%       { transform: translate(-4px, 0); opacity: 0.8; }
+  75%       { transform: translate(3px, 0); opacity: 1; }
+}
+
+@keyframes glitchSliceB {
+  0%, 100% { transform: translate(0); opacity: 1; }
+  25%       { transform: translate(-7px, 0); opacity: 0.9; }
+  50%       { transform: translate(5px, 0); opacity: 0.8; }
+  75%       { transform: translate(-2px, 0); opacity: 1; }
+}
+
+/* ---- DESCRIPTION ---- */
+
+.description {
+  font-family: 'Literata', serif;
+  font-size: 0.88rem;
+  color: rgba(220, 240, 235, 0.65);
+  line-height: 1.6;
+  margin: 0 0 1rem;
+  max-width: 68ch;
+}
+
+/* ---- TAGS ---- */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #00ffcc;
+  border: 1px solid rgba(0, 255, 200, 0.35);
+  padding: 0.15rem 0.5rem;
+  background: rgba(0, 255, 200, 0.05);
+  transition: background 0.1s, border-color 0.1s, color 0.1s;
+}
+
+.card:hover .tag {
+  border-color: rgba(255, 0, 200, 0.5);
+  color: #ff66dd;
+  background: rgba(255, 0, 200, 0.06);
+}
+
+/* ---- FOOTER ROW (read more arrow) ---- */
+
+.readMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: rgba(0, 255, 180, 0.4);
+  margin-top: 1rem;
+  text-transform: uppercase;
+  transition: color 0.1s, gap 0.15s;
+}
+
+.card:hover .readMore {
+  color: #00ffcc;
+  gap: 0.7rem;
+}
+
+/* ---- PAGINATOR ---- */
+
+.paginator {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* ---- LIGHT MODE OVERRIDES ---- */
+
+html[data-theme='light'] .wrapper {
+  /* keep cyberpunk regardless of light/dark — blog is always dark */
+}
+
+html[data-theme='light'] .card {
+  background: rgba(0, 10, 20, 0.92);
+}
+
+/* ---- RESPONSIVE ---- */
+
+@media (max-width: 640px) {
+  .headerTitle {
+    font-size: 1.15rem;
+  }
+
+  .title {
+    font-size: 0.95rem;
+  }
+
+  .card {
+    padding: 1rem 1.1rem;
+  }
+}
