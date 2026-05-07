@@ -8,7 +8,7 @@ image: /img/elkburp.png
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Eu estava procurando uma extensão que conseguisse enviar os logs para o elasticsearch, porém as extensões existentes não funcionavam corretamente. Então veio a péssima/ótima idéia de criar eu mesmo uma extensão. Gostaria muito de ter feito em Java, porém como não estou tão habituado como gostaria, optei por pytohn.
+Eu estava procurando uma extensão que conseguisse enviar os logs para o elasticsearch, porém as extensões existentes não funcionavam corretamente. Então veio a péssima/ótima idéia de criar eu mesmo uma extensão. Gostaria muito de ter feito em Java, porém como não estou tão habituado como gostaria, optei por python.
 
 <!-- truncate -->
 
@@ -750,12 +750,5 @@ Você pode verificar no [github](https://github.com/imgodes/elastico) assim como
 
 ### O que aprendi nessa missão
 
-> Fiquei com dúvida em por que o `AttributeError: object has no attribute 'tab'` aparecia. Era porque o `addSuiteTab` chama `getUiComponent` imediatamente, antes do `initGui` ter rodado. A ordem de chamada no `registerExtenderCallbacks` é crítica.
-
-> Fiquei com dúvida em por que o formulário ficava gigante. O `GridLayout` estica os componentes para preencher todo o espaço disponível. O `BorderLayout.NORTH` resolve isso ancorando o form no topo com tamanho natural.
-
-> Fiquei com dúvida em como o botão chama o método `saveConfig`. No Jython, o Swing aceita `actionPerformed=self.saveConfig` direto no construtor do `JButton`, sem precisar criar um listener Java explícito.
-
-> Fiquei com dúvida sobre o `global` no `saveConfig`. Sem ele, o Python criaria variáveis locais com o mesmo nome e as globais usadas pelo `sentToElastic` ficariam com os valores antigos.
-> 
+No finalzinho fiquei com dúvida em por que o `AttributeError: object has no attribute 'tab'` aparecia. Era porque o `addSuiteTab` chama `getUiComponent` imediatamente, antes do `initGui` ter rodado. A ordem de chamada no `registerExtenderCallbacks` é crítica. Depois não entendia por que o formulário ficava gigante. O `GridLayout` estica os componentes para preencher todo o espaço disponível. O `BorderLayout.NORTH` resolve isso ancorando o form no topo com tamanho aceitável. E muitas outras dúvidas, porém me sinto mais confiante para ir para extensões mais avançadas e com mais funcionalidades. A real é que baseado nos exemplos que já existem, somados com a doc do burp, já dá para fazer muita coisa legal, só precisava desse primeiro passo.
 
