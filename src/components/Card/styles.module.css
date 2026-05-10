@@ -1,0 +1,89 @@
+.cyberpunk {
+  position: relative;
+  background: rgba(5, 8, 14, 0.96);
+  border: 1px solid rgba(0, 255, 255, 0.22);
+  border-radius: 2px;
+  box-shadow:
+    0 0 12px rgba(0, 255, 255, 0.08),
+    inset 0 0 20px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  font-family: var(--ifm-font-family-monospace);
+  color: #b8c8d8;
+}
+
+/* Faixa de acento no topo */
+.cyberpunk::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 255, 255, 0.6) 40%,
+    rgba(0, 255, 255, 0.6) 60%,
+    transparent 100%
+  );
+}
+
+/* Scanlines muito sutis */
+.cyberpunk::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.04) 3px,
+    rgba(0, 0, 0, 0.04) 4px
+  );
+  pointer-events: none;
+}
+
+.cyberpunk :global(.card__header) {
+  border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+  background: rgba(0, 255, 255, 0.04);
+}
+
+.cyberpunk :global(.card__header) h3,
+.cyberpunk :global(.card__header) h2 {
+  font-family: 'Orbitron', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(0, 220, 220, 0.9);
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+  margin: 0;
+}
+
+.cyberpunk :global(.card__footer) {
+  border-top: 1px solid rgba(0, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.cyberpunk :global(.button--secondary) {
+  border-color: rgba(0, 255, 255, 0.3);
+  color: rgba(0, 220, 220, 0.85);
+  background: transparent;
+}
+
+.cyberpunk :global(.button--secondary:hover) {
+  background: rgba(0, 255, 255, 0.08);
+  border-color: rgba(0, 255, 255, 0.55);
+  color: #00ffff;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.2);
+}
+
+.cyberpunk :global(.avatar__name) {
+  color: rgba(0, 220, 220, 0.9);
+  font-family: 'Orbitron', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.cyberpunk :global(.avatar__subtitle) {
+  color: rgba(180, 200, 220, 0.6);
+}
