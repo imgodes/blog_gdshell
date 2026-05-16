@@ -1,8 +1,8 @@
 ---
-title: Bits
+title: Binário, Bits e Bytes
 ---
 
-#  Bits e Bytes
+#  Binários, Bits e Bytes
 
 Agora que entendemos o sistema binário e como ele representa números, podemos falar sobre como a informação é organizada dentro de um computador. O conceito mais fundamental nessa organização é o bit.
 
@@ -14,7 +14,7 @@ Sozinho, um bit serve para representar apenas dois estados distintos. Isso é su
 
 ##  Combinando bits
 
-Quando juntamos dois bits, passamos a ter quatro combinações possíveis: `00`, `01`, `10` e `11`. Com três bits, são oito combinações. A regra geral é simples:
+Quando juntamos dois bits, passamos a ter quatro combinações possíveis: `00`, `01`, `10` e `11`. Com três bits, são oito combinações. Existe inclusive uma "fórmula" para calcular o número de combinação possíveis com $n \text{ bits}$.
 
 $$
 \text{numero de combinações} = 2^n
@@ -48,7 +48,7 @@ O computador é uma máquina extremamente literal. Se duas cartas compartilharem
 
 ##  O que é um byte
 
-Para facilitar o trabalho com sequências de bits, computadores agrupam 8 bits em uma unidade chamada *byte*. E isso não é atoa, 8 bits oferecem $2^8 = 256$ combinações, o que é suficiente para representar todos os caracteres do alfabeto latino, pontuações e símbolos de controle com uma margem confortável. Além disso, 8 é uma potência de 2, o que torna operações matemáticas muito mais eficientes para o hardware.
+Para facilitar o trabalho com sequências de bits, computadores agrupam 8 bits em uma unidade chamada *byte*. E isso não é por que 8 era o número da sorte de alguém, 8 bits oferecem $2^8 = 256$ combinações, o que é suficiente para representar todos os caracteres do alfabeto latino, pontuações e símbolos de controle com uma margem confortável. Além disso, 8 é uma potência de 2, o que torna operações matemáticas muito mais eficientes para o hardware.
 
 Alguns exemplos de notação:
 
