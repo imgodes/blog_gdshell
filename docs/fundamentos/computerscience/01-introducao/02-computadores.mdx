@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 #  Computadores
 
-Muitas pessoas limitam o conceito de “computador” àquela caixa que fica embaixo da mesa, ligada a um monitor. Essa imagem não está errada, mas é incompleta. Um computador vai muito além disso. Celulares, smartwatches, notebooks, câmeras digitais, roteadores, videogames e servidores também são computadores. A diferença entre eles não está no fato de serem ou não computadores, mas na forma como são usados e no tipo de tarefa que executam.
+Muitas pessoas limitam o conceito de “computador” àquela caixa que fica embaixo da mesa, ligada a um monitor. Mas um computador vai muito além disso. Celulares, smartwatches, notebooks, câmeras digitais, roteadores, videogames e servidores também são computadores.
 
 De forma simples, **um computador é qualquer dispositivo eletrônico que pode ser programado para executar um conjunto de instruções lógicas**. 
 
@@ -24,7 +24,7 @@ Na ausência dessas ferramentas, normalmente usamos comparações:
 - “Essa boneca tem mais ou menos um palmo de altura”
 - “Ela pesa mais ou menos o mesmo que um copo cheio de água”
 
-Ao fazer isso, você cria uma escala de referência. Você não sabe a medida exata, mas consegue representar o tamanho e o peso usando comparações contínuas com outros objetos.
+Você cria então uma escala de referência. Apesar de não saber a medida exata, ainda assim consegue representar o tamanho e o peso usando comparações contínuas com outros objetos.
 
 Nesse contexto, podemos dizer algo como:
 - altura da boneca = 1 palmo
@@ -34,13 +34,15 @@ Se houver duas bonecas iguais, elas teriam:
 - 2 palmos de altura
 - peso equivalente a 2 copos
 
-Então você consegue comparar, a mão com um objeto e dizer o quão grande ou pequeno ele é por meio de uma analogia, e em outras palavras, é um tipo de representação é analógica. Ela funciona por aproximação, comparação e variação contínua. Pequenas mudanças geram pequenas diferenças no resultado, sem saltos bruscos.
+Então você consegue comparar, a mão com um objeto e dizer o quão grande ou pequeno ele é por meio de uma analogia, e em outras palavras, é um tipo de representação analógica. Ela funciona por aproximação, comparação e variação contínua. Pequenas mudanças geram pequenas diferenças no resultado, sem saltos bruscos.
 
 O mesmo acontece em uma balança analógica. À medida que o peso aumenta, a agulha se move de forma contínua. Não há “pulos” entre valores. O ponteiro pode estar exatamente entre dois números, representando algo como “um pouco mais” ou “um pouco menos”.
 
-Em uma balança analógica tradicional, o que move a agulha não é eletricidade, é força física, mais especificamente a força da gravidade atuando sobre o objeto. Quando você coloca um objeto sobre a balança, ele exerce uma força para baixo devido ao seu peso. Essa força é transmitida para uma mola, e dependendo do quanto essa mola for pressionada, ela vai mexer a agulha indicando mais ou menos peso. Ou seja, o peso aplicado a balança é comparado ao quão bem a mola resiste a ele, e a agulha para onde aponta o quilograma, reage de acordo e torna a leitura fácil para o usuário final.
+Em uma balança analógica tradicional, o que move a agulha não é eletricidade, é a força da gravidade atuando sobre o objeto. Quando você coloca um objeto sobre a balança, ele exerce uma força para baixo devido ao seu peso. Essa força é transmitida para uma mola, e dependendo do quanto essa mola for pressionada, ela vai mexer a agulha indicando mais ou menos peso. Ou seja, o peso aplicado a balança é comparado ao quão bem a mola resiste a ele, e a agulha para onde aponta o quilograma, reage de acordo e torna a leitura fácil para o usuário final.
 
-Esse é o coração da abordagem analógica: representar informações como variações contínuas, sem valores fixos e discretos.
+Podemos definir então a abordagem analógica como forma **representar informações como variações contínuas, sem valores fixos e discretos.**
+
+Discreto, nesse contexto, significa que os **valores são separados e distintos entre si, como degraus de uma escada. Não há valores intermediários entre eles, diferente de algo contínuo, que flui sem interrupção**. Lembre-se dessa definição pois será útil ao longo da nossa jornada.
 
 Outro exemplo de medida analógica, seria o termômetro de mercúrio. O volume do mercúrio aumenta conforme a temperatura aumenta, isso é uma propriedade natural dele. Os fabricantes colocam uma quantidade de mercúrio em um tubo de vidro com várias marcações (por exemplo, 24°C, 30°C) que correspondem a um determinado volume que o mercúrio pode assumir dependendo da temperatura. Essas posições do mercúrio em tubos de vidro representam então a temperatura.
 
@@ -50,7 +52,7 @@ Porém aqui vai um problema, esses números não são precisos, se a agulha da b
 
 ## Abordagem digital
 
-Mas o que tudo isso tem a ver com computadores? O ponto central é que representações analógicas são um problema para máquinas digitais. Sistemas analógicos variam demais em forma e comportamento, o que torna extremamente difícil criar uma única máquina capaz de interpretar todos eles diretamente. Medir o deslocamento de uma mola, o volume de mercúrio ou a pressão do ar exige mecanismos físicos completamente diferentes.
+Mas o que tudo isso tem a ver com computadores? Bem, acontece que representações analógicas são um problema para máquinas digitais. Sistemas analógicos variam demais em forma e comportamento, o que torna extremamente difícil criar uma única máquina capaz de interpretar todos eles diretamente. Medir o deslocamento de uma mola, o volume de mercúrio ou a pressão do ar exige mecanismos físicos completamente diferentes.
 
 Além disso, computadores dependem de representações confiáveis e repetíveis. Sistemas analógicos sofrem com ruído, desgaste e perda de fidelidade ao serem copiados. Pequenas variações físicas podem alterar o resultado, e isso é inaceitável para uma máquina que precisa produzir sempre a mesma saída para a mesma entrada.
 
@@ -64,15 +66,23 @@ Dentro do computador, algo parecido acontece. **Sinais elétricos chegam aos cir
 Para entender em profundidade como esses estados elétricos são produzidos e mantidos, seria necessário estudar eletricidade, física e química. Aqui, o foco não é o *como físico*, mas o *significado lógico* desses estados.
 :::
 
-### Do elétrico ao abstrato
+### Abstração
 
-É importante deixar algo claro neste ponto: **sinais elétricos não são números**.
+É importante deixar algo claro neste ponto que **sinais elétricos não são números**.
 
-Uma tensão em um fio não “vale” 0 ou 1 por natureza. Esses valores não existem na eletricidade. O que existe são apenas fenômenos físicos: corrente, tensão, carga e resistência. O que transforma esses fenômenos em algo útil é uma decisão humana.
+:::warning
+Colocar esse tema aqui é perigoso mas acredito que você será recompensado. 
 
-Dentro do computador, circuitos são projetados para trabalhar apenas com dois estados elétricos bem definidos. Um deles corresponde a uma tensão mais baixa, e o outro a uma tensão mais alta. Não importa o valor exato da tensão, desde que ela esteja claramente dentro de um desses dois estados.
+Pode ser desafiador ler sobre eletricidade sem eu ter introduzido antes tais conceitos. Porém explicar toda a física por trás desse fenômeno não tem tanto peso assim na compreensão do tema aqui tratado, claro seria ótimo se você se aprofundasse, porém afirmo que não é mandatório.
 
-Por convenção, escolhe-se interpretar um desses estados como 0 e o outro como 1. Esses valores não surgem da eletricidade em si, mas da necessidade de representar informação de forma simples, confiável e repetível.
+ **Seu objetivo nessa etapa é compreender que sinais elétricos são interpretados pelo computador**, porém sempre lembrando que essas interpretações foram estabelecidas por humanos.
+:::
+
+Uma tensão em um fio não “vale” 0 ou 1 por natureza. Esses valores não existem na eletricidade. O que existe são apenas fenômenos físicos como corrente, tensão, carga e resistência. O que transforma esses fenômenos em algo útil é uma decisão humana de dar determinado significado aos fenômenos físicos.
+
+Dentro do computador, circuitos são projetados para trabalhar apenas com dois estados elétricos. Um deles corresponde a uma tensão mais baixa, e o outro a uma tensão mais alta. Não importa o valor exato da tensão, desde que ela esteja claramente dentro de um desses dois estados.
+
+Por convenção, escolhe-se interpretar um desses estados como 0 e o outro como 1. Esses valores surgem da necessidade de representar informação de forma simples, confiável e repetível.
 
 <details>
   <summary>Um pouco mais sobre transistores e sinais elétricos</summary>
@@ -116,19 +126,15 @@ As abas abaixo começam no nível 2 de abstração e vão até o nível 0 que se
 Lembrando que se aprofundar nos níveis de abstração é uma opção sua, decida com cuidado o quão comprometido e interessado está em entender esse conteúdo. Não existe problema nenhum em parar nos níveis mais altos, muito menos em tentar os mais baixos.
 :::
 
-### Símbolos antes de números
+### Símbolos e números
 
 Esses sinais ainda não são números. Eles são apenas símbolos confiáveis, capazes de serem distinguidos sem ambiguidade. O passo seguinte é organizá-los em sequências e manipulá-los seguindo regras bem definidas.
-
-É nesse momento que os números entram em cena.
 
 O computador não “entende” números no sentido humano. Ele apenas manipula símbolos. Os números surgem quando nós interpretamos determinadas sequências desses símbolos como valores numéricos.
 
 Assim como marcas em um papel não são números, mas representam números, estados elétricos também não são números. Eles apenas os representam.
 
-Antes de falar sobre sistemas de numeração, é fundamental entender essa diferença. Números não surgem da eletricidade. Eles surgem da necessidade de dar significado abstrato a estados físicos confiáveis.
-
-Para que isso funcione de forma consistente, é preciso um sistema que defina como esses símbolos representam valores. É exatamente esse o papel de um sistema de numeração.
+Antes de falar sobre sistemas de numeração, é fundamental entender essa diferença. Os números 0 e 1 não surgem da eletricidade, e sim da necessidade de dar significado abstrato a estados físicos confiáveis. Para que isso funcione de forma consistente, é preciso um sistema que defina como esses símbolos representam valores. É exatamente esse o papel de um sistema de numeração.
 
 [^1]: Helerbrock, Rafael. Transistor: o que é, função, onde é usado, origem - Brasil Escola. Brasil Escola. Disponível em: https://brasilescola.uol.com.br/fisica/transistor.htm. Acesso em: 07 fev. 2026.
 [^2]: The Engineering Mindset. Transistors Explained - How transistors work. Disponível em https://www.youtube.com/watch?v=J4oO7PT_nzQ. Acesso em: 07 fev. 2026.
