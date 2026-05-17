@@ -9,7 +9,7 @@ image: /img/pythoneatbits.png
 Esse post foi criado com o objetivo de servir como guia para deixar o [livro de fundamentos](/docs/fundamentos) um pouco mais prático. Eu roubei essa idéia do [Livro de Engenharia Reversa do Fernando Mercês](https://mentebinaria.gitbook.io/engenharia-reversa) um dos melhores livros que já li, e tive o prazer de te-lo em versão física e autografada, **recomendo que sinta inveja**.
 :::
 
-Se você acabou de ler o capítulo sobre [sistemas de numeração](/docs/fundamentos/computerscience/sistemas_de_numeracao), provavelmente está com vontade de colocar a mão na massa. A boa notícia é que o Python é uma das melhores ferramentas para isso. Ele é fácil, entende binário e hexadecimal nativamente, e tem funções que tornam as conversões entre bases uma linha de código.
+Se você acabou de ler o capítulo sobre sistemas de numeração, provavelmente está com vontade de colocar a mão na massa. A boa notícia é que o Python é uma das melhores ferramentas para isso. Ele é fácil, entende binário e hexadecimal nativamente, e tem funções que tornam as conversões entre bases uma linha de código.
 
 <!-- truncate -->
 
