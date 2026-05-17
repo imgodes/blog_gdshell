@@ -4,20 +4,24 @@ title: Transistor
 
 # O transistor
 
-Na nossa missão de criar circuitos digitais, usamos circuitos baseados em *switches* - e eles foram uma boa forma de introduzir o conceito. De qualquer forma, usar *switches* mecânicos não é uma boa ideia para computadores. Computadores precisam lidar com uma quantidade muito grande de entradas a todo momento, e acionar *switches* manualmente não é um bom *design*. Além disso, sistemas computacionais precisam conectar múltiplos circuitos lógicos juntos, onde a saída de um circuito será a entrada de outro.
+Na nossa missão de criar circuitos digitais, usamos circuitos baseados em *switches* e eles foram uma boa forma de introduzir o conceito. De qualquer forma, usar *switches* mecânicos não é uma boa ideia para computadores. 
+
+Computadores precisam lidar com uma quantidade muito grande de entradas a todo momento, e acionar *switches* manualmente não é um bom *design*. Além disso, sistemas computacionais precisam conectar múltiplos circuitos lógicos juntos, onde a saída de um circuito será a entrada de outro.
 
 Para alcançar esse objetivo, o *switch* precisa ser controlado eletricamente, e não mecanicamente. Não queremos um *switch* mecânico, e sim um elétrico. E ainda bem que existe um componente que pode ser integrado ao circuito chamado **transistor**, que chaveia a corrente eletricamente!
+
 ### Tipos de transistor
 Um transistor é um dispositivo usado para **chavear** ou **amplificar** a corrente. Por enquanto vamos focar em sua capacidade de chaveamento. Existem dois tipos principais:
 - **BJT** - transistor de junção bipolar (*bipolar junction transistor*)
 - **FET** - transistor de efeito de campo (*field-effect transistor*)
+
 A diferença entre eles não é relevante por enquanto, então vamos focar nos BJTs.
 
 ### BJT - Transistor de Junção Bipolar
 
-BJTs possuem três terminais: **base**, **coletor** e **emissor**. Existem dois tipos de BJTs: NPN e PNP, que se diferenciam no modo de responder à aplicação de corrente no terminal base. Vamos focar no tipo NPN.
+BJTs possuem três terminais, um **base**, um **coletor** e um **emissor**. Existem dois tipos de BJTs, NPN e PNP, que se diferenciam no modo de responder à aplicação de corrente no terminal base. Vamos focar no tipo NPN.
 
-![[cs001-8.png]]
+![transistor NPN](./img/transistornpn01.png)
 
 Em um transistor NPN, aplicar uma pequena corrente na base permite que uma corrente maior flua do coletor ao emissor. Em outras palavras, se pensarmos no transistor como uma chave, aplicar corrente na base é como *ligar* o transistor, e remover essa corrente é como *desligá-lo*.
 
@@ -25,14 +29,14 @@ Em um transistor NPN, aplicar uma pequena corrente na base permite que uma corre
 
 Veja como um transistor pode ser conectado como um chave eletrônica:
 
-![[cs001-9.png]]
+![transistor NPN](./img/transistornpn02.png)
 
 Temos um transistor NPN conectado com três tensões rotuladas:
 - $V_{cc}$ - tensão positiva de alimentação, aplicada ao coletor. É o fornecedor de energia do circuito, equivalente a uma bateria. O "cc" significa *common collector*.
 - $V_{out}$ - a tensão que queremos controlar. É o que o circuito produz como saída.
 - $V_{in}$ - a tensão que controla o transistor. É a entrada, o que "diz" ao transistor o que fazer.
 
-A ideia central é que em vez de apertar um *switch* físico, você aplica uma tensão em $V_{in}$. Essa tensão na base do transistor decide se ele conduz ou não:
+Então em vez de apertar um *switch* físico, você aplica uma tensão em $V_{in}$. Essa tensão na base do transistor decide se ele conduz ou não:
 
 | $V_{in}$ | Base         | Transistor    | $V_{out}$ |
 | -------- | ------------ | ------------- | --------- |
@@ -41,10 +45,11 @@ A ideia central é que em vez de apertar um *switch* físico, você aplica uma t
 
 ### Por que o transistor é melhor que o switch mecânico
 
-A pergunta natural é: $V_{in}$ ainda precisa vir de algum lugar, então qual é a vantagem?
+Mas se $V_{in}$ ainda precisa vir de algum lugar, então qual é a vantagem?
+
 Com um switch mecânico, $V_{in}$ é um humano apertando um botão. Isso tem dois problemas sérios:
 - **Velocidade.** Um transistor chaveia bilhões de vezes por segundo. Nenhum switch mecânico chega perto.
-- **$V_{in}$ pode vir de outro circuito.** Esse é o ponto principal. O $V_{out}$ de um circuito pode ser o $V_{in}$ do próximo. Você encadeia circuitos, a saída de um vira entrada do outro, sem nenhuma intervenção humana. Um computador não tem um humano apertando switches internamente: tem trilhões de transistores onde a saída de um grupo controla o próximo, em cascata, na velocidade da eletricidade.
+- **Integração**. $V_{in}$ **pode vir de outro circuito**. O $V_{out}$ de um circuito pode ser o $V_{in}$ do próximo. Você encadeia circuitos, a saída de um vira entrada do outro, sem nenhuma intervenção humana. Um computador não tem um humano apertando switches internamente, e sim trilhões de transistores onde a saída de um grupo controla o próximo, em cascata, na velocidade da eletricidade.
 
 ### Por que a corrente de $V_{cc}$ não chega sozinha em $V_{out}$
 
@@ -53,4 +58,6 @@ Quando $V_{in}$ envia corrente para a base, a comporta abre. A corrente de $V_{c
 
 A corrente de $V_{cc}$ não estava "faltando força" quando a comporta estava fechada, ela estava lá, disponível, esperando. O transistor é que bloqueava o caminho.
 
-> Detalhe importante: a corrente que vem de $V_{in}$ para abrir a comporta é **pequena**, só o suficiente para acionar o transistor. A corrente que flui de $V_{cc}$ quando a comporta abre pode ser muito maior. Por isso o transistor também **amplifica**: uma corrente pequena na base controla uma corrente grande entre coletor e emissor.
+:::tip Detalhe importante
+A corrente que vem de $V_{in}$ para abrir a comporta é **pequena**, só o suficiente para acionar o transistor. A corrente que flui de $V_{cc}$ quando a comporta abre pode ser muito maior. Por isso o transistor também tem a capacidade de **amplificar** uma corrente pequena na base controla uma corrente grande entre coletor e emissor.
+ :::

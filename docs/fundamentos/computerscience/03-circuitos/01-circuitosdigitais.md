@@ -6,7 +6,7 @@ title: Circuitos Digitais
 
 Até aqui falamos de lógica binária de forma bem abstrata, verdadeiro, falso, AND, OR, tabelas verdade. Mas em algum momento essas operações precisam sair do papel e acontecer em algum componente físico dentro do computador.
 
-É aqui que entram os circuitos digitais. Eles são o elo entre a lógica que estudamos e a eletricidade que corre pelos chips. Entender como um AND ou um OR se traduz em circuito vai fechar uma lacuna importante na forma como você imagina a computação, e felizmente não é tão complicado quanto parece.
+Os circuitos digitais são o elo entre a lógica que estudamos e a eletricidade que corre pelos chips. Entender como um AND ou um OR se traduz em circuito vai fechar uma lacuna importante na forma como você imagina a computação, e felizmente não é tão complicado quanto parece.
 
 ## Sinais digitais e tensão
 
@@ -27,27 +27,34 @@ Por mais que eu queira utilizar a palavra "chaveador", sinto que meus textos ser
 
 Para representar um *switch*, usamos os seguintes símbolos:
 
-![[cs001-switches.excalidraw]]
+![switch](./img/switch01.png)
+
+:::tip
+Esse print, esse desenho simpático foi tirado de dentro do programa chamado "Digital", que você pode baixar do [github](https://github.com/hneemann/Digital) se quiser também se divertir montando circuitos.
+
+Em outros momento o print virá de um outro programa, este é online disponível no site [falstad - simulador de circuitos](https://www.falstad.com/circuit/).
+:::
 
 ### Porta AND com switches
 Podemos usar esses *switches* como fornecedores de entrada para a nossa tabela verdade AND. Lembre-se que a tabela AND é composta por todas as possibilidades de combinação de 0 e 1, e irá produzir a saída 1 apenas quando as duas entradas forem 1. Vamos traduzir isso para circuitos digitais usando os *switches*:
 
 Observe o circuito abaixo, onde está sendo constantemente fornecida uma entrada de $5\,\text{V}$ (alta tensão = 1).
 
-![[cs001-3.png]]
+![switch 2](./img/switch02.png)
 
 - Ao encontrar o primeiro *switch* ("Entrada A"), não houve interrupção pois ele está fechado, permitindo a passagem da corrente, portanto permanecemos com o valor 1.
 - Ao chegar na "Entrada B", nosso segundo *switch*, ele está aberto, fazendo com que nenhuma tensão fosse adiante. Por consequência, a tensão chegou como baixa na saída, resultando no valor 0.
 
 Se observarmos o que fizemos aqui, percebe-se que a operação AND usou A = 1 e B = 0, portanto `1 AND 0 = 0`. Caso esteja com a memória em dia, vai se lembrar de que essa mesma linha existe na tabela verdade AND.
 
-Para provar isso, podemos simular as 4 situações possíveis. Observe que a energia só passa quando ambos os *switches* estão ligados:
+Para provar isso, podemos simular as 4 situações possíveis. Observe que a corrente só passa quando ambos os *switches* estão ligados:
 
-![[cs001-4.png]]
+![switch 03](./img/switch03.png)
 
 ### Porta OR com switches
 
 Podemos usar os *switches* também para criar um circuito que produza os resultados da tabela verdade OR:
 
-![[cs001-6.png]]
+![switch 04](./img/switch04.png)
 
+Até o momento utilizamos *switches* que dependem de interações humanas para ativar e desativar a passagem de corrente. Mas não tem algo estranho nisso? Você se lembra de ter apertado um desses alguma vez antes de precisar fazer algo no computador? Vamos adiante, está começando a ficar interessante!
