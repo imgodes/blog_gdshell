@@ -67,7 +67,9 @@ Agora para. Leia quantas vezes forem necessárias tudo que está acima e contemp
 Se minha explicação foi suficiente, você acabou de entender uma frase que, há algumas páginas atrás, poderia muito bem estar escrita em sânscrito. Portanto sua satisfação intelectual, é merecida.
 Não se deixe enganar pelo rótulo de "fundamentos". Fundamento não significa fácil nem trivial. As bases levaram décadas para serem construídas por pessoas muito inteligentes que erraram muito antes de acertar. Você chegou ao mesmo entendimento em algumas páginas. Isso é, no mínimo, digno de uma pausa para o café.
 
-Gostaria de pedir licença ao seu tempo livre para propor um exercício, onde sua missão é definir você mesmo a lógica binária em um parágrafo. **Você deve conseguir descrever o que é, como se manifesta, onde está e qual sua utilidade para as operações realizadas no computador.** Seria covardia da minha parte dar um trabalho desses sem tentar primeiro, então aqui vai minha tentativa abaixo. Conto com sua decência de ver minha resposta apenas após ter feito a sua, mas em nada isso afeta sua integridade física, então fique à vontade caso o exercício ainda pareça desconfortável.
+Gostaria de pedir licença ao seu tempo livre para propor um exercício, onde sua missão é definir você mesmo a lógica binária em um parágrafo. **Você deve conseguir descrever o que é, como se manifesta, onde está e qual sua utilidade para as operações realizadas no computador.**
+
+Seria covardia da minha parte dar um trabalho desses sem tentar primeiro, então aqui vai minha tentativa abaixo. Conto com sua decência de ver minha resposta apenas após ter feito a sua, mas em nada isso afeta sua integridade física, então fique à vontade caso o exercício ainda pareça desconfortável.
 
 <details>
 	<summary>Resposta</summary>
@@ -76,7 +78,7 @@ Gostaria de pedir licença ao seu tempo livre para propor um exercício, onde su
 
 </details>
 
-Felizmente o binário é perfeito para esse tipo de trabalho. O binário se encaixa naturalmente na lógica porque ambos operam com exatamente dois estados. Na matemática não existe meia verdade, e nos computadores não existe meio bit. Diante de um conjunto de fatos, a lógica nos permite determinar se uma afirmação é verdadeira ou falsa, e um único bit pode representar exatamente esse estado: verdadeiro (1) ou falso (0).
+Felizmente o binário é perfeito para esse tipo de trabalho. O binário se encaixa naturalmente na lógica porque ambos operam com exatamente dois estados. Na matemática não existe meia verdade, e nos computadores não existe meio bit. Diante de um conjunto de fatos, a lógica nos permite determinar se uma afirmação é verdadeira ou falsa, e um único bit pode representar esse estado de verdadeiro (1) ou falso (0).
 
 Vamos analisar alguns exemplos:
 
@@ -166,13 +168,15 @@ Como aqui falamos de computação, nada mais natural que puxarmos a sardinha par
 
 A tabela anterior é forma padrão de representar uma **tabela verdade *AND*** para sistemas digitais que usam o sistema binário de $0$ e $1$. Esse tipo de tabela é usado para expressar como os componentes vão se comportar quando receberem determinadas combinações de entrada. Entenda então que isso serve para qualquer tipo de operador, não apenas o *AND*.
 
-Dito isso podemos então avançar para outros operadores lógicos e declarações lógicas mais complexas usando essa tabela verdade como apoio.
+Dito isso podemos avançar para outros operadores lógicos e declarações lógicas mais complexas usando essa tabela verdade como apoio.
 Vamos dizer que você trabalha em uma loja que dá desconto há dois tipos de clientes: crianças ou pessoas usando óculos de sol. Mais ninguém é elegível ao desconto. Se você quer estabelecer uma política da loja em uma expressão lógica você pode dizer o seguinte:
 > **Se** o cliente é uma criança
+>
 > **Ou se** o cliente está usando óculos de sol
+>
 > **Então** o cliente tem direito ao desconto
 
-Temos então duas condições onde em que **se qualquer uma delas for verdadeira, a conclusão torna-se verdadeira**. Nessa situação usamos o operador lógico *OR* ("ou" em inglês) para unir as duas declarações. Podemos expressar isso em uma tabela verdade:
+Temos então duas condições onde **se qualquer uma delas for verdadeira, a conclusão torna-se verdadeira**. Nessa situação usamos o operador lógico *OR* ("ou" em inglês) para unir as duas declarações. Podemos expressar isso em uma tabela verdade:
 
 | Entrada A | Entrada B | Saída OR |
 | --------- | --------- | -------- |
@@ -197,7 +201,7 @@ Podemos classificar essas entradas em condição A, B e C:
 >
 > **Condição C**: é meu aniversário
 
-Em uma expressão lógica pode se dizer que `(A AND B) OR C`, onde assim como na matemática a parte entre parenteses, tem que ser resolvida primeiro. Podemos também colocar isso em uma tabela verdade:
+Em uma expressão lógica pode se dizer que `(A AND B) OR C`, e assim como na matemática a parte entre parenteses, tem que ser resolvida primeiro. Podemos também colocar isso em uma tabela verdade:
 
 | Entrada A | Entrada B | Entrada C | Saída AND/OR |
 | --------- | --------- | --------- | ------------ |
@@ -216,6 +220,16 @@ Existem vários outros operadores lógicos bem comuns em sistemas digitais. O op
 | --------- | --------- |
 | 1         | 0         |
 | 0         | 1         |
+
+:::tip
+Como de costume, vim alertar sobre palavras em inglês. Peço que tente se acostumar com as mais triviais como o *NOT* citado acima, que vem sempre com o sentido de negação de algo.
+
+Mas podem surgir outras como *input*, que significa uma entrada. Ou *output* que significa uma saída. E tente se lembrar delas e de seus significados ao ver suas abreviações como por *in* com frequência é usado para abreviar *input*. Algo como $A_{in}$ por exemplo, poderia significar "entrada A".
+
+De maneira semelhante *output* é abreviado para *out* e pode vir a representar que algo é uma saída como $S_{out}$, poderia significar "saída S".
+
+Esses detalhes que parecem bobos podem fazer a diferença conforme nos aprofundamos.
+:::
 
 O operador **NAND** (NOT AND) é simplesmente o AND invertido. Sua saída é 0 apenas quando ambas as entradas são 1. Em todos os outros casos, a saída é 1, o oposto do AND.
 
@@ -244,4 +258,4 @@ O **XOR** (ou exclusivo) é o mais interessante dos três. Sua saída é 1 quand
 | 1   | 0   | 1   |
 | 1   | 1   | 0   |
 
-Com isso cobrimos os principais operadores lógicos. Agora fica a pergunta natural: onde essas operações acontecem fisicamente? Como um AND ou OR vira algo concreto dentro de um computador? A resposta está nos circuitos digitais, e é exatamente o que veremos a seguir.
+Com isso cobrimos os principais operadores lógicos. Agora fica a pergunta, onde essas operações acontecem fisicamente? Como um AND ou OR vira algo dentro de um computador? A resposta está nos circuitos digitais.
