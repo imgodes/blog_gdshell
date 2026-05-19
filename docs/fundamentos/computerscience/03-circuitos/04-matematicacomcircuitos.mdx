@@ -5,9 +5,9 @@ draft: true
 
 # Matemática com circuitos
 
-Até aqui aprendemos a construir portas lógicas que implementam AND, OR e NOT. Mas portas lógicas sozinhas ainda não parecem com o que imaginamos quando pensamos em "computação". Afinal, um computador some números, multiplica, compara. Onde fica toda essa matemática?
+Até aqui aprendemos a construir portas lógicas que implementam AND, OR e NOT. Mas portas lógicas sozinhas ainda não parecem com o que imaginamos quando pensamos em "computação". Afinal, um computador soma números, multiplica, compara. Onde fica toda essa matemática?
 
-A resposta é que toda operação matemática que um computador realiza é implementada em circuitos, e esses circuitos são feitos exatamente das portas lógicas que acabamos de estudar. Neste capítulo vamos ver como isso acontece na prática, começando pelo mais fundamental: a adição.
+A resposta é que toda operação matemática que um computador realiza é implementada em circuitos, e esses circuitos são feitos de portas lógicas que acabamos de estudar. Neste capítulo vamos ver como isso acontece na prática, começando pela adição.
 
 ## Adição binária
 
@@ -15,9 +15,13 @@ Antes de construir qualquer circuito, precisamos entender como a adição funcio
 
 A boa notícia é que o princípio é o mesmo de qualquer sistema posicional, incluindo o decimal que você já conhece. Pegue como exemplo a soma de `0010` e `0011`. Alinha os números e começa pelo bit menos significativo, o que está mais à direita.
 
-A primeira coluna é simples: `0 + 1 = 1`, sem mistérios.
+![Adicao 01](./img/add01.png)
 
-A segunda coluna já é mais interessante. Lembra da regra do "vai um" quando a soma ultrapassava 9 no sistema decimal? Aqui acontece o mesmo, mas em binário o limite é muito mais baixo: `1 + 1 = 10`. O resultado tem dois símbolos, mas a posição atual só comporta um. O que fazemos é registrar o `0` na posição atual e **carregar** o `1` para a próxima coluna.
+A primeira coluna é simples: `0 + 1 = 1`, tranquilo, né?
+
+A segunda coluna já é mais destemida. Lembra da regra do "vai um" quando a soma ultrapassava 9 no sistema decimal? Aqui acontece o mesmo, mas em binário o limite é muito mais baixo, `1 + 1 = 10`. O resultado tem dois símbolos, mas a posição atual só comporta um. O que fazemos é registrar o `0` na posição atual e **carregar** o `1` para a próxima coluna.
+
+![Adicao 02](./img/add02.png)
 
 :::info
 Esse bit carregado para a próxima posição é chamado de *carry bit*. Vamos usar esse termo daqui em diante no lugar da expressão mais informal "bit que subiu".
@@ -29,9 +33,16 @@ A próxima coluna então ficaria `0 + 0 + 1 = 1`, onde esse `1` extra é o *carr
 
 Agora que entendemos como a adição binária funciona no papel, podemos construir um circuito que realiza essa operação.
 
+![HalfAddder 01](./img/halfadder01.png)
+
 Para somar dois bits, precisamos de duas entradas, vamos chamá-las de **A** e **B**, e o circuito terá duas saídas:
 - **S** (*sum*): o resultado da soma
 - **$C_{out}$** (*carry-out*): o *carry bit* de saída, o "vai um" para a próxima posição
+
+E ele é representado da seguinte forma:
+
+![HalfAddder 01](./img/halfadder01.png)
+
 
 A tabela verdade desse circuito:
 
@@ -42,17 +53,20 @@ A tabela verdade desse circuito:
 | 1 | 0 | 1 | 0         |
 | 1 | 1 | 0 | 1         |
 
+
 Se você olhar com atenção, vai reconhecer dois padrões familiares:
 - A coluna **S** é idêntica à tabela verdade do **XOR**
 - A coluna **$C_{out}$** é idêntica à tabela verdade do **AND**
 
-Isso não é coincidência. Significa que podemos construir esse somador usando exatamente essas duas portas em paralelo, com as mesmas entradas A e B alimentando as duas ao mesmo tempo.
+Isso não é por que os astros se alinharam e demos sorte. Significa que podemos construir esse somador usando essas duas portas em paralelo, com as mesmas entradas A e B alimentando as duas ao mesmo tempo!
 
-Esse circuito tem um nome: **half adder** (somador parcial). O "parcial" no nome já entrega o spoiler: ele resolve a adição dos primeiros dois bits, mas não consegue lidar com um *carry bit* vindo de uma posição anterior. E quando somamos números com mais de um bit, todas as posições além da primeira precisam lidar exatamente com esse caso.
+![HalfAddder 03](./img/halfadder03.png)
+
+Esse circuito tem o nome de **half adder** (somador parcial). O "parcial" no nome já entrega o spoiler de que ele resolve a adição dos primeiros dois bits, mas não consegue lidar com um *carry bit* vindo de uma posição anterior. E quando somamos números com mais de um bit, todas as posições além da primeira precisam lidar com esse caso.
 
 ## Full adder - somador completo
 
-Cada bit além do menos significativo pode receber um *carry bit* da posição anterior. Chamamos esse bit de **$C_{in}$** (*carry-in*). Para incorporar essa terceira entrada, precisamos de um novo circuito: o **full adder**.
+Cada bit além do menos significativo pode receber um *carry bit* da posição anterior. Chamamos esse bit de **$C_{in}$** (*carry-in*). Para incorporar essa terceira entrada, precisamos de um novo circuito chamado **full adder**.
 
 O full adder tem três entradas, **A**, **B** e **$C_{in}$**, e duas saídas, **S** e **$C_{out}$**:
 
