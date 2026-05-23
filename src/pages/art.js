@@ -3,8 +3,6 @@ import Layout from '@theme/Layout';
 import styles from './art.module.css';
 
 const drawings = [
-  // Para adicionar desenhos, coloque as imagens em /static/img/art/ e insira aqui:
-  // { src: '/img/art/nome-do-arquivo.jpg', title: 'Título opcional' },
   { src: '/img/art/mask.jpg', title: '' },
   { src: '/img/art/flowergirl.jpg', title: '' },
   { src: '/img/art/home.jpg', title: '' },
