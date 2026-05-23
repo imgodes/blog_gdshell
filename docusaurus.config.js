@@ -89,6 +89,7 @@ const config = {
         items: [
           {to: '/', label: 'home', position: 'left'},
           {to: '/blog', label: 'blog', position: 'left'},
+          {to: '/art', label: 'art', position: 'left'},
         ],
       },
       footer: {
