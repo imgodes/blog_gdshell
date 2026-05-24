@@ -1,6 +1,7 @@
 ---
 title: Introdução ao Computador
 sidebar_position: 2
+draft: true
 ---
 
 #  Introdução

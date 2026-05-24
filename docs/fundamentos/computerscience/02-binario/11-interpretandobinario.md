@@ -1,5 +1,6 @@
 ---
 title: Interpretando Binários
+draft: true
 ---
 
 # Interpretando Binários

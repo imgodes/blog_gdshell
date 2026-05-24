@@ -1,5 +1,6 @@
 ---
 title: Binário, Bits e Bytes
+draft: true
 ---
 
 #  Binários, Bits e Bytes

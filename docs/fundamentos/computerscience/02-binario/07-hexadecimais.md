@@ -1,5 +1,6 @@
 ---
 title: Hexadecimal
+draft: true
 ---
 #  Hexadecimal
 

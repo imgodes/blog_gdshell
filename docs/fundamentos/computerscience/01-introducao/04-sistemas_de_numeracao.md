@@ -1,6 +1,7 @@
 ---
 title: Sistemas de numeração
 sidebar_position: 5
+draft: true
 ---
 
 import sistema_decimal01 from './img/sistemadecimal01.svg';
