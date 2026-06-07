@@ -1,6 +1,5 @@
 ---
 title: Lógica binária
-draft: true
 ---
 
 import Tabs from '@theme/Tabs';
@@ -12,7 +11,7 @@ Já estabelecemos que binários são úteis para representar dados, mas computad
 Acho interessante que, num primeiro momento, entendamos "instrução" no sentido menos computacional possível. Parece contra-intuitivo dado o contexto, mas é bem prudente pensar em instrução como aquela que um chefe passa ao seu funcionário sequências de tarefas bem definidas, como "some dois números" ou "verifique se esses dois valores são iguais".
 > ***O processador que implementa essas instruções é fundamentalmente baseado na lógica binária, um sistema para descrever afirmações lógicas onde variáveis podem ter um de dois valores: verdadeiro ou falso.*** 
 > 
-> Fonte: How Computers Really Work, Capítulo "Binary in Action"
+> *Fonte: How Computers Really Work, Capítulo "Binary in Action"*
 
 Quando li essa definição pela primeira vez, entendi bem, pois já sabia o que significam "instruções", "lógica binária" e "variáveis" na prática. Mas reconheço que, sem conhecer essas palavras-chave, a explicação pede mais elaboração. De forma um tanto ambiciosa, tentei então traçar uma sequência de verdades, onde cada etapa depende da anterior para fazer sentido:
 
@@ -29,7 +28,8 @@ Quando li essa definição pela primeira vez, entendi bem, pois já sabia o que 
 	Uma boa metáfora para ajudar a acompanhar o conteúdo:
 	- O Sr. Programador é o chefe de um funcionário chamado Sr. Computador.
 	- De forma um tanto cruel, esse chefe tóxico decide tatuar no pulso do Sr. Computador as tarefas que ele deve seguir à risca, coisas simples como comparar dados ou somá-los.
-	- Com isso entendemos que uma instrução é uma tarefa que o computador está previamente programado para executar.
+	
+	Algo parecido acontece com computadores, o engenheiro define algumas coisas que este computador é capaz de fazer e ele o instrui e como faze-las. Com isso entendemos que uma instrução é uma tarefa que o computador está previamente programado para executar.
   </Step>
   <Step title="O processador, processa (avá)">
     O componente que é programado com essas instruções é o processador.
@@ -66,6 +66,7 @@ Agora para. Leia quantas vezes forem necessárias tudo que está acima e contemp
 > ***o processador do computador é fundamentalmente baseado na lógica binária, um sistema para descrever afirmações lógicas onde variáveis podem ter um de dois valores, verdadeiro ou falso***
 
 Se minha explicação foi suficiente, você acabou de entender uma frase que, há algumas páginas atrás, poderia muito bem estar escrita em sânscrito. Portanto sua satisfação intelectual, é merecida.
+
 Não se deixe enganar pelo rótulo de "fundamentos". Fundamento não significa fácil nem trivial. As bases levaram décadas para serem construídas por pessoas muito inteligentes que erraram muito antes de acertar. Você chegou ao mesmo entendimento em algumas páginas. Isso é, no mínimo, digno de uma pausa para o café.
 
 Gostaria de pedir licença ao seu tempo livre para propor um exercício, onde sua missão é definir você mesmo a lógica binária em um parágrafo. **Você deve conseguir descrever o que é, como se manifesta, onde está e qual sua utilidade para as operações realizadas no computador.**
@@ -102,8 +103,7 @@ Vamos analisar alguns exemplos:
 </Tabs>
 
 Esses exemplos possuem duas condições e ambas precisam ser verdadeiras para a conclusão ser verdadeira.
-Para esse tipo de situação, usamos o **operador lógico** *AND* ( *E* ) para unir as duas afirmações, em que, se qualquer uma das afirmações for falsa, logo a conclusão é falsa também.
-Veja a tabela abaixo, ela expressa as operações e resultado possíveis de uma operação *AND*.
+Para esse tipo de situação, usamos o **operador lógico** *AND* ( *E* ) para unir as duas afirmações, em que, se qualquer uma das afirmações for falsa, logo a conclusão é falsa também. Veja a tabela abaixo, ela expressa as operações e resultado possíveis de uma operação *AND*.
 
 | quatro linhas iguais | Operador | quatro ângulos retos | é um quadrado | Em uma frase                                                                                          |
 | -------------------- | -------- | -------------------- | ------------- | ----------------------------------------------------------------------------------------------------- |
@@ -170,6 +170,7 @@ Como aqui falamos de computação, nada mais natural que puxarmos a sardinha par
 A tabela anterior é forma padrão de representar uma **tabela verdade *AND*** para sistemas digitais que usam o sistema binário de $0$ e $1$. Esse tipo de tabela é usado para expressar como os componentes vão se comportar quando receberem determinadas combinações de entrada. Entenda então que isso serve para qualquer tipo de operador, não apenas o *AND*.
 
 Dito isso podemos avançar para outros operadores lógicos e declarações lógicas mais complexas usando essa tabela verdade como apoio.
+
 Vamos dizer que você trabalha em uma loja que dá desconto há dois tipos de clientes: crianças ou pessoas usando óculos de sol. Mais ninguém é elegível ao desconto. Se você quer estabelecer uma política da loja em uma expressão lógica você pode dizer o seguinte:
 > **Se** o cliente é uma criança
 >
@@ -186,7 +187,7 @@ Temos então duas condições onde **se qualquer uma delas for verdadeira, a con
 | 0         | 0         | 0        |
 | 0         | 1         | 1        |
 
-Observando a saída da tabela verdade *OR*, nota-se que o desconto não será dado apenas se ambas as entradas forem falsas ( 0 ), ou seja, se não for criança e nem estiver usando óculos.
+Observando a saída da tabela verdade *OR*, nota-se que o desconto não será dado apenas se ambas as entradas forem falsas ( `0` ), ou seja, se não for criança e nem estiver usando óculos.
 
 Podemos ainda combinar o operador *OR* e *AND* para em declarações lógicas mais complexas. Para fins de exemplo, vamos considerar que eu vou para a praia sempre que eu estiver de férias e o clima estiver quente, ou então, quando é meu aniversário, podemos reescrever da seguinte forma:
 > **Se** eu estiver de férias **e se** o clima estiver quente

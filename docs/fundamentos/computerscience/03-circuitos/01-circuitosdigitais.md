@@ -5,7 +5,7 @@ draft: true
 
 # Circuitos Digitais
 
-Até aqui falamos de lógica binária de forma bem abstrata, verdadeiro, falso, AND, OR, tabelas verdade. Mas em algum momento essas operações precisam sair do papel e acontecer em algum componente físico dentro do computador.
+Até aqui falamos de lógica binária de forma bem generalista, verdadeiro, falso, AND, OR, tabelas verdade. Mas em algum momento essas operações precisam sair do papel e acontecer em algum componente físico dentro do computador.
 
 Os circuitos digitais são o elo entre a lógica que estudamos e a eletricidade que corre pelos chips. Entender como um AND ou um OR se traduz em circuito vai fechar uma lacuna importante na forma como você imagina a computação, e felizmente não é tão complicado quanto parece.
 
