@@ -1,7 +1,6 @@
 ---
 title: Sistemas de numeração
 sidebar_position: 5
-draft: true
 ---
 
 import sistema_decimal01 from './img/sistemadecimal01.svg';
@@ -19,12 +18,13 @@ Normalmente, escrevemos números usando algo chamado notação posicional. Isso 
 </center>
 
 Por hora vamos chamar esse lugar de casa, pois é bem comum chamarem assim no Brasil durante o ensino.
+
 Quando dizemos que cada “casa” representa uma ordem de grandeza, o que estamos realmente dizendo é que cada posição está associada a uma potência de 10. Isso significa que, no sistema decimal, cada casa vale 10 elevado a algum número.
 
 Começando da direita para a esquerda:
-- A primeira casa é a casa #0, logo ela vale $10^0$
-- A segunda casa é a casa #1, logo ela vale $10^1$
-- A terceira casa é a casa #2, vale $10^2$ 
+- A primeira casa é a casa 0, logo ela vale $10^0$
+- A segunda casa é a casa 1, logo ela vale $10^1$
+- A terceira casa é a casa 2, vale $10^2$ 
 
 E assim por diante, agora que nos aprofundamos vamos mudar um pouco a imagem:
 
@@ -32,9 +32,9 @@ E assim por diante, agora que nos aprofundamos vamos mudar um pouco a imagem:
 ![sistema_decimal](./img/sistemadecimal02.svg)
 </center>
 
-Agora que já separamos o número em "casas", podemos finalmente chegar ao número original novamente, para isso basta multiplicar o número presenta na casa pelo valor que ela possui. Se número estiver na casa #0 será multiplicado por $10^0$.
+Agora que já separamos o número em "casas", podemos finalmente chegar ao número original novamente, para isso basta multiplicar o número presente na casa pelo valor que ela possui. Se número estiver na casa 0 será multiplicado por $10^0$.
 
-Agora vem o ponto chave, qualquer número decimal pode ser decomposto como a soma de cada dígito multiplicado pela potência de 10 correspondente à sua posição:
+Qualquer número decimal pode ser decomposto como a soma de cada dígito multiplicado pela potência de 10 correspondente à sua posição:
 - O número $5$ seria multiplicado por $10$ elevado ao número da posição de $5$ que neste caso é a posição zero. Isso é o mesmo que escrever: $5 \cdot 10^0 = 5$ 
 - O número $7$ seria multiplicado por $10$ elevado ao número da posição de $5$ que neste caso é a posição um. Isso é o mesmo que escrever: $7 \cdot 10^1 = 70$ 
 - O número $2$ seria multiplicado por $10$ elevado ao número da posição de $2$ que neste caso é a posição dois. isso é o mesmo que escrever: $2 \cdot 10^2 = 200$ 
@@ -52,9 +52,7 @@ Observe que o valor mais a direita, é multiplicado por $10^0$, isso faz com que
 
 Como o maior número possível de se representar com três casas é 999, se quisermos representar o que vai além disso precisaríamos de uma quarta casa, a do milhar, ou $10^3$, e assim por diante.
 
-Isso remove qualquer achismo de que um número é apenas uma sequência de símbolos. Agora entendemos que ele vem de um sistema de somas de potências de 10, e que qualquer sistema posicional pode ser descrito da mesma forma, trocando apenas a base.
-
-É exatamente esse princípio que fundamenta o sistema que os computadores usam: o binário.
+Isso remove qualquer achismo de que um número é apenas uma sequência de símbolos. Agora entendemos que ele vem de um sistema de somas de potências de 10, e que qualquer sistema posicional pode ser descrito da mesma forma, trocando apenas a base. E é esse princípio que fundamenta o sistema binário que os computadores usam.
 
 ##  Sistema binário
 O sistema binário tem esse nome pois é constituído de apenas dois símbolos 0 e 1 e assim como o decimal é chamado de base 10, o binário também pode ser chamado de base 2. Contar em binário segue a mesma ideia do sistema decimal, primeiro vem o 0 (que representa nenhuma quantidade), depois o 1 que representa uma unidade, se quisermos representar duas quantidades devemos colocar o 1 a esquerda e depois a unidade de valor nulo 0 a direita, formando 10 (le-se um, zero, e não dez), que representaria duas quantidades.
@@ -77,7 +75,7 @@ Observe a tabela abaixo que compara os dois sistemas:
 | 15      | 1111    |
 | 16      | 10000   |
 
-Perceba o padrão de que toda vez que os símbolos disponíveis se esgotam, acrescenta-se uma nova posição à esquerda e recomeça-se do zero. No decimal isso acontece ao passar do 9 para o 10. No binário, ao passar do 1 para o 10, do 11 para o 100, e assim por diante.
+Perceba que toda vez que os símbolos disponíveis se esgotam, acrescenta-se uma nova posição à esquerda e recomeça-se do zero. No decimal isso acontece ao passar do 9 para o 10. No binário, ao passar do 1 para o 10, do 11 para o 100, e assim por diante.
 
 ##  Binário e potências de 2
 
@@ -100,12 +98,12 @@ Logo, $101$ em binário representa o número cinco em decimal. A mesma sequênci
 Existem duas formas comuns de indicar em qual base um número está escrito. A primeira usa um subscrito com o valor da base: $101_2$ para binário e $275_{10}$ para decimal. A segunda, muito usada no mundo da programação, usa prefixos textuais: `0b` para binário, como em `0b101`, e `0x` para hexadecimal, um sistema que veremos em seguida.
 
 :::tip
-Ao encontrar o número $101$ em um código ou documento sem nenhuma indicação de base, o contexto geralmente esclarece. Mesmo assim, é boa prática usar os prefixos ou subscritos para eliminar qualquer dúvida, especialmente ao comunicar para outras pessoas.
+Ao encontrar o número $101$ em um código ou documento sem nenhuma indicação de base, o contexto geralmente esclarece. Mesmo assim, é boa prática usar os prefixos ou subscritos para eliminar qualquer dúvida.
 :::
 
 ##  Convertendo binário para decimal
 
-O processo de converter um número binário para decimal segue a lógica da notação posicional: multiplica-se cada bit pela potência de 2 correspondente à sua posição, da direita para a esquerda, e somam-se os resultados.
+O processo de converter um número binário para decimal segue a lógica da notação posicional, onde multiplica-se cada bit pela potência de 2 correspondente à sua posição, da direita para a esquerda, e somam-se os resultados.
 
 Para o binário $1010_2$:
 
@@ -147,7 +145,12 @@ Usando o número 13 como exemplo:
 | 3 / 2   | 1         | 1     |
 | 1 / 2   | 0         | 1     |
 
-Lendo os restos de baixo para cima: $1101_2$. Para verificar: $1 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 8 + 4 + 0 + 1 = 13$. Correto.
+Lendo os restos de baixo para cima: $1101_2$. 
+E para verificar: 
+$$
+1 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 \newline
+8 + 4 + 0 + 1 = 13
+$$
 
 :::info
 O processo termina quando o quociente chega a zero. A partir daí, basta ler os restos na ordem inversa em que foram calculados.

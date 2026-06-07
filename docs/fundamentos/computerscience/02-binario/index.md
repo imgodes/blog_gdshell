@@ -3,13 +3,13 @@ title: Binário, Bits e Bytes
 draft: true
 ---
 
-#  Binários, Bits e Bytes
+#  Binário, Bits e Bytes
 
-Agora que entendemos o sistema binário e como ele representa números, podemos falar sobre como a informação é organizada dentro de um computador. O conceito mais fundamental nessa organização é o bit.
+Agora que entendemos o sistema binário e como ele representa números, podemos falar sobre como a informação é organizada dentro de um computador por meio de um conceito chamado **bit**.
 
 ##  O que é um bit
 
-A palavra bit vem do inglês *Binary Digit*, ou seja, dígito binário. Um bit é a menor unidade de informação possível: ele assume apenas dois valores, 0 ou 1. Em termos físicos, um bit é mantido por um transistor que está ou ligado ou desligado, como vimos no capítulo sobre computadores.
+A palavra bit vem do inglês *Binary Digit*, ou seja, dígito binário. Um bit é a menor unidade de informação possível, podendo assumir apenas dois valores, 0 ou 1. Em termos físicos, um bit é mantido por um transistor que está ou ligado ou desligado, como vimos no capítulo sobre computadores.
 
 Sozinho, um bit serve para representar apenas dois estados distintos. Isso é suficiente para perguntas simples como verdadeiro ou falso, ligado ou desligado, sim ou não. Para representar qualquer coisa mais complexa, é preciso combinar vários bits.
 

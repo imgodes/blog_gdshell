@@ -1,23 +1,20 @@
 ---
 title: Hexadecimal
-draft: true
 ---
 #  Hexadecimal
 
-Vimos que computadores representam tudo usando sequências de 0s e 1s. Na teoria, isso é elegante. Na prática, ler e escrever longas cadeias binárias é extremamente tedioso e sujeito a erros humanos. Imagine ter que inspecionar o valor `0b10110011110100011010000111001101` em um depurador. Parece terrível, não é?
+Vimos que computadores representam tudo usando sequências de 0s e 1s. Mas no dia-a-dia, ler e escrever longas cadeias binárias é extremamente tedioso e sujeito a erros humanos. Imagine ter que inspecionar o valor `0b10110011110100011010000111001101`. Parece terrível, não é?
 
 É para resolver esse problema que o sistema hexadecimal existe.
 
 ##  O que é hexadecimal
 
-O sistema hexadecimal, ou simplesmente *hex*, é um sistema de numeração de base 16. Assim como o decimal usa potências de 10 e o binário usa potências de 2, o hexadecimal usa potências de 16 para determinar o valor de cada posição.
+O sistema hexadecimal, ou simplesmente *hexa*, é um sistema de numeração de base 16. Assim como o decimal usa potências de 10 e o binário usa potências de 2, o hexadecimal usa potências de 16 para determinar o valor de cada posição.
 
 A primeira coisa que pensei quando estava aprendendo foi a seguinte.
 > se temos apenas 10 algarismos (de 0 a 9), mas um sistema de base 16 precisa de 16 símbolos distintos, como vou representar valores depois do 9?
 
-Bom, para completar os 6 símbolos restantes, usamos as primeiras letras do alfabeto: A, B, C, D, E e F. Poderiam ser outros símbolos quaisquer; letras foram escolhidas por convenção.
-
-A correspondência é simples:
+Bom, para completar os 6 símbolos restantes, usamos as primeiras letras do alfabeto: A, B, C, D, E e F. Poderiam ser outros símbolos quaisquer; letras foram escolhidas por convenção. Observe a tabela abaixo onde listo a relação entre o hexadecimal, o decimal e o binário.
 
 | Hexadecimal | Decimal | Binário |
 | ----------- | ------- | ------- |
@@ -44,9 +41,7 @@ O prefixo convencional para indicar que um número está em hexadecimal é `0x`.
 
 A razão pela qual o hexadecimal é tão útil na computação é a **simplicidade na presentação e compatibilidade com binários**. 16 é uma potência de 2, especificamente $2^4 = 16$. Isso significa que exatamente 4 bits correspondem a exatamente 1 dígito hexadecimal.
 
-Isso torna a conversão entre os dois sistemas extremamente simples. Para converter um número binário para hexadecimal, basta separá-lo em grupos de 4 bits da direita para a esquerda e substituir cada grupo pelo dígito hexadecimal correspondente.
-
-Tomando `0b10110011` como exemplo:
+Isso torna a conversão entre os dois sistemas extremamente simples. Para converter um número binário para hexadecimal, basta separá-lo em grupos de 4 bits da direita para a esquerda e substituir cada grupo pelo dígito hexadecimal correspondente. Tomando `0b10110011` como exemplo:
 
 ```
 1011 0011
@@ -55,7 +50,7 @@ Tomando `0b10110011` como exemplo:
 
 Logo, `0b10110011 = 0xB3`. Para conferir matematicamente: 
 $$
-11 \cdot 16^1 + 3 \cdot 16^0 = 176 + 3 = 179
+11 \cdot 16^1 + 3 \cdot 16^0 \implies 176 + 3 = 179
 $$
 
 O caminho inverso é igualmente possível, onde cada dígito hexadecimal é expandido para 4 bits.
@@ -78,7 +73,7 @@ Tente converter esses números antes de ver a resposta:
 
 ##  Por que não usar o binário diretamente?
 
-Computadores de fato usam binário internamente. Entretanto, ferramentas como depuradores, editores hexadecimais, documentações técnicas e até endereços de memória são exibidos em hexadecimal por uma razão simples: compacidade. Um byte (8 bits) é representado por exatamente 2 dígitos hexadecimais. Quatro bytes (32 bits) cabem em 8 dígitos hexadecimais.
+Computadores de fato usam binário internamente. Entretanto, ferramentas como depuradores, editores hexadecimais, documentações técnicas e até endereços de memória são exibidos em hexadecimal por compacidade. Um byte (8 bits) é representado por exatamente 2 dígitos hexadecimais. Quatro bytes (32 bits) cabem em 8 dígitos hexadecimais.
 
 Compare as representações do mesmo valor `255`:
 
@@ -88,7 +83,7 @@ Binário:     0b11111111
 Hexadecimal: 0xFF
 ```
 
-O hexadecimal equilibra compacidade e proximidade com o binário, nem tão longo e difícil ler ou decorar quanto o binário, e nem tão distante quanto seria o decimal. Ao contrário do decimal, a conversão para binário não exige cálculos complicados.
+O hexadecimal equilibra compacidade e proximidade com o binário, nem tão longo e difícil ler quanto o binário, e nem tão distante quanto seria o decimal. Ao contrário do decimal, a conversão para binário não exige cálculos complicados.
 
 ##  Onde o hexadecimal aparece
 
