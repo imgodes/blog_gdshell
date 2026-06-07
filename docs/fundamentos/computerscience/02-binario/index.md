@@ -1,6 +1,5 @@
 ---
 title: Binário, Bits e Bytes
-draft: true
 ---
 
 #  Binário, Bits e Bytes
@@ -80,7 +79,7 @@ Com esses prefixos, ao invés de dizer "esse arquivo tem 3 bilhões de bytes", e
 
 ###  O problema dos prefixos binários
 
-Muita gente faz confusão nessa parte. Computadores operam em base 2, mas esses prefixos vêm do sistema decimal. Na prática, fabricantes de hardware e sistemas operacionais usaram durante muito tempo os mesmos prefixos com valores ligeiramente diferentes, baseados em potências de 2.
+Muita gente faz confusão nessa parte. Computadores operam em base 2, mas esses prefixos vêm do sistema decimal. Fabricantes de hardware e sistemas operacionais usaram durante muito tempo os mesmos prefixos com valores ligeiramente diferentes, baseados em potências de 2.
 
 Por exemplo, quando alguém diz que um arquivo tem 1 GB, pode querer dizer exatamente 1.000.000.000 bytes (definição decimal, usada por fabricantes de HD) ou 1.073.741.824 bytes (que é $2^{30}$, usada por sistemas operacionais). Para resolver essa ambiguidade, foi criado um conjunto de prefixos binários padronizados pela IEC em 1998:
 
