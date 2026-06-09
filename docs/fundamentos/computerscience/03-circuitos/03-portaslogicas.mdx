@@ -1,6 +1,5 @@
 ---
 title: Portas lógicas
-draft: true
 ---
 
 # Portas lógicas
@@ -65,9 +64,7 @@ No exemplo da imagem, A = 0 e B = 1, portanto `0 OR 1 = 1` a saída é alta, con
 | Condição para saída alta | Os dois ativados                                            | Qualquer um ativado                          |
 | Analogia                 | Duas torneiras no mesmo cano - ambas precisam estar abertas | Dois canos distintos - basta um estar aberto |
 
-Acabamos então de entender como uma porta lógica, um circuito que implementa funções lógicas, pode ser construída com transistores e resistores. Deste ponto em diante, vamos esconder um pouco os detalhes de como portas lógicas são implementadas e tratá-las como componentes únicos. 
-
-Isso não é um capricho meu nem uma simplificação acadêmica. Portas lógicas estão disponíveis para compra já montadas e empacotadas fisicamente como um componente único, então não existe a necessidade de construir uma por meio de transistores, exceto para fins de aprendizado, como fizemos aqui.
+Acabamos então de entender como uma porta lógica, um circuito que implementa funções lógicas, pode ser construída com transistores e resistores. Deste ponto em diante, vamos esconder um pouco os detalhes de como portas lógicas são implementadas e tratá-las como componentes únicos. Afinal, portas lógicas estão disponíveis para compra já montadas e empacotadas fisicamente como um componente único, então não existe a necessidade de construir uma por meio de transistores, exceto para fins de aprendizado, como fizemos aqui.
 
 Existem símbolos padrões para cada porta lógica. Veja alguns exemplos:
 
@@ -75,9 +72,7 @@ Existem símbolos padrões para cada porta lógica. Veja alguns exemplos:
 
 Você pode ter percebido alguns círculos adicionados aos símbolos. Eles servem para representar NOT, ou seja, inversão. A porta NOT é o exemplo mais simples disso, pois a saída é sempre o inverso da entrada. Se a entrada for 1, a saída é 0, e vice-versa. A porta NAND é simplesmente um NOT AND, onde os resultados que seriam 1 passam a ser 0, e os que seriam 0 passam a ser 1.
 
-Vale introduzir aqui o conceito de **encapsulamento**, **uma escolha de *design* que esconde os detalhes internos** de um componente e documenta apenas como interagir com ele. 
-
-Dessa forma quando os criadores de um componente querem que outras pessoas possam usá-lo sem precisar entender cada detalhe da implementação, eles encapsulam. É exatamente o que estamos fazendo ao tratar uma porta lógica como uma caixinha preta com entradas e saída, sem precisar pensar nos transistores por baixo.
+Vale introduzir aqui o conceito de **encapsulamento**, **uma escolha de *design* que esconde os detalhes internos** de um componente e documenta apenas como interagir com ele. Dessa forma quando os criadores de um componente querem que outras pessoas possam usá-lo sem precisar entender cada detalhe da implementação, eles encapsulam. É exatamente o que estamos fazendo ao tratar uma porta lógica como uma caixinha preta com entradas e saída, sem precisar pensar nos transistores por baixo.
 
 ### Projetando com portas lógicas
 

@@ -1,6 +1,5 @@
 ---
 title: Matemática com circuitos
-draft: true
 ---
 
 # Matemática com circuitos
@@ -58,7 +57,7 @@ Se você olhar com atenção, vai reconhecer dois padrões familiares:
 - A coluna **S** é idêntica à tabela verdade do **XOR**
 - A coluna **$C_{out}$** é idêntica à tabela verdade do **AND**
 
-Isso não é por que os astros se alinharam e demos sorte. Significa que podemos construir esse somador usando essas duas portas em paralelo, com as mesmas entradas A e B alimentando as duas ao mesmo tempo!
+Isso significa que podemos construir esse somador usando essas duas portas em paralelo, com as mesmas entradas A e B alimentando as duas ao mesmo tempo!
 
 ![HalfAddder 03](./img/halfadder03.png)
 
@@ -116,23 +115,25 @@ Chips prontos com somadores de 4 bits estão disponíveis na série 7400 de ICs.
 
 Até aqui representamos apenas números positivos. Mas computadores precisam lidar com números negativos também, e o problema é que um bit só pode ser 0 ou 1, e um sinal negativo não é nenhum dos dois.
 
-### A abordagem ingênua: sinal de magnitude
+### Abordagem de sinal de magnitude
 
-A primeira ideia que vem à cabeça é reservar o bit mais significativo para o sinal: 0 para positivo, 1 para negativo. O restante dos bits representa o valor absoluto. Funciona conceitualmente, mas exige que o somador seja modificado para entender esse bit de sinal, o que complica o hardware sem necessidade.
+A primeira ideia que vem à cabeça é reservar o bit mais significativo para o sinal, com 0 para positivo, 1 para negativo. O restante dos bits representa o valor absoluto. Funciona conceitualmente, mas exige que o somador seja modificado para entender esse bit de sinal, o que complica o hardware sem necessidade.
 
-### A abordagem elegante: complemento de dois
+### Abordagem complemento de dois
 
 Existe uma solução melhor chamada **complemento de dois** (*two's complement*). A ideia é representar negativos de forma que o somador que já construímos continue funcionando sem nenhuma modificação.
 
-O processo para converter um número positivo em negativo é direto:
+O processo para converter um número positivo em negativo é o seguinte:
 
-1. Escreva o número em binário: `5 = 0101`
-2. Inverta todos os bits: `0101` → `1010`
-3. Some 1 ao resultado: `1010 + 1 = 1011`
+| Passo | Processo |
+| ----- | -------- |
+| Escreva o número que positivo em binário primeiro | `5 = 0101` | 
+| Inverta todos os bits       | `0101` -> `1010` |
+| Some 1 ao resultado | `1010 + 1 = 1011` | 
 
-Logo, `-5` em complemento de dois é `1011`. O processo é reversível: aplicar os mesmos três passos de volta retorna ao valor original.
+Logo, `-5` em complemento de dois é `1011`. E o processo é reversível, basta aplicar os mesmos três passos de volta retorna ao valor original.
 
-A parte divertida é que subtração vira adição. Para calcular `7 + (-3)`:
+Uma parte divertida é que para fazer uma subtração basta fazer uma adição de um número positivo com um negativo. Por exemplo, para calcular `7 + (-3)`:
 
 ```
   0111   (7)
@@ -141,7 +142,7 @@ A parte divertida é que subtração vira adição. Para calcular `7 + (-3)`:
  10100
 ```
 
-O bit que extrapola os 4 bits é descartado, e o resultado é `0100 = 4`. Exatamente `7 - 3 = 4`, e o somador não precisou saber de nada disso.
+O bit que extrapola os 4 bits é descartado, e o resultado é `0100 = 4` que é exatamente o resultado esperado para `7 - 3`.
 
 Para interpretar um número em complemento de dois, basta lembrar que o bit mais significativo tem peso negativo. Para 4 bits, os pesos das posições são:
 
@@ -156,13 +157,9 @@ Então `-3` seria representado como:
  1  1  0  1
 ```
 
-As posições ativas são -8, 4 e 1, portanto: $-8 + 4 + 1 = -3$.
+As posições "ativas" são -8, 4 e 1, portanto: $-8 + 4 + 1 = -3$. 
 
-A regra prática: sempre que o bit mais significativo for 1, o número é negativo. Quando for 0, é positivo.
-
-### O custo do sinal
-
-Ao usar o bit mais significativo para indicar o sinal, perdemos uma posição que antes contribuía para a magnitude. O total de valores representáveis não muda, mas o range se redistribui:
+Então sempre que o bit mais significativo for 1, o número é negativo e quando for 0, é positivo. Ao usar o bit mais significativo para indicar o sinal, perdemos uma posição que antes contribuía para a magnitude. Veja a tabela abaixo onde demonstro a nova distribuição.
 
 |                    | Sem sinal (unsigned) | Com sinal (signed) |
 |--------------------|---------------------|--------------------|
@@ -174,7 +171,14 @@ A distribuição é assimétrica porque o zero ocupa uma posição do lado posit
 
 $$\text{máximo} = 2^{n-1} - 1 \qquad \text{mínimo} = -2^{n-1} \qquad \text{total} = 2^n$$
 
-Para 8 bits: máximo = 127, mínimo = -128, total = 256 valores.
+Observe um exemplo com 8 bits:
+
+$$
+\text{máximo} = 2^{8-1} - 1 \qquad \text{mínimo} = -2^{8-1} \qquad \text{total} = 2^8 \newline
+\text{máximo} = 2^7 - 1 \qquad \text{mínimo} = -2^7 \qquad \text{total} = 2^8  \newline
+\text{máximo} = 127 \qquad \text{mínimo} = -128 \qquad \text{total} = 256
+$$
+
 
 Quando se sabe que negativos nunca serão necessários, faz sentido usar *unsigned* e recuperar toda a faixa para valores positivos:
 
@@ -184,6 +188,3 @@ Quando se sabe que negativos nunca serão necessários, faz sentido usar *unsign
 | 8 bits  | -128 a 127       | 0 a 255       |
 | 16 bits | -32.768 a 32.767 | 0 a 65.535    |
 
----
-
-Vale parar um segundo aqui. Construímos, passo a passo, um circuito capaz de somar números, partindo de nada além de portas lógicas simples. Lembra da definição lá do começo? Um computador é um dispositivo que executa instruções lógicas. A adição é uma dessas instruções, e você acabou de ver como ela se traduz em transistores, portas e circuitos encadeados. Outras operações fundamentais, como subtração e multiplicação, seguem a mesma lógica. É assim que tudo funciona lá embaixo.
