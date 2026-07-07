@@ -12,7 +12,7 @@ Link: [The Apple Wiki](https://theapplewiki.com/wiki/Jailbreak)
 
 ## Computador e Acessórios
 
-Não é impossível de forma alguma fazer pentest/engenharia reversa de apps iOS em Linux ou Windows, mas é inegável que a experiência realizando essa atividades usando um Mac é bem mais fluida.
+Não é impossível de forma alguma fazer pentest/engenharia reversa de apps iOS em Linux ou Windows, mas é inegável que a experiência realizando essas atividades usando um Mac é bem mais fluida.
 
 Fora isso, é ideal também que tenha um cabo com saída uma USB-A e a outra lightning. Na minha experiência, usar adaptadores funcionou.
 
@@ -26,6 +26,7 @@ Antes sair tentando rodar já o Jailbreak, leia a documentação inteira no que 
 
 Depois do Jailbreak, é tudo mais fácil, aqui vai uma lista de coisas para se fazer:
 > Dei preferência para citar as fontes de onde baixar, ao invés de providenciar um tutorial que vai ficar desatualizado provavelmente.
+>
 > Uma alternativa, é que você instale as ferramentas abaixo apenas quando for conveniente. Afinal elas não são um requisito como um todo, mas serão utilizadas em diferentes partes do trabalho.
 
 - Instale o Xcode no seu computador;
