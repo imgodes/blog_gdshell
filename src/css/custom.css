@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Literata:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Literata:wght@400;500;600&family=Inter:wght@400;500;600&display=swap");
 
 /* =====================
    INFIMA BASE
@@ -12,6 +12,7 @@
   --font-ui: "Orbitron", system-ui, sans-serif;
   --font-heading: "JetBrains Mono", monospace;
   --font-body: "Literata", serif;
+  --font-sidebar: "Inter", system-ui, sans-serif;
 
   --ifm-font-family-base: var(--font-body);
   --ifm-font-family-monospace: "JetBrains Mono", monospace;
@@ -110,10 +111,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar,
-.menu,
 .button,
 .theme-doc-sidebar-container {
   font-family: var(--font-ui);
+}
+
+/* =====================
+   SIDEBAR (menu de docs) — legibilidade
+===================== */
+
+.menu {
+  font-family: var(--font-sidebar);
+  font-size: 0.85rem;
+}
+
+.menu__link,
+.menu__list-item-collapsible {
+  font-weight: 500;
 }
 
 /* =====================
