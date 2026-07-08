@@ -128,7 +128,7 @@ const config = {
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
-        additionalLanguages: ['powershell','java', 'armasm'],
+        additionalLanguages: ['powershell','java', 'armasm', 'bash'],
       },
     }),
   stylesheets: [
