@@ -18,3 +18,4 @@ Então confie em mim, se você não possui os requisitos acima, não vale a pena
 Depois eu descrevo alguns "truques" e coisas que é legal que você saiba fazer para ter sucesso durante seus pentests.
 - [Automatizando extração de backups](/docs/cybersecurity/iossecurity/introducao/automatebackup)
 - [Instalando um app não assinado](/docs/cybersecurity/iossecurity/introducao/installnotsignedapp)
+
