@@ -88,6 +88,8 @@ const config = {
         },
         items: [
           {to: '/', label: 'home', position: 'left'},
+          {to: '/docs/fundamentos', label: 'fundamentos', position: 'left'},
+          {to: '/docs/cybersecurity', label: 'cybersecurity', position: 'left'},
           {to: '/blog', label: 'blog', position: 'left'},
           {to: '/art', label: 'art', position: 'left'},
         ],

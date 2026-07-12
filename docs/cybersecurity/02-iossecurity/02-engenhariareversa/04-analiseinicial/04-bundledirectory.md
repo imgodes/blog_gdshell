@@ -1,5 +1,5 @@
 ---
-title: Localizando o Bundle de Apps Instalados
+title: Localizando o Bundle de Apps
 ---
 
 # Localizando o Bundle de Apps Instalados

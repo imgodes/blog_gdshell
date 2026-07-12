@@ -1,8 +1,8 @@
 ---
-title: Análise estática do IPA
+title: Análise do IPA
 ---
 
-# Análise estática do IPA
+# Análise do IPA
 
 Descompactar o `.ipa` é o ponto de partida de qualquer pentest estático em um app iOS. O arquivo nada mais é do que um ZIP comum, logo basta extraí-lo:
 

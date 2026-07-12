@@ -133,6 +133,40 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =====================
+   NAVBAR — links com cara de botão
+===================== */
+
+.navbar__items .navbar__link {
+  margin: 0 0.2rem;
+  padding: 0.45rem 0.9rem;
+  border: 1.5px solid transparent;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: border-color 0.2s ease, background-color 0.2s ease,
+    box-shadow 0.2s ease, transform 0.15s ease, color 0.2s ease;
+}
+
+.navbar__items .navbar__link:hover {
+  border-color: var(--ifm-color-primary);
+  background-color: rgba(46, 133, 85, 0.12);
+  box-shadow: 0 0 10px rgba(46, 133, 85, 0.45), 0 2px 6px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.navbar__items .navbar__link:active {
+  transform: translateY(0);
+}
+
+.navbar__items .navbar__link.navbar__link--active {
+  border-color: var(--ifm-color-primary);
+  background-color: rgba(46, 133, 85, 0.15);
+}
+
+/* =====================
    SIDEBAR (menu de docs) — legibilidade
 ===================== */
 
