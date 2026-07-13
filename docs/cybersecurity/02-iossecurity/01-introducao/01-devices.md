@@ -8,7 +8,7 @@ Um dispositivo físico é o ideal para nós Brasileiros, dificilmente a empresa 
 Mas antes de falar sobre qual versão do iPhone é a ideal, vamos primeiro entender o que é um "*Jailbreak*" e por que ele é mandatório para escolhermos um iPhone.
 
 ## Jailbreak
-O termo *jailbreak* se refere ao processo pelo qual alguma forma de execução de código arbitrário é obtida por meio de explorações de falhas no kernel do iOS. Se você viu nossos tópicos sobre o [Básico de iOS](/docs/category/ios-basics-1) deve se lembrar que diversos componentes devem ser contornados para que de fato um iOS com o kernel comprometido seja utilizável. E justamente por isso, são versões muito específicas do iOS que os *jailbreaks* realmente funcionam.
+O termo *jailbreak* se refere ao processo pelo qual alguma forma de execução de código arbitrário é obtida por meio de explorações de falhas no kernel do iOS. Se você viu nossos tópicos sobre o [Básico de iOS](/docs/cybersecurity/iosbasics) deve se lembrar que diversos componentes devem ser contornados para que de fato um iOS com o kernel comprometido seja utilizável. E justamente por isso, são versões muito específicas do iOS que os *jailbreaks* realmente funcionam.
 
 ## Tipos de jailbreak
 Antes de entrar na parte técnica de como um jailbreak se instala, vamos diferenciar os tipos, porque essa classificação é o que mais aparece quando você for escolher qual ferramenta usar em cada versão de iOS.
