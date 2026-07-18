@@ -1,0 +1,144 @@
+---
+title: Smali
+---
+
+## Introdução ao Smali
+
+Smali é a linguagem utilizada para descrever o bytecode Dalvik, que é a representação em baixo nível de aplicações Android. O Dalvik é a máquina virtual originalmente usada pelo Android para executar aplicativos, projetada para otimizar o uso de memória e recursos em dispositivos móveis. Em outras palavras, o Smali é como o código Java se traduz no nível de máquina dentro do ecossistema Android.
+
+Durante o processo de decompilação, é comum que partes do código não sejam traduzidas completamente para Java ou outras linguagens de alto nível. Nesses casos, a análise de Smali torna-se indispensável para interpretar a lógica e as funcionalidades do código, permitindo uma compreensão mais profunda de seu comportamento.
+
+## Estrutura do Código Smali
+
+Um arquivo Smali é organizado em classes, métodos e instruções, seguindo uma sintaxe própria. Abaixo, é apresentada a relação entre um código Java e sua representação equivalente em Smali:
+
+```smali
+.class public LHelloWorld;
+.super Ljava/lang/Object;
+
+.method public static main([Ljava/lang/String;)V
+   .registers 2
+   sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
+   const-string v1, "Hello World!"
+   invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+   return-void
+.end method
+```
+
+```java title="HelloWorld.java"
+public class HelloWorld {
+   public static void main(String[] args) {
+      System.out.println("Hello World!");
+   }
+}
+```
+
+- `.class`: Define a classe pública HelloWorld.
+- `L`: Indica que se trata de uma classe ou objeto, e HelloWorld é o nome da classe.
+- `.super`: Define a classe base da qual a classe HelloWorld herda, neste caso `java.lang.Object`.
+- `.method`: Representa um método, neste caso, o método principal `main`.
+
+### O que são Registradores
+
+Os registradores são equivalentes a variáveis temporárias no Smali e representam valores que são manipulados durante a execução do bytecode. Cada método define o número de registradores que ele utiliza; essa informação é especificada pela diretiva `.registers`.
+
+| Registrador | Descrição |
+| --- | --- |
+| `v0, v1, v2` | Registradores locais usados para armazenar valores temporários, como strings, objetos ou referências. |
+| `p0, p1, p2` | Registradores de parâmetros, que armazenam os valores passados para o método. |
+
+### Exemplo de Uso
+
+No exemplo a seguir existe um método Smali que soma dois números armazenados nos registradores de parâmetro e retorna o resultado:
+
+```smali
+.method public addNumbers(II)I
+   .registers 3
+   add-int v0, p1, p2    # Soma os valores dos registradores p1 e p2, armazenando o resultado em v0
+   return v0             # Retorna o valor armazenado no registrador v0
+.end method
+```
+
+O método declara que usará 3 registradores (`.registers 3`): dois para os parâmetros (`p1` e `p2`) e um local (`v0`) para armazenar o resultado.
+
+A instrução `add-int v0, p1, p2` realiza a soma dos valores nos registradores de parâmetros `p1` e `p2` e guarda o resultado no registrador local `v0`. Por fim, o método retorna o valor armazenado em `v0`.
+
+## Java para Smali
+
+É possível converter um código Java em Smali utilizando ferramentas como `javac`, `dx` e `baksmali`. Para ilustrar o processo de conversão, considere o seguinte código Java:
+
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
+```
+
+Compile o código Java para bytecode:
+
+```bash
+javac --release 7 HelloWorld.java
+```
+
+Converta o bytecode em um arquivo `.dex`:
+
+```bash
+dx --dex --output=HelloWorld.dex HelloWorld.class
+```
+
+Descompile o `.dex` em código Smali:
+
+```bash
+baksmali HelloWorld.dex -o HelloWorld
+```
+
+O resultado será um arquivo `.smali` que representa o comportamento do código Java no nível Dalvik.
+
+## Smali para Java
+
+Converter Smali de volta para Java é uma prática comum durante o processo de engenharia reversa. Essa conversão é particularmente útil quando se deseja compreender a lógica do código em um formato mais legível ou reconstruir o comportamento original de um aplicativo Android.
+
+Recompile os arquivos Smali em um arquivo `.dex`:
+
+```bash
+smali assemble <diretório_smali> -o output.dex
+```
+
+Converta o arquivo `.dex` em código Java:
+
+```bash
+jadx -d <diretório_destino> output.dex
+```
+
+O resultado será uma estrutura de pastas contendo os arquivos `.java`. Embora o código gerado nem sempre seja uma representação perfeita do original (especialmente em casos de ofuscação), ele oferece uma base legível para análise.
+
+## APK para Smali
+
+Quando se trabalha com um aplicativo Android já compilado (`.apk`), a conversão para Smali pode ser feita diretamente utilizando ferramentas como o APKTool, que extrai os arquivos Smali de forma organizada.
+
+Descompilar o APK para Smali:
+
+```bash
+apktool d app.apk
+```
+
+Modificar os arquivos Smali: edite os arquivos Smali conforme necessário para realizar alterações no comportamento do aplicativo.
+
+Recompilar o APK:
+
+```bash
+apktool b myApp
+```
+
+Assinar o APK recompilado:
+
+```bash
+jarsigner -verbose -keystore my-release-key.jks myApp/dist/myApp.apk alias_name
+```
+
+Realizar a instalação do APK:
+
+```bash
+adb install app.apk
+```
