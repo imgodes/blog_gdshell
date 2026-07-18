@@ -1,6 +1,5 @@
 ---
-title: Memória e sinais de clock
-draft: true
+title: Memória
 ---
 
 # Memória e sinais de clock
@@ -15,12 +14,15 @@ Para que isso funcione, o circuito precisa de memória, a capacidade de armazena
 O componente de memória mais simples possível é o **latch**, simples pois ele armazena apenas 1 bit.
 
 O **SR latch** tem duas entradas e duas saídas:
+
+![SR Latch](./img/srlatch01.png)
+
 - **S** (*set*): define o bit armazenado como 1
 - **R** (*reset*): redefine o bit armazenado como 0
 - **Q**: a saída principal, o bit armazenado
 - **$\overline{Q}$**: o complemento de Q, sempre o oposto do que está em Q
 
-O comportamento é o seguinte. Quando S é 1, a saída Q vai para 1. Se S voltar a ser 0, Q continua sendo 1, pois o circuito "lembra" da entrada anterior. Quando R é 1, o estado anterior é apagado e Q volta para 0, onde permanece mesmo quando R voltar a ser 0.
+Quando S é 1, a saída Q vai para 1. Se S voltar a ser 0, Q continua sendo 1, pois o circuito "lembra" da entrada anterior. Quando R é 1, o estado anterior é apagado e Q volta para 0, onde permanece mesmo quando R voltar a ser 0.
 
 | S | R | Q                       | Operação  |
 |---|---|-------------------------|-----------|
@@ -29,27 +31,31 @@ O comportamento é o seguinte. Quando S é 1, a saída Q vai para 1. Se S voltar
 | 1 | 0 | 1                       | Definir   |
 | 1 | 1 | X                       | Inválido  |
 
-A linha `S=1, R=1` é inválida porque as duas entradas se contradizem: uma quer definir e a outra quer redefinir ao mesmo tempo. O resultado seria indeterminado.
+A linha `S=1`, `R=1` é inválida porque as duas entradas se contradizem: uma quer definir e a outra quer redefinir ao mesmo tempo. O resultado seria indeterminado.
 
 ### Como o SR latch funciona por dentro
 
 O SR latch pode ser implementado com duas portas NOR e alguns fios de realimentação, onde a saída de cada porta alimenta a entrada da outra.
 
+![SR Latch](./img/srlatch02.png)
+
 Quando vi isso pela primeira vez, pensei: espera, isso é um paradoxo. Para calcular a saída de N1, preciso da saída de N2, que por sua vez depende da saída de N1. Como isso funciona sem entrar em loop infinito?
 
 O problema era que eu estava pensando de forma muito humana. O circuito não calcula em passos como nós. O tempo todo existe corrente fluindo pelos fios, seja ela alta ou baixa. Quando uma nova entrada é aplicada, as tensões se propagam simultaneamente pelos dois fios de realimentação e o circuito converge para um novo estado estável em frações de nanossegundo. Não é uma sequência de passos, são tensões se ajustando ao mesmo tempo.
 
-Para tornar isso concreto, tome o caso `R=1`:
+Para tornar isso mais palpável, tome o caso `R=1`:
+
+![SR Latch](./img/srlatch03.png)
 
 1. N2 recebe R=1. Independente do que $\overline{Q}$ vale, `1 NOR qualquer_coisa = 0`. Q vai para 0.
 2. N1 agora recebe `S=0` e `Q=0`. `0 NOR 0 = 1`. $\overline{Q}$ = 1.
 3. O circuito estabilizou em Q=0 e $\overline{Q}$=1.
 
-Quando R volta para 0, as saídas permanecem Q=0 e $\overline{Q}$=1 por realimentação. Esse é o momento em que o circuito está lembrando algo. Não há nenhuma bateria extra, nenhum componente especial de memória: apenas dois fios se alimentando mutuamente em loop.
+Quando R volta para 0, as saídas permanecem Q=0 e $\overline{Q}$=1 por realimentação. Esse é o momento em que o circuito está fazendo o que imaginamos que uma memória deveria fazer, ou seja, armazenando coisas.
 
 Dito isso, podemos voltar a tratar o SR latch como um bloco único encapsulado. Os detalhes internos estão lá, mas não precisamos pensar neles a cada uso.
 
-### Na prática: a máquina de venda automática
+### A máquina de venda automática
 
 Para entender o SR latch em ação, imagine o seguinte circuito de uma máquina de venda automática com duas entradas e dois LEDs:
 - **COIN**: botão que representa inserir uma moeda
@@ -57,17 +63,23 @@ Para entender o SR latch em ação, imagine o seguinte circuito de uma máquina 
 - **COIN LED**: acende quando uma moeda foi inserida
 - **VEND LED**: acende quando um item está sendo vendido
 
-A regra central é que a máquina só vende se uma moeda foi inserida antes.
+A regra proposta é que a máquina só vende se uma moeda foi inserida antes.
 
-Sem memória, o circuito não tem como saber se uma moeda foi inserida no passado. Ele enxerga apenas o estado presente das entradas. Com um SR latch, o problema se resolve: quando COIN é pressionado, o latch armazena Q=1. Quando VEND é pressionado, uma porta AND verifica se Q=1. Se sim, o VEND LED acende.
+Sem memória, o circuito não tem como saber se uma moeda foi inserida no passado. Ele enxerga apenas o estado presente das entradas. Mas com um SR latch, quando COIN é pressionado, o latch armazena Q=1. Quando VEND é pressionado, uma porta AND verifica se Q=1. Se sim, o VEND LED acende.
 
 Mas há mais de uma forma de implementar o reset desse latch:
 
 **Versão 1 - reset manual.** A saída da porta AND acende o VEND LED. O latch só é resetado via input R, por intervenção humana. Funciona, mas alguém precisaria apertar R para voltar ao estado inicial.
 
-**Versão 2 - reset automático.** A saída da porta AND é conectada de volta ao input R do latch. Quando o VEND LED acende, o latch se reseta sozinho. O problema: o circuito opera tão rápido que o reset ocorre antes do LED ter tempo de acender. O usuário não vê nada. Um exemplo clássico de um design que tecnicamente funciona, mas é rápido demais para ser percebido.
+![SR Latch](./img/srlatch04.png)
+
+**Versão 2 - reset automático.** A saída da porta AND é conectada de volta ao input R do latch. Quando o VEND LED acende, o latch se reseta sozinho. Porém o problema é que o circuito opera tão rápido que o reset ocorre antes do LED ter tempo de acender. O usuário não vê nada. Um exemplo clássico de um design que tecnicamente funciona, mas é rápido demais para ser percebido.
+
+![SR Latch](./img/srlatch05.png)
 
 **Versão 3 - reset automático com delay.** Um **capacitor** é inserido na linha de reset. O capacitor precisa de tempo para carregar, e esse tempo introduz o atraso necessário para o VEND LED aparecer antes do reset ocorrer.
+
+![SR Latch](./img/srlatch06.png)
 
 Um capacitor é um componente elétrico que armazena energia. Seu comportamento muda conforme seu estado de carga:
 - **Descarregado:** age como curto-circuito, deixando a corrente passar livremente
@@ -75,87 +87,3 @@ Um capacitor é um componente elétrico que armazena energia. Seu comportamento 
 
 O tempo para carregar ou descarregar depende da **capacitância** do componente e da **resistência** do circuito. Quanto maiores esses valores, mais lento o carregamento, e portanto, maior o delay. A capacitância é medida em **farads** (F). Um farad é um valor enorme, então capacitores são tipicamente medidos em **microfarads** ($\mu\text{F}$).
 
-## Sinais de clock
-
-Conforme os circuitos se tornam mais complexos, surge a necessidade de manter vários elementos sincronizados para que todos os estados mudem ao mesmo tempo. Se um circuito tem múltiplos dispositivos de memória, como garantir que todos os bits são definidos exatamente no mesmo instante?
-
-A resposta é o **sinal de clock**, ou simplesmente *clock*. Um sinal de clock alterna sua tensão entre alto e baixo em uma cadência regular, alto metade do tempo e baixo a outra metade. Esse tipo de sinal é chamado de **onda quadrada** (*square wave*).
-
-Uma variação completa da tensão, subindo e descendo, é um **pulso**. Uma oscilação completa, de baixo para alto e de volta para baixo, é um **ciclo**. A frequência do clock é medida em ciclos por segundo, ou **hertz** (Hz).
-
-:::info
-Para fins didáticos, vamos assumir que a mudança de alta para baixa tensão ocorre instantaneamente. Na realidade, essa transição leva um tempo finito, mas isso não é relevante aqui.
-:::
-
-Quando um circuito usa clock, todos os componentes que precisam estar sincronizados são conectados a ele. Cada componente é projetado para permitir mudanças de estado apenas quando um pulso de clock ocorrer.
-
-Há dois tipos de acionamento por clock:
-- **Positive edge-triggered:** o componente muda de estado na borda ascendente do pulso, quando a tensão sobe
-- **Negative edge-triggered:** o componente muda de estado na borda descendente, quando a tensão cai
-
-## JK Flip-Flop
-
-Um dispositivo de memória de 1 bit que usa clock é chamado de **flip-flop**.
-
-:::tip
-Você pode encontrar pessoas usando *latch* e *flip-flop* como sinônimos. A diferença é simples: latches não usam clock, flip-flops usam clock.
-:::
-
-O **JK flip-flop** é uma extensão do SR latch. Assim como o SR latch usa S para definir e R para redefinir, o JK flip-flop usa **J** para definir e **K** para redefinir. A diferença principal é que o JK flip-flop só muda de estado durante o pulso de clock, e não imediatamente ao receber uma entrada.
-
-Além disso, o JK flip-flop resolve o estado inválido do SR latch. Quando tanto J quanto K são 1, em vez de um resultado indeterminado, a saída simplesmente **alterna**, invertendo o valor atualmente armazenado.
-
-| J | K | Q (próximo estado) | Operação  |
-|---|---|--------------------|-----------|
-| 0 | 0 | Q (sem mudança)    | Manter    |
-| 0 | 1 | 0                  | Redefinir |
-| 1 | 0 | 1                  | Definir   |
-| 1 | 1 | $\overline{Q}$     | Alternar  |
-
-O símbolo do JK flip-flop tem uma entrada CLK indicada por um triângulo. A versão com triângulo simples é positive edge-triggered; com um círculo antes do triângulo, é negative edge-triggered. O comportamento geral dos dois é idêntico.
-
-## T Flip-Flop
-
-Ao conectar J e K juntos e tratá-los como uma entrada única, cria-se um flip-flop que só faz duas coisas a cada pulso de clock: ou alterna o valor armazenado, ou mantém.
-
-Esse é o **T flip-flop** (*toggle flip-flop*). Quando T=1, ele inverte o bit armazenado a cada pulso de clock. Quando T=0, mantém o estado.
-
-| T | Q (próximo estado) | Operação |
-|---|--------------------|----------|
-| 0 | Q (sem mudança)    | Manter   |
-| 1 | $\overline{Q}$     | Alternar |
-
-Simples, direto, e surpreendentemente útil como você vai ver a seguir.
-
-### Contador de 3 bits
-
-Para ilustrar como o clock e o T flip-flop trabalham juntos, vamos construir um **contador de 3 bits** que conta de 0 a 7 em binário.
-
-O circuito tem três T flip-flops, cada um armazenando um bit do número: Q0 é o bit menos significativo, Q2 é o mais significativo. A cada pulso de clock, o número é incrementado em 1.
-
-| Contagem | Q2 | Q1 | Q0 |
-|----------|----|----|-----|
-| 0        | 0  | 0  | 0   |
-| 1        | 0  | 0  | 1   |
-| 2        | 0  | 1  | 0   |
-| 3        | 0  | 1  | 1   |
-| 4        | 1  | 0  | 0   |
-| 5        | 1  | 0  | 1   |
-| 6        | 1  | 1  | 0   |
-| 7        | 1  | 1  | 1   |
-
-Observando a tabela, um padrão emerge:
-- Q0 alterna a cada contagem, sem exceção
-- Q1 alterna apenas quando Q0 era 1 na contagem anterior
-- Q2 alterna apenas quando tanto Q0 quanto Q1 eram 1 na contagem anterior
-
-T flip-flops são perfeitos para isso. A implementação é direta:
-- **T0** conectado permanentemente a 5V, então Q0 alterna a cada pulso de clock
-- **T1** conectado a Q0, então Q1 alterna apenas quando Q0 está alto
-- **T2** conectado à saída de uma porta AND entre Q0 e Q1, então Q2 alterna apenas quando os dois estão altos ao mesmo tempo
-
-Os três flip-flops compartilham o mesmo sinal de clock, então a mudança acontece de forma sincronizada a cada pulso.
-
----
-
-Olhando para o que construímos neste capítulo: T flip-flops, que foram construídos a partir de JK flip-flops, que são circuitos digitais baseados em transistores. Mais uma vez, o encapsulamento nos permitiu construir algo complexo escondendo os detalhes ao longo do caminho. O que começou como dois fios se alimentando em loop em um SR latch se tornou um contador binário sincronizado por clock. É assim que computadores constroem sistemas complexos: uma camada de abstração de cada vez.
