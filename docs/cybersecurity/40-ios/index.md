@@ -1,0 +1,6 @@
+---
+title: iOS Basics
+---
+
+Quando comecei a estudar iOS me deparei com uma escassez de conteúdo sem precedentes. Então mesmo sem ser especialista nem nada do tipo, decidi criar esse tópico por aqui, afim de compartilhar o pouco que sei sobre o assunto, espero que seja útil!
+

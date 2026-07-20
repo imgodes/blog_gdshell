@@ -133,6 +133,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =====================
+   SIDEBAR — grupos de topo (estilo GitBook "Spaces")
+===================== */
+
+.theme-doc-sidebar-item-category-level-1 {
+  margin-top: 0.6rem;
+}
+
+.theme-doc-sidebar-item-category-level-1:first-child {
+  margin-top: 0;
+}
+
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+  transition: opacity 0.15s ease;
+}
+
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link:hover {
+  opacity: 1;
+  background: transparent;
+}
+
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link--active {
+  color: inherit;
+}
+
+/* =====================
    NAVBAR — links com cara de botão
 ===================== */
 

@@ -4,8 +4,5 @@ title: Tabela de conteúdos
 ---
 
 # Tabela de conteúdos
-
-## iOS Security
-Foi bem difícil aprender 
-- [iOS - Basics](/docs/cybersecurity/iosbasics/)
-- [iOS - Application Security](/docs/cybersecurity/iossecurity/)
+- [Android Application Security](/docs/cybersecurity/android/)
+- [iOS Application Security](/docs/cybersecurity/ios/)
