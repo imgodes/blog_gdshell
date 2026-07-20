@@ -1,6 +1,6 @@
 ---
 title: iOS RE com ipsw
-slug: /cybersecurity/iossecurity/engenhariareversa/iosrecomipsw/
+
 ---
 
 # iOS RE com ipsw

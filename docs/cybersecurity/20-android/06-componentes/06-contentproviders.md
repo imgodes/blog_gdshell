@@ -1,6 +1,6 @@
 ---
 title: Content Providers
-slug: /cybersecurity/androidbasics/componentes/contentproviders
+
 ---
 
 Content Providers são componentes fundamentais do Android para compartilhamento de dados entre aplicativos. Eles também funcionam como mecanismos de Interprocess Communication (IPC), permitindo que dados sejam acessados e manipulados por outras apps com permissões apropriadas.

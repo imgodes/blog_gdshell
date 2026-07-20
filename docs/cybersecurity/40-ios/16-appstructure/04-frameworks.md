@@ -1,6 +1,6 @@
 ---
 title: Frameworks de Terceiros
-slug: /cybersecurity/iosbasics/appstructure/frameworks
+
 ---
 
 # Frameworks de Terceiros

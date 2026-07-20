@@ -1,6 +1,6 @@
 ---
 title: Segurança de App e Sistema
-slug: /cybersecurity/iosbasics/appsec/
+
 ---
 
 # Segurança de Aplicações e Sistema

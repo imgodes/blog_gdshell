@@ -1,6 +1,6 @@
 ---
 title: App Store Review Process
-slug: /cybersecurity/iosbasics/appsec/appstorereview
+
 ---
 
 # App Store Review Process

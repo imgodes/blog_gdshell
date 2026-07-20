@@ -1,6 +1,6 @@
 ---
 title: Hookando um Método em Objective-C
-slug: /cybersecurity/iossecurity/analisedinamica/frida/hookobjc
+
 ---
 
 # Hookando um Método em Objective-C

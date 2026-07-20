@@ -1,6 +1,6 @@
 ---
 title: Patch Management e Forced Updates
-slug: /cybersecurity/iosbasics/software/lifecycle
+
 ---
 
 # Patch Management e Forced Updates

@@ -1,6 +1,6 @@
 ---
 title: Privacidade e Controle do Usuário
-slug: /cybersecurity/iosbasics/privacy/
+
 ---
 
 # Privacidade e Controle do Usuário

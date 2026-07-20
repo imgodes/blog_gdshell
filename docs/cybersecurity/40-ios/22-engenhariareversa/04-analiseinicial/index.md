@@ -1,6 +1,6 @@
 ---
 title: Análise Inicial de Arquivos
-slug: /cybersecurity/iossecurity/engenhariareversa/analiseinicial/
+
 ---
 
 # Análise Inicial de Arquivos

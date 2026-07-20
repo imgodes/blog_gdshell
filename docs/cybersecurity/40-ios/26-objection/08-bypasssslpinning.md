@@ -1,6 +1,6 @@
 ---
 title: Bypass de SSL Pinning
-slug: /cybersecurity/iossecurity/analisedinamica/objection/bypasssslpinning
+
 ---
 
 # Bypass de SSL Pinning

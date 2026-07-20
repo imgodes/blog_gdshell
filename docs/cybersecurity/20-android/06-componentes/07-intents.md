@@ -1,6 +1,6 @@
 ---
 title: Intents
-slug: /cybersecurity/androidbasics/componentes/intents
+
 ---
 
 Intents são objetos de mensagem usados pelo sistema Android e pelos aplicativos para **requisitar ações de outros componentes**. Eles são fundamentais para iniciar atividades, serviços ou enviar mensagens entre apps. Embora não sejam projetados exclusivamente como um mecanismo de IPC, podem ser usados para comunicação entre processos.

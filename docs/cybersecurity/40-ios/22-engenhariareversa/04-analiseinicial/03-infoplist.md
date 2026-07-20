@@ -1,6 +1,6 @@
 ---
 title: Arquivo Info.plist
-slug: /cybersecurity/iossecurity/engenhariareversa/analiseinicial/infoplist
+
 ---
 
 # Arquivo Info.plist

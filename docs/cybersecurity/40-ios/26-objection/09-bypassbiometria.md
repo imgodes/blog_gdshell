@@ -1,6 +1,6 @@
 ---
 title: Bypass de Touch ID ou Face ID
-slug: /cybersecurity/iossecurity/analisedinamica/objection/bypassbiometria
+
 ---
 
 # Bypass de Touch ID ou Face ID

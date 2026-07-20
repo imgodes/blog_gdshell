@@ -1,6 +1,6 @@
 ---
 title: Análise do IPA
-slug: /cybersecurity/iossecurity/engenhariareversa/analiseinicial/analiseipa
+
 ---
 
 # Análise do IPA

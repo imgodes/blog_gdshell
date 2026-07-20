@@ -1,6 +1,6 @@
 ---
 title: Introdução aos Componentes
-slug: /cybersecurity/androidbasics/componentes/introducao
+
 ---
 
 O Android não possui uma função "main" (um ponto de partida do programa), como em outras linguagens.

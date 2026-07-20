@@ -1,6 +1,6 @@
 ---
 title: Secure Enclave
-slug: /cybersecurity/iosbasics/hardware/secureenclave
+
 ---
 
 # Secure Enclave

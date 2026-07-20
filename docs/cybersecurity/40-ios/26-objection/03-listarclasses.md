@@ -1,6 +1,6 @@
 ---
 title: Listar Classes Carregadas
-slug: /cybersecurity/iossecurity/analisedinamica/objection/listarclasses
+
 ---
 
 # Listar Classes Carregadas

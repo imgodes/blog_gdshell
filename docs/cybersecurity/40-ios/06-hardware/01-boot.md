@@ -1,6 +1,6 @@
 ---
 title: Boot ROM e Chain of Trust
-slug: /cybersecurity/iosbasics/hardware/boot
+
 ---
 
 # Boot ROM e Chain of Trust

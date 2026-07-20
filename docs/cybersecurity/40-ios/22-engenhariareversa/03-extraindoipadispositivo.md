@@ -1,6 +1,6 @@
 ---
 title: Extraindo o IPA de um App Instalado
-slug: /cybersecurity/iossecurity/engenhariareversa/extraindoipadispositivo
+
 ---
 
 # Extraindo o IPA de um App Instalado

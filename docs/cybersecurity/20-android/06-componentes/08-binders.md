@@ -1,6 +1,6 @@
 ---
 title: Binders
-slug: /cybersecurity/androidbasics/componentes/binders
+
 ---
 
 O Binder é o mecanismo de Interprocess Communication (IPC) central do Android. Ele **permite que processos diferentes se comuniquem de forma eficiente e segura, utilizando chamadas de procedimento remoto (Remote Procedure Call - RPC)**.

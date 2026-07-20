@@ -1,6 +1,6 @@
 ---
 title: Extensões de Arquivo do IPA
-slug: /cybersecurity/iosbasics/appstructure/extensoes
+
 ---
 
 # Extensões de Arquivo do IPA

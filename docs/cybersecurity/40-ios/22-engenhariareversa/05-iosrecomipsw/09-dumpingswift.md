@@ -1,6 +1,6 @@
 ---
 title: Dumping de Classes Swift
-slug: /cybersecurity/iossecurity/engenhariareversa/iosrecomipsw/dumpingswift
+
 ---
 
 # Dumping de Classes Swift

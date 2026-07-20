@@ -1,6 +1,6 @@
 ---
 title: Deep Links
-slug: /cybersecurity/androidbasics/componentes/deeplinks
+
 ---
 
 Deep Links são mecanismos de Interprocess Communication (IPC) que permitem que um link (por exemplo, em um site ou e-mail) abra diretamente uma atividade dentro de um app Android.

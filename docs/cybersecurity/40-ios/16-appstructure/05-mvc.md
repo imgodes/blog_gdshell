@@ -1,6 +1,6 @@
 ---
 title: Arquitetura Model-View-Controller
-slug: /cybersecurity/iosbasics/appstructure/mvc
+
 ---
 
 > *Aqui eu fiz bastante tradução literal de textos em inglês, mas confesso que não entendi por completo o conteúdo. Se for do seu interesse se aprofundar no modelo MVC, recomendo que continue realizando suas pesquisas.*

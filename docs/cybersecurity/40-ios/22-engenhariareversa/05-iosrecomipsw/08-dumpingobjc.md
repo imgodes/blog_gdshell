@@ -1,6 +1,6 @@
 ---
 title: Dumping de Classes Objective-C
-slug: /cybersecurity/iossecurity/engenhariareversa/iosrecomipsw/dumpingobjc
+
 ---
 
 # Dumping de Classes Objective-C

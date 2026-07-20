@@ -1,6 +1,6 @@
 ---
 title: Localizando o Bundle de Apps
-slug: /cybersecurity/iossecurity/engenhariareversa/analiseinicial/bundledirectory
+
 ---
 
 # Localizando o Bundle de Apps Instalados

@@ -1,6 +1,6 @@
 ---
 title: Automatizando extração de backups
-slug: /cybersecurity/iossecurity/introducao/automatebackup
+
 ---
 
 Você pode automatizar tarefas como extração de backups usando scripts bash no seu host e a biblioteca libimobiledevice.

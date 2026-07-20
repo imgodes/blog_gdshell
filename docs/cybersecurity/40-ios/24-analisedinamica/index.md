@@ -1,6 +1,6 @@
 ---
 title: Análise Dinâmica
-slug: /cybersecurity/iossecurity/analisedinamica/
+
 ---
 
 

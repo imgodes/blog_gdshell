@@ -1,6 +1,6 @@
 ---
 title: Monitorar Funções Criptográficas
-slug: /cybersecurity/iossecurity/analisedinamica/objection/monitorcripto
+
 ---
 
 # Monitorar Funções Criptográficas

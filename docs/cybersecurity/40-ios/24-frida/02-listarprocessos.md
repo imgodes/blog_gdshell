@@ -1,6 +1,6 @@
 ---
 title: Listar Processos em Execução
-slug: /cybersecurity/iossecurity/analisedinamica/frida/listarprocessos
+
 ---
 
 # Listar Processos em Execução

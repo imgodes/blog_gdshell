@@ -1,6 +1,6 @@
 ---
 title: Primeiras Interações com iOS
-slug: /cybersecurity/iossecurity/introducao/firstinteractions
+
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

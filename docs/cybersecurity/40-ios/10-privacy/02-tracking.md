@@ -1,6 +1,6 @@
 ---
 title: Prevenção de Rastreamento
-slug: /cybersecurity/iosbasics/privacy/tracking
+
 ---
 
 # Prevenção de Rastreamento

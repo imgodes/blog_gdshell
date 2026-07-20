@@ -1,6 +1,6 @@
 ---
 title: Hookando um Método em Swift
-slug: /cybersecurity/iossecurity/analisedinamica/frida/hookswift
+
 ---
 
 # Hookando um Método em Swift

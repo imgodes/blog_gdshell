@@ -1,6 +1,6 @@
 ---
 title: Rastreando Chamadas de Função
-slug: /cybersecurity/iossecurity/analisedinamica/frida/tracefunctions
+
 ---
 
 # Rastreando Chamadas de Função

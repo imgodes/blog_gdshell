@@ -1,6 +1,6 @@
 ---
 title: Kernel / Runtime Integrity
-slug: /cybersecurity/iosbasics/software/integrity
+
 ---
 
 # Kernel Integrity e Runtime Integrity

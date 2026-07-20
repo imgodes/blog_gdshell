@@ -1,6 +1,6 @@
 ---
 title: Comunicação Segura
-slug: /cybersecurity/iosbasics/network/
+
 ---
 
 # Comunicação Segura

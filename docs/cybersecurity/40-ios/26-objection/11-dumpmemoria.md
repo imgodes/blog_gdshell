@@ -1,6 +1,6 @@
 ---
 title: Dump de Memória e Busca por Segredos
-slug: /cybersecurity/iossecurity/analisedinamica/objection/dumpmemoria
+
 ---
 
 # Dump de Memória e Busca por Segredos

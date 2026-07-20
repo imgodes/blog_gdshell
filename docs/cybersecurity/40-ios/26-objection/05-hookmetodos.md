@@ -1,6 +1,6 @@
 ---
 title: Hookar Métodos em Objective-C
-slug: /cybersecurity/iossecurity/analisedinamica/objection/hookmetodos
+
 ---
 
 # Hookar Métodos em Objective-C

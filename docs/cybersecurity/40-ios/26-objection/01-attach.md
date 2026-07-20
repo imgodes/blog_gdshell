@@ -1,6 +1,6 @@
 ---
 title: Anexar o Objection ao App
-slug: /cybersecurity/iossecurity/analisedinamica/objection/attach
+
 ---
 
 # Anexar o Objection ao App

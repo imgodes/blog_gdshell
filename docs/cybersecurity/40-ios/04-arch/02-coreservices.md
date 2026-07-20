@@ -1,6 +1,6 @@
 ---
 title: Core Services
-slug: /cybersecurity/iosbasics/arch/coreservices
+
 ---
 
 # Core Services

@@ -1,6 +1,6 @@
 ---
 title: Segurança de Hardware
-slug: /cybersecurity/iosbasics/hardware/
+
 ---
 
 # Segurança de Hardware

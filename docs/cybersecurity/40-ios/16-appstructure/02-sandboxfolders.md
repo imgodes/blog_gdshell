@@ -1,6 +1,6 @@
 ---
 title: Application Sandbox Folders
-slug: /cybersecurity/iosbasics/appstructure/sandboxfolders
+
 ---
 
 # Application Sandbox Folders

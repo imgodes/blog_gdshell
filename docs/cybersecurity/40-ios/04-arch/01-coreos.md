@@ -1,6 +1,5 @@
 ---
 title: Core OS
-slug: /cybersecurity/iosbasics/arch/coreos
 ---
 
 Nesta camada está a base open-source dos sistemas da Apple (macOS, iOS, tvOS, watchOS, visionOS). Ela fornece o núcleo do sistema operacional, incluindo kernel, drivers, sistema de arquivos, networking e modelo de permissões. É a fundação sobre a qual as camadas superiores (Core Services, Media e Cocoa Touch) são construídas.

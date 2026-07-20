@@ -1,6 +1,6 @@
 ---
 title: Arquitetura do iOS
-slug: /cybersecurity/iosbasics/arch/
+
 ---
 # O que é o iOS?
 

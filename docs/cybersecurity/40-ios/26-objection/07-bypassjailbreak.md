@@ -1,6 +1,6 @@
 ---
 title: Bypass de Jailbreak Detection
-slug: /cybersecurity/iossecurity/analisedinamica/objection/bypassjailbreak
+
 ---
 
 # Bypass de Jailbreak Detection

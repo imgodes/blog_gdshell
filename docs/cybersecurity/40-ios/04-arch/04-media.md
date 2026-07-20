@@ -1,6 +1,6 @@
 ---
 title: Media
-slug: /cybersecurity/iosbasics/arch/media
+
 ---
 
 # Media

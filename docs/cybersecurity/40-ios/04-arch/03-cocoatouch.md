@@ -1,6 +1,6 @@
 ---
 title: Cocoa Touch
-slug: /cybersecurity/iosbasics/arch/cocoatouch
+
 ---
 
 # Cocoa Touch

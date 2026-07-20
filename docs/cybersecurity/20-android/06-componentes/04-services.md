@@ -1,6 +1,6 @@
 ---
 title: Services
-slug: /cybersecurity/androidbasics/componentes/services
+
 ---
 
 Um Service (Serviço) é um componente de aplicação Android que **realiza operações de longa duração em segundo plano, sem fornecer uma interface de usuário**.

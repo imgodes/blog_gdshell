@@ -1,6 +1,6 @@
 ---
 title: Alterar um Método em Runtime
-slug: /cybersecurity/iossecurity/analisedinamica/objection/patchmetodo
+
 ---
 
 # Alterar um Método em Runtime

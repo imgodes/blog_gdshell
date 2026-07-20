@@ -1,6 +1,6 @@
 ---
 title: Arquivos prioritários para pentest
-slug: /cybersecurity/iossecurity/engenhariareversa/analiseinicial/arquivosprioritarios
+
 ---
 
 # Arquivos prioritários para pentest

@@ -1,6 +1,6 @@
 ---
 title: AndroidManifest
-slug: /cybersecurity/androidbasics/componentes/androidmanifest
+
 ---
 
 Todo aplicativo Android define seus componentes principais no arquivo `AndroidManifest.xml`, que é o ponto central de configuração do app. Esse arquivo pode ser analisado para entender:

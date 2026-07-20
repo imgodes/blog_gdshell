@@ -1,6 +1,6 @@
 ---
 title: App Sandbox e Entitlements
-slug: /cybersecurity/iosbasics/software/sandbox
+
 ---
 
 # App Sandbox e Entitlements

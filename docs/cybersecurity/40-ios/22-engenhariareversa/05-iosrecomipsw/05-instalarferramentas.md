@@ -1,6 +1,6 @@
 ---
 title: Instalando ipsw e Swift
-slug: /cybersecurity/iossecurity/engenhariareversa/iosrecomipsw/instalarferramentas
+
 ---
 
 # Instalando ipsw e Swift

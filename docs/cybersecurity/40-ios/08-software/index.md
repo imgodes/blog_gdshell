@@ -1,6 +1,6 @@
 ---
 title: Segurança de Software
-slug: /cybersecurity/iosbasics/software/
+
 ---
 
 # Segurança de Software

@@ -1,6 +1,6 @@
 ---
 title: Permissões e Transparência
-slug: /cybersecurity/iosbasics/privacy/permissions
+
 ---
 
 # Permissões e Transparência

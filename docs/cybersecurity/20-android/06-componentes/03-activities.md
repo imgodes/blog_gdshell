@@ -1,6 +1,6 @@
 ---
 title: Activities
-slug: /cybersecurity/androidbasics/componentes/activities
+
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,6 +1,6 @@
 ---
 title: Data Protection Classes
-slug: /cybersecurity/iosbasics/hardware/dataprotection
+
 ---
 
 # Data Protection Classes

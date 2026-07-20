@@ -1,6 +1,6 @@
 ---
 title: Broadcast Receivers
-slug: /cybersecurity/androidbasics/componentes/broadcastreceivers
+
 ---
 
 Broadcast Receivers são componentes de aplicação e também mecanismos de Interprocess Communication (IPC) no Android. Eles **permitem que aplicativos recebam eventos enviados pelo sistema ou por outros apps na forma de _Intents_**.

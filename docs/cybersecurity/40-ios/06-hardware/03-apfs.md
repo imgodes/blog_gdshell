@@ -1,6 +1,6 @@
 ---
 title: Criptografia com APFS
-slug: /cybersecurity/iosbasics/hardware/apfs
+
 ---
 
 # Criptografia de Arquivos com APFS

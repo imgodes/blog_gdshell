@@ -1,6 +1,6 @@
 ---
 title: Ferramentas e Procedimentos
-slug: /cybersecurity/iossecurity/engenhariareversa/ferramentas
+
 ---
 
 # Ferramentas e Procedimentos

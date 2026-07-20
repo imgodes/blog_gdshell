@@ -1,6 +1,6 @@
 ---
 title: Developer Certificates
-slug: /cybersecurity/iosbasics/software/certificates
+
 ---
 
 # Developer Certificates

@@ -1,6 +1,6 @@
 ---
 title: Explorar o Ambiente do App
-slug: /cybersecurity/iossecurity/analisedinamica/objection/explorarambiente
+
 ---
 
 # Explorar o Ambiente do App

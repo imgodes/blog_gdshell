@@ -1,6 +1,6 @@
 ---
 title: Explorar Métodos de uma Classe
-slug: /cybersecurity/iossecurity/analisedinamica/objection/explorarmetodos
+
 ---
 
 # Explorar Métodos de uma Classe

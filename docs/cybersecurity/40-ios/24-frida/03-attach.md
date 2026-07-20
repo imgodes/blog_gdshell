@@ -1,6 +1,6 @@
 ---
 title: Anexar o Frida a um App
-slug: /cybersecurity/iossecurity/analisedinamica/frida/attach
+
 ---
 
 # Anexar o Frida a um App

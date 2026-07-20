@@ -1,6 +1,6 @@
 ---
 title: Instalando um app não assinado
-slug: /cybersecurity/iossecurity/introducao/installnotsignedapp
+
 ---
 
 ## Instalando um app não assinado

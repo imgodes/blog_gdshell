@@ -1,6 +1,6 @@
 ---
 title: Estrutura de um App iOS
-slug: /cybersecurity/iosbasics/appstructure/
+
 ---
 
 # Estrutura de um App iOS

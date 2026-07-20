@@ -1,6 +1,6 @@
 ---
 title: Extraindo o Arquivo IPA
-slug: /cybersecurity/iossecurity/engenhariareversa/iosrecomipsw/extraindoarquivoipa
+
 ---
 
 # Extraindo o Arquivo IPA

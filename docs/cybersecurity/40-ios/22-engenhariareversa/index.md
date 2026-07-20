@@ -1,25 +1,7 @@
 ---
 title: Introdução à Eng. Reversa
-slug: /cybersecurity/iossecurity/engenhariareversa/
+
 ---
-
-* [Introdução à Eng. Reversa](/docs/cybersecurity/iossecurity/engenhariareversa/)
-  * [Binário Mach-O](/docs/cybersecurity/iossecurity/engenhariareversa/machobinario)
-  * [Ferramentas e Procedimentos](/docs/cybersecurity/iossecurity/engenhariareversa/ferramentas)
-  * [Extraindo o IPA de um App Instalado](/docs/cybersecurity/iossecurity/engenhariareversa/extraindoipadispositivo)
-  * [Análise Inicial de Arquivos](/docs/cybersecurity/iossecurity/engenhariareversa/analiseinicial/)
-    * [Análise do IPA](/docs/cybersecurity/iossecurity/engenhariareversa/analiseinicial/analiseipa)
-    * [Arquivos prioritários para pentest](/docs/cybersecurity/iossecurity/engenhariareversa/analiseinicial/arquivosprioritarios)
-    * [Arquivo Info.plist](/docs/cybersecurity/iossecurity/engenhariareversa/analiseinicial/infoplist)
-    * [Localizando o Bundle de Apps](/docs/cybersecurity/iossecurity/engenhariareversa/analiseinicial/bundledirectory)
-    * [Estrutura de diretório do sandbox](/docs/cybersecurity/iossecurity/engenhariareversa/analiseinicial/estruturasandbox)
-  * [iOS RE com ipsw](/docs/cybersecurity/iossecurity/engenhariareversa/iosrecomipsw/)
-    * [Instalando ipsw e Swift](/docs/cybersecurity/iossecurity/engenhariareversa/iosrecomipsw/instalarferramentas)
-    * [Extraindo o Arquivo IPA](/docs/cybersecurity/iossecurity/engenhariareversa/iosrecomipsw/extraindoarquivoipa)
-    * [Lendo Arquivos plist com ipsw](/docs/cybersecurity/iossecurity/engenhariareversa/iosrecomipsw/lendoplist)
-    * [Dumping de Classes Objective-C](/docs/cybersecurity/iossecurity/engenhariareversa/iosrecomipsw/dumpingobjc)
-    * [Dumping de Classes Swift](/docs/cybersecurity/iossecurity/engenhariareversa/iosrecomipsw/dumpingswift)
-
 
 # iOS Reverse Engineering
 Antes de nos aprofundarmos na engenharia reversa de aplicações iOS, vamos estabelecer a definição do que é engenharia reversa e alguns outros termos:

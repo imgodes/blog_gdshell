@@ -1,6 +1,6 @@
 ---
 title: Lendo Arquivos plist com ipsw
-slug: /cybersecurity/iossecurity/engenhariareversa/iosrecomipsw/lendoplist
+
 ---
 
 # Lendo Arquivos plist com ipsw

@@ -1,6 +1,6 @@
 ---
 title: Setup para pentest/RE
-slug: /cybersecurity/iossecurity/introducao/setup
+
 ---
 
 Eu não vou me arriscar listando versões certinhas e ferramentas, pois é muito fácil de essa lista ficar desatualizada. Por outro lado, o que posso fazer é citar as fontes para te ajudar na sua busca!

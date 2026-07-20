@@ -1,6 +1,6 @@
 ---
 title: App Bundle
-slug: /cybersecurity/iosbasics/appstructure/appbundle
+
 ---
 
 # App Bundle

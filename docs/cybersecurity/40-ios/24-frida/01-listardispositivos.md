@@ -1,6 +1,6 @@
 ---
 title: Listar Dispositivos Conectados
-slug: /cybersecurity/iossecurity/analisedinamica/frida/listardispositivos
+
 ---
 
 # Listar Dispositivos Conectados

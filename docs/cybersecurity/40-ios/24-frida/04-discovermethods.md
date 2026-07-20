@@ -1,6 +1,6 @@
 ---
 title: Descobrindo Métodos Dinamicamente
-slug: /cybersecurity/iossecurity/analisedinamica/frida/discovermethods
+
 ---
 
 # Descobrindo Métodos Dinamicamente

@@ -1,6 +1,6 @@
 ---
 title: Estrutura de diretório do sandbox
-slug: /cybersecurity/iossecurity/engenhariareversa/analiseinicial/estruturasandbox
+
 ---
 
 import Tabs from '@theme/Tabs';
@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 # Estrutura de diretório do sandbox iOS
 
-Quando um app é instalado no iOS, o sistema cria vários diretórios próprios para ele, isolados dos diretórios de outros apps, como visto no capítulo sobre [App Sandbox](/docs/cybersecurity/iosbasics/appstructure/sandboxfolders). Esses diretórios têm papéis diferentes, um guarda o bundle estático do app, outro guarda arquivos que o usuário cria, outro guarda cache que pode ser apagado a qualquer momento, e assim por diante. Saber onde cada tipo de dado costuma parar é o que torna a análise de armazenamento local rápida em vez de uma busca às cegas pelo sandbox inteiro.
+Quando um app é instalado no iOS, o sistema cria vários diretórios próprios para ele, isolados dos diretórios de outros apps, como visto no capítulo sobre App Sandbox. Esses diretórios têm papéis diferentes, um guarda o bundle estático do app, outro guarda arquivos que o usuário cria, outro guarda cache que pode ser apagado a qualquer momento, e assim por diante. Saber onde cada tipo de dado costuma parar é o que torna a análise de armazenamento local rápida em vez de uma busca às cegas pelo sandbox inteiro.
 
 Um comando que veremos mais adiante, é o `env` do `objection` que lista os principais diretórios do sandbox da aplicação. Veja abaixo um exemplo de saída desse comando:
 
