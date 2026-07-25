@@ -5,6 +5,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import youtubePlugin from './src/remark/youtube.js';
+import highlightPlugin from './src/remark/highlight.js';
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 
@@ -40,12 +41,12 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          remarkPlugins: [remarkMath, youtubePlugin],
+          remarkPlugins: [remarkMath, youtubePlugin, highlightPlugin],
           rehypePlugins: [rehypeKatex],
 
         },
         blog: {
-          remarkPlugins: [remarkMath, youtubePlugin],
+          remarkPlugins: [remarkMath, youtubePlugin, highlightPlugin],
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
