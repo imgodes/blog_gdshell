@@ -50,7 +50,7 @@ No meu caso precisei confirmar mais uma vez para ele bootar.
 Depois de bootar, configure apenas o wifi e um Pin, o resto pode pular.
 
 ## Instalação do KernelSU
-A partir daqui é bem importante que tenha lido sobre [[Android - Generic Kernel Imagem (GKI)|GKI]] e [[Android - KernelSU|KernelSU]] para pelo menos entender o que está fazendo, mas não é impossível de apenas seguir os passos e boa.
+A partir daqui é bem importante que tenha lido sobre GKI e KernelSU (que expliquei nos tópicos anteriores) para pelo menos entender o que está fazendo, mas não é impossível de apenas seguir os passos e boa.
 
 Depois de iniciado, habilite novamente o modo desenvolvedor e o Debug USB, para conseguir checar a versão do seu Android:
 ```
