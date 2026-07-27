@@ -178,8 +178,11 @@ Reinicie o celular e você deverá ver uma tela como essa:
 
 Clique no símbolo `<>` e ative a opção "Use anonymous memory", pois isso faz o ZygiskNext usar memória anônima em vez de arquivos mapeados, o que dificulta detecção por RASP que inspeciona `/proc/maps` em busca de arquivos suspeitos.
 
-## Módulos - PlayIntegrityFix
-Baixe o módulo em https://modules.kernelsu.org/module/playintegrityfix/, importe da mesma forma que fez para o Zygisk, reinicie e boa!
+## Módulos - .Integrity Box
+Baixe o módulo em https://github.com/MeowDump/Integrity-Box/releases, importe da mesma forma que fez para o Zygisk, reinicie e boa!
+
+## Módulos - TrickStore
+Baixe o módulo em https://github.com/5ec1cff/TrickyStore/releases, importe da mesma forma que fez para o Zygisk.
 
 ## Frida
 Primeiro baixe o frida para sua máquina via `pip` e baixe também o `frida-server` para android em https://github.com/frida/frida/releases/.
@@ -249,3 +252,9 @@ E mesmo com todas essas ferramentas, se usarmos os Apps "Applist Detector" e "Ro
 ![print](./img/android-11.png)
 
 ![print](./img/android-12.png)
+
+E ainda testei também em apps que verificam a integridade do dispositivo e também passou liso!
+
+![print](./img/android-14.png)
+
+![print](./img/android-15.png)
